@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://game/Game.gd" type="Script" id=1]
+[ext_resource path="res://game/Adventure.gd" type="Script" id=1]
 [ext_resource path="res://game/hud/HUD.tscn" type="PackedScene" id=2]
 
-[node name="Game" type="Spatial"]
+[node name="Adventure" type="Node"]
 script = ExtResource( 1 )
 
 [node name="Map" type="Spatial" parent="."]
 
 [node name="Player" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="Camera" type="Camera" parent="Player"]
-transform = Transform( 1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 14.5009, 6.76189 )
+transform = Transform( 1, 0, 0, 0, 0.573577, 0.819152, 0, -0.819152, 0.573577, 0, 25.799, 0 )
+current = true
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
 

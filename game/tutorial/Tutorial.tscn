@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://game/Game.tscn" type="PackedScene" id=1]
+[ext_resource path="res://game/Adventure.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/characters/player/physicus/Physicus.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/maps/initial_map/InitialMap.tscn" type="PackedScene" id=3]
 
