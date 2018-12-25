@@ -1,7 +1,7 @@
 extends Node
 
 func _ready() -> void:
-	$Player.add_child(load(GameManager.data["player"]).instance())
+	$Player.add_child(load(GameManager.get_player_character()).instance())
 	# TODO: handle savable objects in the map
 	reload_map()
 
@@ -12,4 +12,4 @@ func reload_map() -> void:
 	
 	# Add a child
 	# FIXME: handle big map
-	$Map.add_child(load(GameManager.data["map"]).instance())
+	$Map.add_child(load(GameManager.get_map()).instance())

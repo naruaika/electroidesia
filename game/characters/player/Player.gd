@@ -7,16 +7,8 @@ const GRAVITATION = -9.8
 
 var velocity = Vector3()
 
-#onready var area = $Area
-
-#signal area_entered(information)
-
-#func _ready() -> void:
-#	area.connect("area_entered", self, "check_area", [true]) # true when enter
-#	area.connect("area_exited", self, "check_area", [false]) # false when exit
-
 func _physics_process(delta: float) -> void:
-	if !GameManager.is_telling_story:
+	if !GameManager.is_interrupted:
 		process_movement(delta)
 
 func process_movement(delta: float) -> void:
@@ -68,11 +60,3 @@ func process_movement(delta: float) -> void:
 	# TODO: make it more flexible
 	camera.translation.x = translation.x
 	camera.translation.z = translation.z + 18
-
-#func check_area(area, bind) -> void:
-#	if area.is_in_group("gate"):
-#		var area_information = []
-#		if bind:
-#			area_information = [] + area.get_meta("information")
-#			print("[{0}] faced [{1} Gate]".format([get_name(), area_information[0]]))
-#		emit_signal("area_entered", area_information)

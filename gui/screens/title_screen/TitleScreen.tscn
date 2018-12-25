@@ -23,11 +23,14 @@ margin_bottom = 48.0
 [node name="NewGameButton" parent="Menu/Buttons" instance=ExtResource( 2 )]
 margin_right = 82.0
 text = "New Game"
+script = null
 
 [node name="ContinueButton" parent="Menu/Buttons" instance=ExtResource( 2 )]
 margin_top = 24.0
 margin_right = 82.0
 margin_bottom = 44.0
 text = "Continue"
+script = null
 
 [connection signal="pressed" from="Menu/Buttons/NewGameButton" to="." method="_on_NewGameButton_pressed"]
+[connection signal="pressed" from="Menu/Buttons/ContinueButton" to="." method="_on_ContinueButton_pressed"]

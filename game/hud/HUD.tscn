@@ -36,3 +36,32 @@ margin_right = 124.0
 margin_bottom = 44.0
 text = "Dialogue/story Text"
 
+[node name="PlayerStatistics" type="Control" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -110.0
+margin_right = 300.0
+
+[node name="BgImage" type="TextureRect" parent="PlayerStatistics"]
+margin_right = 190.0
+margin_bottom = 110.0
+texture = SubResource( 1 )
+expand = true
+
+[node name="Name" type="Label" parent="PlayerStatistics"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Name"
+
+[node name="HitPoint" type="ProgressBar" parent="PlayerStatistics"]
+margin_top = 30.0
+margin_right = 150.0
+margin_bottom = 44.0
+value = 50.0
+
+[node name="ManaPoint" type="ProgressBar" parent="PlayerStatistics"]
+margin_top = 60.0
+margin_right = 150.0
+margin_bottom = 74.0
+value = 50.0
+
