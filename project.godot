@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Character",
 "language": "GDScript",
 "path": "res://game/characters/Character.gd"
+}, {
+"base": "Button",
+"class": "CustomMenuButton",
+"language": "GDScript",
+"path": "res://gui/buttons/menu_button/MenuButton.gd"
 } ]
 _global_script_class_icons={
-"Character": ""
+"Character": "",
+"CustomMenuButton": ""
 }
 
 [application]

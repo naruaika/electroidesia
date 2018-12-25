@@ -18,6 +18,14 @@ func _input(event: InputEvent) -> void:
 				$Dialogue/Name.text = story[dialogue_index][1]
 				$Dialogue/Content.text = story[dialogue_index][0]
 
+func _physics_process(delta: float) -> void:
+	# Reset player statistics
+	$PlayerStatistics/Name.text = GameManager.get_player_name()[1]
+	$PlayerStatistics/HitPoint.value = GameManager.get_player_hp()[0]
+	$PlayerStatistics/HitPoint.max_value = GameManager.get_player_hp()[1]
+	$PlayerStatistics/ManaPoint.value = GameManager.get_player_mp()[0]
+	$PlayerStatistics/ManaPoint.max_value = GameManager.get_player_mp()[1]
+
 func show_dialogues(game_story: Array) -> void:
 	story = game_story
 	$Dialogue/Name.text = story[0][1]
