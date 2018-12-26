@@ -2,8 +2,6 @@
 
 [ext_resource path="res://game/objects/story_area/StoryArea.gd" type="Script" id=1]
 
-
-
 [sub_resource type="CylinderShape" id=1]
 
 
@@ -15,4 +13,5 @@ script = ExtResource( 1 )
 transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 1, 0 )
 shape = SubResource( 1 )
 
-[connection signal="body_entered" from="." to="." method="_on_TellStory_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_StoryArea_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_StoryArea_body_exited"]

@@ -7,12 +7,12 @@ func _ready() -> void:
 	set_process_input(false)
 
 func _input(event: InputEvent) -> void:
-	if GameManager.is_interrupted:
-		if event.is_action_released("ui_accept"):
+	if GameManager.is_telling_story:
+		if event.is_action_pressed("ui_accept"):
 			dialogue_index += 1
 			if dialogue_index == story.size():
 				$Dialogue.hide()
-				GameManager.is_interrupted = false
+				GameManager.is_telling_story = false
 				set_process_input(false)
 			else:
 				$Dialogue/Name.text = story[dialogue_index][1]
@@ -32,6 +32,6 @@ func show_dialogues(game_story: Array) -> void:
 	$Dialogue/Content.text = story[0][0]
 	
 	$Dialogue.show()
-	GameManager.is_interrupted = true
+	GameManager.is_telling_story = true
 	set_process_input(true)
 	dialogue_index = 0

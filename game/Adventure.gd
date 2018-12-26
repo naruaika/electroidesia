@@ -13,3 +13,4 @@ func reload_map() -> void:
 	# Add a child
 	# FIXME: handle big map
 	$Map.add_child(load(GameManager.get_map()).instance())
+	StoryManager.reset_environment()

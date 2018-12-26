@@ -1,40 +1,48 @@
 {
     "1" : [
         [
-            "Hai anak muda, bukankah ini kali pertama kamu ke sini?", "Mathea"
+            "Halo anak muda! Aku tidak mengenalmu, tapi aku sarankan untuk meninggalkan jalur ini. Di ujung sana ada monster Caeruleum Igne yang menunggu tanpa membiarkan siapa pun untuk lewat.", "Mathea"
         ],
         [
-            "Benarkah!? Aku sudah sering ke sini.", "Naru"
+            "Hanya jalur ini yang bisa kulewati.", "Naru"
         ],
+        [
+            "Saya terlalu tua untuk memaksa. Selamat jalan.", "Mathea"
+        ]
+    ],
+    "2" : [
         [   
-            "Aku belum pernah melihatmu sekali pun sejak 50 tahun di sini", "Mathea"
+            "Aku belum pernah melihatmu sekali pun sejak 50 tahun di sini. Siapa kamu? Aku melihat sebuah harapan darimu.", "Mathea"
         ],
         [
-            "Mengapa wanita tua sepertimu tinggal di sini sendirian?", "Naru"
+            "Namaku Naru. Aku tersesat di tempat ini yang bahkan kukenali sebelumnya. Ini terasa aneh.", "Naru"
         ],
         [
-            "Aku di sini setelah kematian suamiku...", "Mathea"
-        ],
-        [
-            "Apa yang terjadi dengan suamimu?", "Naru"
-        ],
-        [
-            "Sejak Hari H, suamiku tidak pernah lagi berbicara denganku. Padahal dulunya dia periang sekali. Dan dia meninggal begitu saja di umur 47 tahun di bawah pohon Methuselah", "Mathea"
+            "Tidak mengapa, setiap orang merasakan hal itu setelah Hari H.", "Mathea"
         ],
         [
             "Hari H? Hari apa itu?", "Naru"
         ],
         [
-            "Eh!? Setiap orang sepakat menamai kejadian besar dengan huruf alfabet sesuai dengan urutannya sejak 50 abad yang lalu!", "Mathea"
+            "Eh, benarkah kamu tidak tahu!?", "Mathea"
         ],
         [
-            "Kejadian besar terakhir adalah Hari H, terjadi 60 tahun yang lalu.", "Mathea"
+            "...", "Naru"
         ],
         [
-            "Pada hari nahas itu, komet Hyakutake berhasil melewati atmosfer bumi. Menghancurkan ladang-ladang kami dan membuat kami melupakan kecuali hal-hal yang selalu kami mimpikan.", "Mathea"
+            "Tidak ada orang yang tidak tahu dengan peristiwa besar beruntun ini yang terjadi sejak 50 abad yang lalu! Semua sepakat menamai kejadian-kejadian besar seperti ini dengan huruf alfabet sesuai dengan urutan kejadiannya.", "Mathea"
         ],
         [
-            "Aneh, padahal 6 hari yang lalu semuanya masih kukenali, sebelum aku kembali ke sini hari ini.", "Naru"
+            "Kejadian besar terakhir terjadi adalah Hari H, sekitar 60 tahun yang lalu.", "Mathea"
+        ],
+        [
+            "Pada hari nahas itu, komet Hyakutake berhasil sampai ke bumi. Menghancurkan ladang-ladang kami dan membuat kami melupakan semuanya kecuali hal-hal yang selalu kami mimpikan.", "Mathea"
+        ],
+        [
+            "Andai saja suamiku, Connor, tidak meninggal ketika Hari H itu...", "Mathea"
+        ],
+        [
+            "Hmmm... Enam hari yang lalu semuanya masih normal, sebelum aku kembali ke sini hari ini.", "Naru"
         ],
         [
             "...", "Mathea"]

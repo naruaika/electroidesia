@@ -4,8 +4,7 @@ var current_scene = null
 
 # Current game data
 var data
-var is_interrupted = false
-var _story_path = "game/stories/stories.dat"
+var is_telling_story = false setget set_telling_story, get_telling_story
 var _levelup_path = "game/characters/level_up.dat"
 
 # References
@@ -33,7 +32,6 @@ var opposite_direction = {
 	"East"  : "West",
 	"West"  : "East"
 }
-var stories_reference
 var levelups_reference
 
 func _ready() -> void:
@@ -44,12 +42,6 @@ func _ready() -> void:
 	var f = File.new()
 	f.open(_levelup_path, File.READ)
 	levelups_reference = parse_json(f.get_as_text())
-	f.close()
-	
-	# Load stories.dat file
-	f = File.new()
-	f.open(_story_path, File.READ)
-	stories_reference = parse_json(f.get_as_text())
 	f.close()
 
 func start_game(create_new: bool) -> void:
@@ -106,12 +98,13 @@ func goto_scene(path: String) -> void:
 			loader = null
 			break
 
-func tell_story() -> void:
-	get_node("/root/Adventure/HUD").show_dialogues(stories_reference[str(data["story"])])
-	data["story"] += 1
+func get_telling_story() -> bool:
+	return is_telling_story
 
-func syncro_names() -> void:
-	stories_reference = parse_json(to_json(stories_reference).replace("Naru", data["player"]["name"]))
+func set_telling_story(enable: bool) -> void:
+	is_telling_story = enable
+	for player in get_tree().get_nodes_in_group("player"):
+		player.set_physics_process(!enable)
 
 func reset_stats() -> void:
 	var point = levelups_reference[get_player_name()[0]]["hit_point"][get_player_level()]
@@ -124,7 +117,7 @@ func get_player_name() -> Array:
 
 func set_player_name(real_name: String, alias_name: String) -> void:
 	data["player"]["name"] = [real_name, alias_name]
-	syncro_names()
+	StoryManager.syncro_names()
 	reset_stats()
 
 func get_player_character() -> String:
@@ -162,3 +155,9 @@ func set_player_exp(current_exp: float, max_exp = null) -> void:
 
 func get_map() -> String:
 	return data["map"]
+
+func get_story() -> int:
+	return int(data["story"])
+
+func set_story(story_number: float) -> void:
+	data["story"] = story_number

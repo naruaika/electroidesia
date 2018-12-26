@@ -7,9 +7,10 @@ const GRAVITATION = -9.8
 
 var velocity = Vector3()
 
+onready var camera = get_node("/root").get_camera()
+
 func _physics_process(delta: float) -> void:
-	if !GameManager.is_interrupted:
-		process_movement(delta)
+	process_movement(delta)
 
 func process_movement(delta: float) -> void:
 	var direction = Vector3()
