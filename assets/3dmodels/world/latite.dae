@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Naufan Rusyda Faikar</author>
+      <authoring_tool>Blender 2.80.39 commit date:2018-12-28, commit time:11:37, hash:a4e4d9f0ab89</authoring_tool>
+    </contributor>
+    <created>2018-12-31T11:29:01</created>
+    <modified>2018-12-31T11:29:01</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="latite-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0 0 0 1</color>
+            </specular>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images/>
+  <library_materials>
+    <material id="latite-material" name="latite">
+      <instance_effect url="#latite-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="latite-mesh" name="latite">
+      <mesh>
+        <source id="latite-mesh-positions">
+          <float_array id="latite-mesh-positions-array" count="39">0.0207318 0.794729 1.901494 0.877493 0.3095262 1.002662 -0.7377694 0.1292545 0.0109958 1.109346 -0.6499232 1.070143 -0.7051635 -0.6519918 1.786229 0.4444847 0.7675554 0.2510074 0.8999578 0.03484517 0.3166432 -0.924927 -0.5766931 0.3243069 -0.9786645 0.6404337 0.309868 0.5589552 -0.1377246 1.748813 0.5390387 -0.7894936 0.2174902 0.1775345 0.7626018 0.8694082 -0.659354 0.0888766 2.145423</float_array>
+          <technique_common>
+            <accessor source="#latite-mesh-positions-array" count="13" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="latite-mesh-normals">
+          <float_array id="latite-mesh-normals-array" count="66">0.8154073 -0.2972604 -0.4967366 -0.08401435 0.9955036 -0.04375267 -0.8123406 -0.04276543 -0.5816132 -0.9859859 -0.01937037 0.1657001 0.3137671 0.0256958 0.9491522 -0.9883357 -0.04189908 0.1464135 0.0515151 -0.9904775 0.1276743 0.06257796 -0.7715691 0.6330602 0.3321858 -0.4280368 0.8404981 -0.6235222 0.7122017 0.3224731 0.5351545 0.8429577 0.05506503 -0.09019768 0.9954425 -0.03096258 0.971206 0.2304413 -0.06046462 0.4995964 0.8372302 0.2223715 0.8430272 0.5082913 -0.1759128 -0.1458591 -0.9888801 -0.02900767 0.1853936 0.03694242 -0.9819697 0.1848949 0.02693396 -0.9823892 -0.1216257 -0.3755313 -0.9187947 -0.07869684 0.4752699 -0.8763135 0.7649937 0.3534032 0.5384152 0.8342711 0.236629 0.4979946</float_array>
+          <technique_common>
+            <accessor source="#latite-mesh-normals-array" count="22" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="latite-mesh-map-0">
+          <float_array id="latite-mesh-map-0-array" count="132">0.4939715 0.7386109 0.3572066 0.7526848 0.4172965 0.6469216 0.6052089 0.2887123 0.4923999 0.3860576 0.428014 0.1832541 0.4479166 0.0625 0.428014 0.1832541 0.3902714 0.1448503 0.611494 0.07128196 0.6149637 0.1465916 0.428014 0.1832541 0.7944381 0.5308275 0.8514152 0.6075407 0.6725248 0.6374983 0.4479166 0.0625 0.611494 0.07128196 0.428014 0.1832541 0.4875995 0.7450176 0.5760998 0.946312 0.3572066 0.7526848 0.6725248 0.6374983 0.8514152 0.6075407 0.4939715 0.7386109 0.8514152 0.6075407 0.8431177 0.6801418 0.4939715 0.7386109 0.6149637 0.1465916 0.6052089 0.2887123 0.428014 0.1832541 0.4923999 0.3860576 0.6052089 0.2887123 0.524726 0.5544838 0.428014 0.1832541 0.4923999 0.3860576 0.3910085 0.4451439 0.524726 0.5544838 0.4939715 0.7386109 0.4172965 0.6469216 0.4923999 0.3860576 0.524726 0.5544838 0.382797 0.4554758 0.524726 0.5544838 0.4172965 0.6469216 0.382797 0.4554758 0.3572066 0.7526848 0.5760998 0.946312 0.4357564 0.9744176 0.158866 0.6182323 0.4172965 0.6469216 0.3572066 0.7526848 0.382797 0.4554758 0.4172965 0.6469216 0.158866 0.6182323 0.158866 0.6182323 0.3572066 0.7526848 0.1297764 0.7092351 0.2377356 0.5249111 0.158866 0.6182323 0.1345949 0.5352827 0.7944381 0.5308275 0.6725248 0.6374983 0.524726 0.5544838 0.6725248 0.6374983 0.4939715 0.7386109 0.524726 0.5544838</float_array>
+          <technique_common>
+            <accessor source="#latite-mesh-map-0-array" count="66" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="latite-mesh-vertices">
+          <input semantic="POSITION" source="#latite-mesh-positions"/>
+        </vertices>
+        <polylist material="latite-material" count="22">
+          <input semantic="VERTEX" source="#latite-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#latite-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#latite-mesh-map-0" offset="2" set="1"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 10 0 1 6 0 2 0 1 3 11 1 4 8 1 5 7 2 6 8 2 7 2 2 8 4 3 9 12 3 10 8 3 11 0 4 12 12 4 13 9 4 14 7 5 15 4 5 16 8 5 17 3 6 18 4 6 19 10 6 20 9 7 21 12 7 22 3 7 23 12 8 24 4 8 25 3 8 26 12 9 27 0 9 28 8 9 29 11 10 30 0 10 31 1 10 32 8 11 33 11 11 34 5 11 35 1 12 36 3 12 37 6 12 38 11 13 39 1 13 40 5 13 41 1 14 42 6 14 43 5 14 44 10 15 45 4 15 46 7 15 47 2 16 48 6 16 49 10 16 50 5 17 51 6 17 52 2 17 53 2 18 54 10 18 55 7 18 56 5 19 57 2 19 58 8 19 59 0 20 60 9 20 61 1 20 62 9 21 63 3 21 64 1 21 65</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="latite" name="latite" type="NODE">
+        <matrix sid="transform">0.4319999 0 0 0 0 0.4319999 0 0 0 0 0.4319999 0 0 0 0 1</matrix>
+        <instance_geometry url="#latite-mesh" name="latite">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="latite-material" target="#latite-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

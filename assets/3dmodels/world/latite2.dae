@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Naufan Rusyda Faikar</author>
+      <authoring_tool>Blender 2.80.39 commit date:2018-12-28, commit time:11:37, hash:a4e4d9f0ab89</authoring_tool>
+    </contributor>
+    <created>2018-12-31T12:50:21</created>
+    <modified>2018-12-31T12:50:21</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="latite-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0 0 0 1</color>
+            </specular>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images/>
+  <library_materials>
+    <material id="latite-material" name="latite">
+      <instance_effect url="#latite-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="latite2-mesh" name="latite2">
+      <mesh>
+        <source id="latite2-mesh-positions">
+          <float_array id="latite2-mesh-positions-array" count="30">-0.8173079 -0.5219829 0.4415099 0.4333485 0.9193303 0.2834191 -0.5713853 0.5551661 1.604856 0.3801368 0.3593348 1.071449 -0.7330152 0.2814208 -0.0130819 0.6929888 -0.9643048 2.94074e-4 0.9792161 0.1674795 0.1194112 0.6978008 -0.562168 0.6263172 -0.5849643 -0.3675636 1.57822 -1.035327 0.7417057 0.794025</float_array>
+          <technique_common>
+            <accessor source="#latite2-mesh-positions-array" count="10" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="latite2-mesh-normals">
+          <float_array id="latite2-mesh-normals-array" count="48">0.4282202 -0.2690986 0.8626782 -0.2869658 0.7819162 -0.5534055 -0.3667593 -0.4287012 -0.8256531 0.09238743 0.2757848 -0.9567692 0.08241313 0.08367657 -0.9930793 -0.2287171 -0.9573042 0.1767972 0.9531801 -0.2577106 0.1582181 0.7821962 0.4817058 0.3951312 0.8492166 0.03834694 0.5266504 -0.03312748 0.9696997 0.2420439 0.4483753 0.7140368 0.5376906 -0.9472799 -0.07664519 -0.3111053 -0.8681148 -0.001553356 0.4963611 0.5924819 -0.03195559 0.8049498 0.2626252 -0.8127488 0.5200648 -0.9478768 -0.2261502 0.2244681</float_array>
+          <technique_common>
+            <accessor source="#latite2-mesh-normals-array" count="16" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="latite2-mesh-map-0">
+          <float_array id="latite2-mesh-map-0-array" count="96">0.8597127 0.5349395 0.4853368 0.7400569 0.5721996 0.5168276 0.3287367 0.4698991 0.147662 0.5833333 0.125 0.5 0.147662 0.5833333 0.353932 0.7515524 0.125 0.7083333 0.3865658 0.4352016 0.4166666 0.625 0.147662 0.5833333 0.147662 0.5833333 0.4166666 0.625 0.353932 0.7515524 0.5790899 0.9456032 0.4375 0.9791666 0.353932 0.7515524 0.4853368 0.7400569 0.353932 0.7515524 0.4166666 0.625 0.5721996 0.5168276 0.4166666 0.625 0.3865658 0.4352016 0.5721996 0.5168276 0.4853368 0.7400569 0.4166666 0.625 0.6149042 0.2217116 0.3865658 0.4352016 0.4561687 0.195166 0.3865658 0.4352016 0.6149042 0.2217116 0.5721996 0.5168276 0.4479166 0.0625 0.4561687 0.195166 0.375 0.1666666 0.615023 0.07147145 0.6149042 0.2217116 0.4561687 0.195166 0.8597127 0.5349395 0.8431177 0.6801418 0.4853368 0.7400569 0.4853368 0.7400569 0.5790899 0.9456032 0.353932 0.7515524 0.4479166 0.0625 0.615023 0.07147145 0.4561687 0.195166</float_array>
+          <technique_common>
+            <accessor source="#latite2-mesh-map-0-array" count="48" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="latite2-mesh-vertices">
+          <input semantic="POSITION" source="#latite2-mesh-positions"/>
+        </vertices>
+        <polylist material="latite-material" count="16">
+          <input semantic="VERTEX" source="#latite2-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#latite2-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#latite2-mesh-map-0" offset="2" set="1"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>2 0 0 7 0 1 3 0 2 1 1 3 4 1 4 9 1 5 4 2 6 5 2 7 0 2 8 1 3 9 6 3 10 4 3 11 4 4 12 6 4 13 5 4 14 8 5 15 0 5 16 5 5 17 7 6 18 5 6 19 6 6 20 3 7 21 6 7 22 1 7 23 3 8 24 7 8 25 6 8 26 2 9 27 1 9 28 9 9 29 1 10 30 2 10 31 3 10 32 0 11 33 9 11 34 4 11 35 8 12 36 2 12 37 9 12 38 2 13 39 8 13 40 7 13 41 7 14 42 8 14 43 5 14 44 0 15 45 8 15 46 9 15 47</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="latite2" name="latite2" type="NODE">
+        <matrix sid="transform">0.4319999 0 0 0 0 0.4319999 0 0 0 0 0.4319999 0 0 0 0 1</matrix>
+        <instance_geometry url="#latite2-mesh" name="latite2">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="latite-material" target="#latite-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/gui/default_theme/MenuButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/gui/title_screen/new_game_button_normal.png" type="Texture" id=2]
+[ext_resource path="res://assets/gui/title_screen/new_game_button_hover.png" type="Texture" id=3]
+
+[node name="NewGameButton" index="0" instance=ExtResource( 1 )]
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+scene_to_load = "res://game_ui/greeting/Greeting.tscn"
+

@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://game/characters/npcs/tellers/Teller.tscn" type="PackedScene" id=1]
-
-[node name="Mathea" index="0" instance=ExtResource( 1 )]
-
