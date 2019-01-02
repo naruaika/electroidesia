@@ -8,6 +8,12 @@ var current_scene = null
 func _ready() -> void:
 	var root = get_node("/root")
 	current_scene = root.get_child(root.get_child_count() - 1)
+	
+	# Load story data
+	var file = File.new()
+	file.open(_story_path, File.READ)
+	story_data = parse_json(file.get_as_text())
+	file.close()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
@@ -40,6 +46,7 @@ func goto_scene(path: String) -> void:
 """
 func new_game() -> void:
 	goto_scene("res://maps/Firstland.tscn")
+	HUD.visible = true
 
 func load_game() -> void:
 	pass
@@ -47,4 +54,21 @@ func load_game() -> void:
 """
 	Handle game adventure
 """
-var player_name: String = ""
+var _user_data = {
+	"player_name" : "",
+	"story_number" : 0.0
+}
+var story_data
+
+var _story_path = "game_data/story.dat"
+
+var is_interrupted = false
+
+func set_player_name(new_name: String) -> void:
+	_user_data["player_name"] = new_name
+
+func set_story_number() -> void:
+	_user_data["story_number"] += 1
+
+func get_story_number() -> int:
+	return int(_user_data["story_number"])

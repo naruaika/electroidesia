@@ -3,13 +3,14 @@
 [ext_resource path="res://GameManager.gd" type="Script" id=1]
 [ext_resource path="res://assets/gui/title_screen/title_screen.ogg" type="AudioStream" id=2]
 
-[node name="GameManager" type="Control"]
+[node name="GameManager" type="Node"]
 pause_mode = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
 script = ExtResource( 1 )
 
-[node name="TitleScreen" type="AudioStreamPlayer" parent="."]
+[node name="BGM" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="TitleScreen" type="AudioStreamPlayer" parent="BGM"]
 stream = ExtResource( 2 )
 autoplay = true
 

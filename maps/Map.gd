@@ -2,7 +2,12 @@ extends Spatial
 
 func _ready() -> void:
 	# Add player node as child
-	pass
+	
+	# Reset camera
+	reset_camera()
+	
+	# Show HUD
+	HUD.visible = true
 
 func _physics_process(delta: float) -> void:
 	# Make camera look at active player

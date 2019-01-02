@@ -17,13 +17,10 @@ func play() -> void:
 	# Check LineEdit if it's empty
 	if $VBoxContainer/PlayerName/LineEdit.text:
 		# Stop TitleScreen BGM
-		GameManager.get_node("TitleScreen").stop()
+		GameManager.get_node("BGM/TitleScreen").stop()
 		
 		# Save inputed character name
-		GameManager.player_name = $VBoxContainer/PlayerName/LineEdit.text
-		
-		# Change GreetingText
-		$GreetingText.text = "Entering " + GameManager.player_name + " Mind Palace..."
+		GameManager.set_player_name($VBoxContainer/PlayerName/LineEdit.text)
 		
 		# Play fade_out animation
 		$AnimationPlayer.play("fade_out")

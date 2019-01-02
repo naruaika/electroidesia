@@ -8,7 +8,8 @@ var velocity = Vector3()
 onready var camera = get_node("/root").get_camera()
 
 func _physics_process(delta: float) -> void:
-	process_movement(delta)
+	if not GameManager.is_interrupted:
+		process_movement(delta)
 
 func process_movement(delta: float) -> void:
 	var direction = Vector3()

@@ -1,7 +1,9 @@
-[gd_resource type="Theme" load_steps=5 format=2]
+[gd_resource type="Theme" load_steps=8 format=2]
 
 [ext_resource path="res://assets/gui/default_theme/font_cookie_regular_50.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/gui/default_theme/clear_button.png" type="Texture" id=2]
+[ext_resource path="res://assets/gui/title_screen/bg_color.png" type="Texture" id=3]
+[ext_resource path="res://assets/gui/default_theme/font_cookie_regular_16.tres" type="DynamicFont" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -9,12 +11,20 @@
 [sub_resource type="StyleBoxEmpty" id=2]
 
 
+[sub_resource type="StyleBoxTexture" id=3]
+
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 150, 150 )
+
 [resource]
 
+default_font = ExtResource( 4 )
+Label/colors/font_color = Color( 0, 0, 0, 1 )
 LineEdit/colors/cursor_color = Color( 0.101961, 0.101961, 0.101961, 1 )
 LineEdit/colors/font_color = Color( 0.101961, 0.101961, 0.101961, 1 )
 LineEdit/fonts/font = ExtResource( 1 )
 LineEdit/icons/clear = ExtResource( 2 )
 LineEdit/styles/focus = SubResource( 1 )
 LineEdit/styles/normal = SubResource( 2 )
+Panel/styles/panel = SubResource( 3 )
 

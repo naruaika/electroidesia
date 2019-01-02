@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Area",
+"class": "event",
+"language": "GDScript",
+"path": "res://events/EventTrigger.gd"
+} ]
 _global_script_class_icons={
-
+"event": ""
 }
 
 [application]
@@ -23,6 +28,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GameManager="*res://GameManager.tscn"
+HUD="*res://game_ui/hud/HUD.tscn"
 
 [display]
 

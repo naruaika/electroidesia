@@ -1,14 +1,16 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://characters/players/Aleace.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/3dmodels/world/grass.material" type="Material" id=3]
-[ext_resource path="res://assets/3dmodels/world/Electroidesia.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/3dmodels/world/Electroidesia2.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/3dmodels/world/Latite.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/3dmodels/world/Latite2.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/3dmodels/world/Latite3.tscn" type="PackedScene" id=8]
-[ext_resource path="res://maps/forest.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/3dmodels/monsters/dragon_mushroom/DragonMushroom.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/3dmodels/world/grass.material" type="Material" id=4]
+[ext_resource path="res://assets/3dmodels/world/Electroidesia.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/3dmodels/world/Electroidesia2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/3dmodels/world/Latite.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/3dmodels/world/Latite2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/3dmodels/world/Latite3.tscn" type="PackedScene" id=9]
+[ext_resource path="res://maps/forest.ogg" type="AudioStream" id=10]
+[ext_resource path="res://events/StoryTrigger.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ArrayMesh" id=1]
 
@@ -20,7 +22,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 11616,
-"material": ExtResource( 3 ),
+"material": ExtResource( 4 ),
 "name": "grass",
 "primitive": 4,
 "skeleton_aabb": [  ],
@@ -36,8 +38,8 @@ script = ExtResource( 1 )
 
 [node name="Sun" type="DirectionalLight" parent="."]
 transform = Transform( 0.766044, 0.368688, -0.526541, 0, 0.819152, 0.573576, 0.642788, -0.439385, 0.627507, 0, 31, 0 )
-light_specular = 0.0
 shadow_enabled = true
+directional_shadow_depth_range = 1
 directional_shadow_max_distance = 1000.0
 __meta__ = {
 "_edit_lock_": true
@@ -54,6 +56,9 @@ __meta__ = {
 }
 
 [node name="Aleace" parent="." instance=ExtResource( 2 )]
+
+[node name="DragonMushroom" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.41421, 0, 1.41421, 0, 2, 0, -1.41421, 0, -1.41421, -19, -20.6656, 127 )
 
 [node name="Floor" type="MeshInstance" parent="."]
 editor/display_folded = true
@@ -76,162 +81,165 @@ __meta__ = {
 }
 
 [node name="Decorations" type="Spatial" parent="."]
+editor/display_folded = true
 
-[node name="Electroidesia" parent="Decorations" instance=ExtResource( 4 )]
+[node name="Electroidesia" parent="Decorations" instance=ExtResource( 5 )]
 transform = Transform( -0.620476, -0.0231356, -0.358787, 0.033294, 0.708857, -0.103287, 0.357987, -0.106026, -0.612257, 4.07971, -1.00477, -4.77193 )
 
-[node name="Electroidesia14" parent="Decorations" instance=ExtResource( 4 )]
+[node name="Electroidesia14" parent="Decorations" instance=ExtResource( 5 )]
 transform = Transform( -0.620476, -0.0231356, -0.358787, 0.033294, 0.708857, -0.103287, 0.357987, -0.106026, -0.612257, -48.261, -14.803, 20.5973 )
 
-[node name="Electroidesia31" parent="Decorations" instance=ExtResource( 4 )]
+[node name="Electroidesia31" parent="Decorations" instance=ExtResource( 5 )]
 transform = Transform( -0.620476, -0.0231356, -0.358787, 0.033294, 0.708857, -0.103287, 0.357987, -0.106026, -0.612257, -75.1461, -14.803, -66.2344 )
 
-[node name="Electroidesia32" parent="Decorations" instance=ExtResource( 4 )]
+[node name="Electroidesia32" parent="Decorations" instance=ExtResource( 5 )]
 transform = Transform( -1.33621, -0.0552041, -0.773362, -0.134994, 1.53397, 0.123744, 0.763488, 0.17461, -1.33161, 16.7814, -16.7921, -77.6011 )
 
-[node name="Electroidesia33" parent="Decorations" instance=ExtResource( 4 )]
+[node name="Electroidesia33" parent="Decorations" instance=ExtResource( 5 )]
 transform = Transform( -0.620476, -0.0231356, -0.358787, 0.033294, 0.708857, -0.103287, 0.357987, -0.106026, -0.612257, 105.42, -17.3214, -43.3457 )
 
-[node name="Electroidesia34" parent="Decorations" instance=ExtResource( 4 )]
-transform = Transform( -0.620476, -0.0231356, -0.358787, 0.033294, 0.708857, -0.103287, 0.357987, -0.106026, -0.612257, 41.8404, -14.803, -44.0723 )
+[node name="Electroidesia34" parent="Decorations" instance=ExtResource( 5 )]
+transform = Transform( -0.620476, -0.0231356, -0.358787, 0.033294, 0.708857, -0.103287, 0.357987, -0.106026, -0.612257, 41.7003, -10.5097, -44.7145 )
 
-[node name="Electroidesia35" parent="Decorations" instance=ExtResource( 4 )]
+[node name="Electroidesia35" parent="Decorations" instance=ExtResource( 5 )]
 transform = Transform( -0.620476, -0.0231356, -0.358787, 0.033294, 0.708857, -0.103287, 0.357987, -0.106026, -0.612257, 54.9197, -14.803, 47.1191 )
 
-[node name="Electroidesia37" parent="Decorations" instance=ExtResource( 4 )]
+[node name="Electroidesia37" parent="Decorations" instance=ExtResource( 5 )]
 transform = Transform( -0.620476, -0.0231356, -0.358787, 0.033294, 0.708857, -0.103287, 0.357987, -0.106026, -0.612257, -23.1925, -14.803, 54.7487 )
 
-[node name="Electroidesia38" parent="Decorations" instance=ExtResource( 4 )]
+[node name="Electroidesia38" parent="Decorations" instance=ExtResource( 5 )]
 transform = Transform( -0.620476, -0.0231356, -0.358787, 0.033294, 0.708857, -0.103287, 0.357987, -0.106026, -0.612257, -70.6961, -17.7723, 43.486 )
 
-[node name="Electroidesia39" parent="Decorations" instance=ExtResource( 4 )]
+[node name="Electroidesia39" parent="Decorations" instance=ExtResource( 5 )]
 transform = Transform( -0.620476, -0.0231356, -0.358787, 0.033294, 0.708857, -0.103287, 0.357987, -0.106026, -0.612257, -106.301, -17.5442, -19.0037 )
 
-[node name="Electroidesia36" parent="Decorations" instance=ExtResource( 4 )]
+[node name="Electroidesia36" parent="Decorations" instance=ExtResource( 5 )]
 transform = Transform( -0.620476, -0.0231356, -0.358787, 0.033294, 0.708857, -0.103287, 0.357987, -0.106026, -0.612257, 82.5314, -14.803, 5.70149 )
 
-[node name="Electroidesia30" parent="Decorations" instance=ExtResource( 4 )]
+[node name="Electroidesia30" parent="Decorations" instance=ExtResource( 5 )]
 transform = Transform( -0.620476, -0.0231356, -0.358787, 0.033294, 0.708857, -0.103287, 0.357987, -0.106026, -0.612257, -48.261, -14.803, 20.5973 )
 
-[node name="Electroidesia3" parent="Decorations" instance=ExtResource( 4 )]
+[node name="Electroidesia3" parent="Decorations" instance=ExtResource( 5 )]
 transform = Transform( -0.484069, 0.0758162, 0.364289, 0.0283467, 0.603524, -0.0879389, -0.371013, -0.0528079, -0.482015, -4.8953, -1.3389, -1.93 )
 
-[node name="Electroidesia2" parent="Decorations" instance=ExtResource( 4 )]
+[node name="Electroidesia2" parent="Decorations" instance=ExtResource( 5 )]
 transform = Transform( 0.926385, -0.0884004, -0.366056, 0.094684, 0.995507, -0.000790626, 0.364482, -0.0339272, 0.930592, 0, -0.593105, -7.36874 )
 
-[node name="Electroidesia4" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia4" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 0.715631, 0, 0, 0, 0.715631, 0, 0, 0, 0.715631, -19.4595, -8.72037, 24.4341 )
 
-[node name="Electroidesia20" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia20" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 0.548205, 3.002e-08, -0.459999, -0.0400915, 0.712908, -0.0477792, 0.458248, 0.0623713, 0.546119, -36.7136, -12.8562, 9.87251 )
 
-[node name="Electroidesia5" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia5" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -0.861993, 0.000547132, -0.5601, -0.0008126, 1.02798, 0.00225477, 0.560099, 0.00233344, -0.86199, 4.04233, -9.4657, 36.5349 )
 
-[node name="Electroidesia7" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia7" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -0.433211, 0.000821239, -0.530546, -0.00054145, 0.684945, 0.00150235, 0.530547, 0.00136959, -0.433209, 36.3671, -13.5234, 31.1849 )
 
-[node name="Electroidesia8" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia8" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 2.38419e-06, 0.00177768, -0.810488, -0.000640705, 0.810487, 0.00177767, 0.810489, 0.000640699, 3.8147e-06, 53.3846, -12.7973, 4.04886 )
 
-[node name="Electroidesia24" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia24" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 0.00621458, -0.068594, -0.807558, -0.0710056, 0.80443, -0.0688748, 0.807349, 0.0712769, 0.000158734, 71.4715, -12.7973, -11.0617 )
 
-[node name="Electroidesia25" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia25" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 2.38419e-06, 0.00177768, -0.810488, -0.000640705, 0.810487, 0.00177767, 0.810489, 0.000640699, 3.8147e-06, -13.484, -14.7993, -63.9998 )
 
-[node name="Electroidesia26" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia26" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -5.3466e-05, 0.0724095, -0.807249, -0.000638475, 0.807248, 0.0724095, 0.810489, 0.000640699, 3.8147e-06, -85.9225, -16.31, -39.9621 )
 
-[node name="Electroidesia27" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia27" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 2.38419e-06, 0.00177768, -0.810488, -0.000640705, 0.810487, 0.00177767, 0.810489, 0.000640699, 3.8147e-06, -94.5998, -17.9912, 14.2366 )
 
-[node name="Electroidesia28" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia28" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 2.38419e-06, 0.00177768, -0.810488, -0.000640705, 0.810487, 0.00177767, 0.810489, 0.000640699, 3.8147e-06, -51.1518, -19.3995, 69.4601 )
 
-[node name="Electroidesia29" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia29" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 2.38419e-06, 0.00177768, -0.810488, -0.000640705, 0.810487, 0.00177767, 0.810489, 0.000640699, 3.8147e-06, 30.9568, -12.7973, 53.111 )
 
-[node name="Electroidesia22" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia22" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -0.518932, -0.0696922, -0.618664, -0.0460438, 0.807486, -0.0523416, 0.620872, 0.00163349, -0.520968, -28.8084, -12.7973, 41.0798 )
 
-[node name="Electroidesia15" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia15" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -0.558903, 0.141548, -0.569636, 0.0978991, 0.798032, 0.102247, 0.578737, 0.00170204, -0.56741, 44.2266, -10.6795, -13.1222 )
 
-[node name="Electroidesia9" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia9" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 3.01557e-06, 0.00224845, -1.02512, -0.000810379, 1.02512, 0.00224844, 1.02513, 0.00081037, 4.82492e-06, 65.0709, -11.7852, 26.2673 )
 
-[node name="Electroidesia10" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia10" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 0.592247, 0.00168177, -0.553294, -0.000640717, 0.810487, 0.0017777, 0.553296, -0.000861618, 0.592247, 37.8262, -8.32523, -35.7774 )
 
-[node name="Electroidesia11" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia11" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 0.433901, 0.00184449, -0.684558, -0.000640711, 0.810487, 0.00177769, 0.684561, -0.000410539, 0.433901, -15.9383, -11.3442, -37.5328 )
 
-[node name="Electroidesia19" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia19" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -0.10764, 0.00167689, -0.803308, -0.00064072, 0.810487, 0.00177773, 0.80331, 0.00087114, -0.107638, 5.81531, -3.27754, -35.3335 )
 
-[node name="Electroidesia16" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia16" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 0.140535, -0.00163958, 0.798211, -0.000640618, 0.810487, 0.00177759, -0.798212, -0.000939137, 0.140533, -74.6118, -15.5687, -29.2518 )
 
-[node name="Electroidesia17" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia17" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -0.618431, 0.0712884, -0.518994, 0.0534625, 0.807346, 0.0471905, 0.521132, 0.00177343, -0.620734, 35.5565, -7.28293, -28.9503 )
 
-[node name="Electroidesia18" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia18" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 0.476161, -0.00106211, 0.655868, -0.000640769, 0.810487, 0.00177769, -0.655869, -0.00156292, 0.476159, 48.6826, -11.5921, -17.8436 )
 
-[node name="Electroidesia12" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia12" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -0.763625, 0.105317, -0.909732, 0.0658623, 1.18774, 0.0822165, 0.913436, 0.00240317, -0.766456, -67.3835, -16.7907, 20.3147 )
 
-[node name="Electroidesia40" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia40" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -0.766459, 0.00139754, -0.913436, -0.000942627, 1.1924, 0.0026153, 0.913436, 0.00240317, -0.766456, -71.1226, -15.9423, -49.4413 )
 
-[node name="Electroidesia41" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia41" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -0.763625, 0.105317, -0.909732, 0.0658623, 1.18774, 0.0822165, 0.913436, 0.00240317, -0.766456, -39.6491, -18.1111, -72.2081 )
 
-[node name="Electroidesia42" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia42" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -0.766459, 0.00139754, -0.913436, -0.000942627, 1.1924, 0.0026153, 0.913436, 0.00240317, -0.766456, 25.5185, -8.39403, -47.9881 )
 
-[node name="Electroidesia43" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia43" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -0.763461, -0.102532, -0.910188, -0.0677404, 1.18798, -0.0770058, 0.913436, 0.00240317, -0.766456, 92.368, -16.7213, 23.9478 )
 
-[node name="Electroidesia44" parent="Decorations" instance=ExtResource( 5 )]
-transform = Transform( -0.763461, -0.102532, -0.910188, -0.0677404, 1.18798, -0.0770058, 0.913436, 0.00240317, -0.766456, 8.80611, -15.9423, 64.2755 )
+[node name="Electroidesia44" parent="Decorations" instance=ExtResource( 6 )]
+transform = Transform( -0.763461, -0.102532, -0.910188, -0.0677404, 1.18798, -0.0770058, 0.913436, 0.00240317, -0.766456, 8.59877, -13.54, 64.2804 )
 
-[node name="Electroidesia45" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia45" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -0.766459, 0.00139754, -0.913436, -0.000942627, 1.1924, 0.0026153, 0.913436, 0.00240317, -0.766456, 70.2059, -15.9423, -59.2508 )
 
-[node name="Electroidesia23" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia23" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -1.17429, -0.00138249, 0.207053, -0.000942676, 1.1924, 0.00261529, -0.207055, 0.00241187, -1.17429, -6.12767, -7.23879, -32.3257 )
 
-[node name="Electroidesia13" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia13" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -0.649742, 0.000192315, -0.321873, -0.000573219, 0.725096, 0.00159035, 0.321873, 0.00167953, -0.64974, -69.55, -13.2675, -18.6063 )
 
-[node name="Electroidesia21" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia21" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -0.704627, -0.000932223, 0.171076, -0.000573182, 0.725096, 0.00159036, -0.171077, 0.00141022, -0.704626, -61.5885, -13.2675, -26.9576 )
 
-[node name="Electroidesia6" parent="Decorations" instance=ExtResource( 5 )]
+[node name="Electroidesia6" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 0.662475, 0.000215852, 0.140333, -0.000535257, 0.677174, 0.00148522, -0.140332, -0.0015639, 0.662473, -15.797, -10.6318, 33.6715 )
 
-[node name="Latite" parent="Decorations" instance=ExtResource( 6 )]
+[node name="Latite" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, 4.57118, -1.4606, -8.50892 )
 
-[node name="Latite2" parent="Decorations" instance=ExtResource( 6 )]
+[node name="Latite2" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 4.876, 2.05467, 2.82894, -3.46612, 2.2034, 4.37391, 0.458943, -5.18877, 2.97759, -7.59782, -1.29678, -2.99525 )
 
-[node name="Latite3" parent="Decorations" instance=ExtResource( 6 )]
+[node name="Latite3" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 3.1957, -0.330019, -1.06766, 0.906359, 2.65748, 1.89146, 0.653696, -2.07128, 2.59688, -4.87445, -0.887604, 0.757566 )
 
-[node name="Latite4" parent="Decorations" instance=ExtResource( 7 )]
+[node name="Latite4" parent="Decorations" instance=ExtResource( 8 )]
 transform = Transform( 2.88221, 0, 0, 0, 2.88221, 0, 0, 0, 2.88221, 4.63654, -0.537964, -3.31126 )
 
-[node name="Latite5" parent="Decorations" instance=ExtResource( 8 )]
+[node name="Latite5" parent="Decorations" instance=ExtResource( 9 )]
 transform = Transform( 5.5103, 0, 0, 0, 5.5103, 0, 0, 0, 5.5103, 0.963623, -0.408691, -5.37152 )
 
 [node name="EnvironmentSound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform( 1, -1.74846e-07, -3.01876e-11, -3.01876e-11, -0.000345306, 1, -1.74846e-07, -1, -0.000345306, 0, 11, 0 )
-stream = ExtResource( 9 )
+stream = ExtResource( 10 )
 unit_db = 80.0
 autoplay = true
 max_distance = 300.0
 doppler_tracking = 2
+
+[node name="StoryTrigger" parent="." instance=ExtResource( 11 )]
 
