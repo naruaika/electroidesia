@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="66.145836mm"
+   height="66.052299mm"
+   viewBox="0 0 66.145834 66.052301"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="/home/nrfaikar/Documents/Kuliah @UPI/Game Programming/Tugas Besar/Electroidesia 0.1.5 Alpha/icon.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.8422615"
+     inkscape:cx="110.76443"
+     inkscape:cy="133.87048"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="717"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-page="true"
+     inkscape:snap-global="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-114.77407,-95.707755)">
+    <ellipse
+       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+       id="path845"
+       cx="147.84698"
+       cy="128.7339"
+       rx="33.072918"
+       ry="33.02615" />
+    <path
+       style="opacity:1;vector-effect:none;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:1.58749998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.99570815;paint-order:fill markers stroke"
+       d="m 147.84698,97.359064 c -17.40627,0 -31.41927,14.013296 -31.41927,31.419756 0,16.37283 12.39852,29.74178 28.35688,31.272 l 0.70251,-3.50522 0.50271,-3.39377 0.22877,-2.74231 -1.14189,-3.43796 c 0,0 -3.39187,-5.14034 -3.36186,-5.2048 -0.0701,-0.001 -1.10557,-0.42857 -1.10557,-0.42857 l -1.09329,-0.43791 -0.0722,1.22192 -7.74878,-0.25332 -0.2052,-5.67756 2.82675,-3.34517 0.88907,0.27737 -1.52826,-4.51947 1.98236,-5.26371 9.07526,-9.15969 6.56614,1.27051 8.72915,8.35164 -0.0923,0.85224 0.52677,-0.0437 3.73938,5.62896 -5.01825,6.4817 -3.28086,-0.64312 -1.54789,1.22241 1.47965,0.27737 1.09379,3.0678 -0.61562,2.5376 -1.91363,1.49978 -2.00642,-0.4384 -0.98136,-0.59942 -1.32305,2.30833 c 0,0 -0.90837,1.82266 -0.83997,1.93818 0.07,0.11514 -0.54689,2.53711 -0.54689,2.53711 l 0.22533,2.88713 0.47866,3.16009 0.83212,3.63188 c 16.27988,-1.21493 29.02649,-14.72875 29.02649,-31.32993 0,-17.40646 -14.01299,-31.419756 -31.41927,-31.419756 z m -7.90882,40.577496 c 0,0 -0.1925,1.56939 -0.27344,1.61613 -0.0806,0.049 1.07758,0.37408 1.07758,0.37408 l 0.69564,-0.58714 0.16053,-0.75161 c 0,0 -1.01526,-0.52074 -1.66031,-0.65146 z m 3.29314,1.21013 c 0.11362,0.13847 -0.0923,1.68486 -0.0923,1.68486 l 4.03689,5.19105 1.38735,-1.75309 0.6873,-1.24647 0.34168,-1.79728 -0.36574,0.27738 c 0,0 -6.10918,-2.49477 -5.99518,-2.35645 z"
+       id="rect17"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

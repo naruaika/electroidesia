@@ -8,9 +8,7 @@ pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="BGM" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="TitleScreen" type="AudioStreamPlayer" parent="BGM"]
 stream = ExtResource( 2 )
-autoplay = true
 

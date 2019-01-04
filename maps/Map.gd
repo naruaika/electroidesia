@@ -27,7 +27,8 @@ func reset_camera() -> void:
 		
 		# Point camera looking to the first player in group
 		# TODO: make it more flexible especially for supporting game story
-		camera.translation.x = player_location.x
-		camera.translation.z = player_location.z + 50
-		camera.translation.y = player_location.y + 55
-		camera.look_at(player_location, Vector3(0, 1, 0))
+		if not GameManager.is_interrupted:
+			camera.translation.x = player_location.x
+			camera.translation.z = player_location.z + 50
+			camera.translation.y = player_location.y + 55
+			camera.look_at(player_location, Vector3(0, 1, 0))

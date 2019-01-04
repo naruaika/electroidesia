@@ -22,7 +22,6 @@ _global_script_class_icons={
 
 config/name="Electroidesia 0.1.5 Alpha"
 run/main_scene="res://game_ui/title_screen/TitleScreen.tscn"
-boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
 [autoload]
@@ -97,4 +96,5 @@ movement_left={
 
 [rendering]
 
+threads/thread_model=2
 environment/default_environment="res://default_env.tres"

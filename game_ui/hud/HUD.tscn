@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://game_ui/hud/HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/gui/default_theme/default_theme.tres" type="Theme" id=2]
-[ext_resource path="res://assets/gui/default_theme/font_cookie_regular_24.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/gui/default_theme/font_cookie_regular_32.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/gui/default_theme/font_cookie_regular_24.tres" type="DynamicFont" id=4]
 
 [node name="HUD" type="Control"]
 visible = false
@@ -19,14 +20,29 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -225.0
+margin_left = -300.0
 margin_top = -200.0
-margin_right = 225.0
+margin_right = 300.0
 margin_bottom = -50.0
 theme = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MessagePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -18.0
+margin_bottom = -48.0
+scroll_horizontal_enabled = false
+
+[node name="Message" type="Label" parent="MessagePanel/ScrollContainer"]
+margin_right = 552.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 552, 70 )
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+text = "Lorem ipsum dolor sit amet, doctus omittam ei vim, prima appareat id est."
+autowrap = true
 
 [node name="Speaker" type="Label" parent="MessagePanel"]
 anchor_left = 0.5
@@ -38,19 +54,8 @@ margin_top = -37.0
 margin_right = 20.5
 margin_bottom = -10.0
 theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 text = "Name"
 align = 1
 valign = 1
-
-[node name="Message" type="Label" parent="MessagePanel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -48.0
-theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 3 )
-text = "Message"
 

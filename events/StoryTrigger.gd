@@ -25,7 +25,7 @@ func _event():
 	# Show current game story
 	HUD.get_node("MessagePanel").visible = true
 	HUD.get_node("MessagePanel/Speaker").text = story_data[0][0]
-	HUD.get_node("MessagePanel/Message").text = story_data[0][1]
+	HUD.get_node("MessagePanel/ScrollContainer/Message").text = story_data[0][1]
 	set_process_input(true)
 	
 	return true
@@ -34,7 +34,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_select"):
 		if story_index < story_data.size():
 			HUD.get_node("MessagePanel/Speaker").text = story_data[story_index][0]
-			HUD.get_node("MessagePanel/Message").text = story_data[story_index][1]
+			HUD.get_node("MessagePanel/ScrollContainer/Message").text = story_data[story_index][1]
 			story_index += 1
 		else:
 			GameManager.set_story_number()

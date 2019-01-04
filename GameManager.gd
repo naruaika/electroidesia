@@ -49,7 +49,8 @@ func new_game() -> void:
 	HUD.visible = true
 
 func load_game() -> void:
-	pass
+	goto_scene("res://maps/Firstland.tscn")
+	HUD.visible = true
 
 """
 	Handle game adventure

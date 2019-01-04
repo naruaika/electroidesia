@@ -1,7 +1,7 @@
 extends KinematicBody
 
-const SPEED = 25
-const GRAVITATION = -9.8
+const SPEED = 15
+const GRAVITATION = -9.8 * 2
 
 var velocity = Vector3()
 
@@ -10,6 +10,9 @@ onready var camera = get_node("/root").get_camera()
 func _physics_process(delta: float) -> void:
 	if not GameManager.is_interrupted:
 		process_movement(delta)
+	else:
+		if $AnimationPlayer.current_animation != "idle":
+			$AnimationPlayer.play("idle")
 
 func process_movement(delta: float) -> void:
 	var direction = Vector3()
@@ -40,7 +43,7 @@ func process_movement(delta: float) -> void:
 	velocity = velocity.linear_interpolate(direction * SPEED, 10 * delta)
 	
 	# Make movement to character
-	velocity = move_and_slide(velocity, Vector3(0, 1, 0), 0.05, 4, deg2rad(60))
+	velocity = move_and_slide(velocity, Vector3(0, 1, 0), 0.05, 4, deg2rad(70))
 	
 	if is_moving:
 		# If character is moving then
