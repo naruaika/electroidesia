@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="100"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="investigation_logo.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:export-filename="/home/nrfaikar/Documents/Kuliah @UPI/Game Programming/Tugas Besar/Electroidesia 0.1.5 Alpha/assets/gui/hud/investigation_logo.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="15.444625"
+     inkscape:cy="35.263373"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     borderlayer="true"
+     inkscape:window-width="1366"
+     inkscape:window-height="717"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-page="true"
+     inkscape:pagecheckerboard="true" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-1022.5196)">
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#fdefba;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:13.67583561;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 40.848277,1029.2999 c -18.774938,-5e-4 -34.068392,15.293 -34.0680583,34.068 -3.624e-4,18.7748 15.2930993,34.0684 34.0680583,34.068 8.159496,10e-5 15.659311,-2.8919 21.534101,-7.6994 l 26.002783,26.0028 4.83462,-4.8346 -26.002783,-26.0027 c 4.80748,-5.8749 7.699496,-13.3746 7.699332,-21.5341 3.35e-4,-18.775 -15.293113,-34.0685 -34.068053,-34.068 z m 0,6.8379 c 15.079366,-4e-4 27.230408,12.1507 27.230135,27.2301 2.94e-4,15.0794 -12.150755,27.2303 -27.230135,27.2301 -15.079383,2e-4 -27.230432,-12.1507 -27.23014,-27.2301 -2.68e-4,-15.0794 12.150775,-27.2305 27.23014,-27.2301 z"
+       id="path821"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#fdefba;fill-opacity:1;fill-rule:nonzero;stroke:#fdefba;stroke-width:3.63;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect833"
+       width="18.945812"
+       height="0.66798794"
+       x="31.238924"
+       y="1046.9098" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#fdefba;fill-opacity:1;fill-rule:nonzero;stroke:#fdefba;stroke-width:3.63;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect847"
+       width="36.774555"
+       height="0.66798794"
+       x="22.324551"
+       y="1053.2574" />
+    <rect
+       y="1059.6051"
+       x="25.296013"
+       height="0.66798794"
+       width="30.83164"
+       id="rect849"
+       style="opacity:1;vector-effect:none;fill:#fdefba;fill-opacity:1;fill-rule:nonzero;stroke:#fdefba;stroke-width:3.63;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#fdefba;fill-opacity:1;fill-rule:nonzero;stroke:#fdefba;stroke-width:3.63;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect851"
+       width="27.161016"
+       height="0.66798794"
+       x="27.131313"
+       y="1065.9529" />
+    <rect
+       y="1072.3004"
+       x="21.013615"
+       height="0.66798794"
+       width="39.396431"
+       id="rect853"
+       style="opacity:1;vector-effect:none;fill:#fdefba;fill-opacity:1;fill-rule:nonzero;stroke:#fdefba;stroke-width:3.63;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#fdefba;fill-opacity:1;fill-rule:nonzero;stroke:#fdefba;stroke-width:3.63;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect855"
+       width="18.945812"
+       height="0.66798794"
+       x="31.238924"
+       y="1078.6481" />
+  </g>
+</svg>

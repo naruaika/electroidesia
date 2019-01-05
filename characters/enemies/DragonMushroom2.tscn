@@ -1,8 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://characters/enemies/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://assets/3dmodels/monsters/dragon_mushroom/dragon_mushroom_2.png" type="Texture" id=2]
+[ext_resource path="res://assets/3d/monsters/dragon_mushroom/dragon_mushroom_2.png" type="Texture" id=2]
 [ext_resource path="res://events/BattleTrigger.tscn" type="PackedScene" id=3]
+
 
 [sub_resource type="BoxShape" id=1]
 

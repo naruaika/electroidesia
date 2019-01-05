@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/gui/default_theme/default_theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/gui/default_theme/default_button_normal.png" type="Texture" id=2]
+[ext_resource path="res://assets/gui/default_theme/secondary_button_hover.png" type="Texture" id=3]
+[ext_resource path="res://game_ui/hud/HUDButton.gd" type="Script" id=4]
+[ext_resource path="res://assets/gui/default_theme/font_amble_regular_24.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/sounds/show_panel.ogg" type="AudioStream" id=6]
+
+[node name="HUDButton" type="TextureButton"]
+margin_left = -0.418121
+margin_right = 225.582
+margin_bottom = 73.0
+theme = ExtResource( 1 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+texture_focused = ExtResource( 3 )
+stretch_mode = 5
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -38.5
+margin_top = -14.5
+margin_right = 38.5
+margin_bottom = 14.5
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
+text = "Button"
+align = 1
+valign = 1
+
+[node name="ButtonFocus" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="ButtonPress" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[connection signal="focus_entered" from="." to="." method="_on_HUDButton_focus_entered"]
+[connection signal="pressed" from="." to="." method="_on_HUDButton_pressed"]

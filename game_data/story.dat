@@ -1,13 +1,19 @@
 [
     [
         ["Aleace", "Where am I?"],
-        ["Aleace", "The atmosphere here feels so tangible..."],
-        ["Aleace", "Did I fail to enter my mind palace?"]
+        ["Aleace", "The atmosphere here feels so tangible... Also this place is very wide ..."],
+        ["Aleace", "What are these trees around me? Is it just ornaments?"],
+        ["Aleace", "By the way, did I fail to enter my mind palace!?"],
+        ["Aleace", "All I know is the truth that my character hasn't changed."]
+    ],
+    [
+        ["Aleace", "Is the wind blowing too big!?"],
+        ["Aleace", "No, but the mushrooms are moving by it own legs! Very impressive!"]
     ],
     [
         ["Aleace", "Ah, looks like I found my house. Is there someone inside?"]
     ],
     [
-        ["Aleace", "Ugh, nobody is here... But this room feels warm, like the owner just left."],
+        ["Aleace", "Ugh, nobody is here... But this room feels warm, like the owner just left."]
     ]
 ]

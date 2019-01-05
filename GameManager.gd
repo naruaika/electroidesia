@@ -14,6 +14,12 @@ func _ready() -> void:
 	file.open(_story_path, File.READ)
 	story_data = parse_json(file.get_as_text())
 	file.close()
+	
+	# Load world objects data
+	file = File.new()
+	file.open(_objects_path, File.READ)
+	objects_data = parse_json(file.get_as_text())
+	file.close()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
@@ -46,11 +52,10 @@ func goto_scene(path: String) -> void:
 """
 func new_game() -> void:
 	goto_scene("res://maps/Firstland.tscn")
-	HUD.visible = true
+	story_data = parse_json(to_json(story_data).replace("Aleace", get_player_name()))
 
 func load_game() -> void:
 	goto_scene("res://maps/Firstland.tscn")
-	HUD.visible = true
 
 """
 	Handle game adventure
@@ -60,13 +65,18 @@ var _user_data = {
 	"story_number" : 0.0
 }
 var story_data
+var objects_data
 
 var _story_path = "game_data/story.dat"
+var _objects_path = "game_data/objects.dat"
 
 var is_interrupted = false
 
 func set_player_name(new_name: String) -> void:
 	_user_data["player_name"] = new_name
+
+func get_player_name() -> String:
+	return _user_data["player_name"]
 
 func set_story_number() -> void:
 	_user_data["story_number"] += 1

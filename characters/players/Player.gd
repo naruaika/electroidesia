@@ -11,8 +11,13 @@ func _physics_process(delta: float) -> void:
 	if not GameManager.is_interrupted:
 		process_movement(delta)
 	else:
+		# Play character idle animation
+		# if current_animation != "idle"
 		if $AnimationPlayer.current_animation != "idle":
 			$AnimationPlayer.play("idle")
+			
+			# Reset velocity
+			velocity = Vector3()
 
 func process_movement(delta: float) -> void:
 	var direction = Vector3()

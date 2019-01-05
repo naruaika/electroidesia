@@ -1,12 +1,204 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://game_ui/hud/HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/gui/default_theme/default_theme.tres" type="Theme" id=2]
-[ext_resource path="res://assets/gui/default_theme/font_cookie_regular_32.tres" type="DynamicFont" id=3]
-[ext_resource path="res://assets/gui/default_theme/font_cookie_regular_24.tres" type="DynamicFont" id=4]
+[ext_resource path="res://game_ui/hud/AttackButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game_ui/hud/TechButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game_ui/hud/ItemButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/gui/default_theme/panel.png" type="Texture" id=6]
+[ext_resource path="res://assets/gui/hud/Aleace.png" type="Texture" id=7]
+[ext_resource path="res://assets/gui/default_theme/font_cookie_regular_24.tres" type="DynamicFont" id=8]
+[ext_resource path="res://assets/gui/default_theme/font_amble_regular_24.tres" type="DynamicFont" id=9]
+[ext_resource path="res://assets/gui/hud/investigation_logo.png" type="Texture" id=10]
+[ext_resource path="res://assets/sounds/show_panel.ogg" type="AudioStream" id=11]
+
+[sub_resource type="Animation" id=6]
+
+resource_name = "battle_hide"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("BattlePanel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("SoundFX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 11 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "battle_show"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("BattlePanel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("SoundFX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 11 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "investigation_hide"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("InvestigationPanel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("SoundFX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 11 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "investigation_show"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("InvestigationPanel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("SoundFX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 11 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "message_hide"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("MessagePanel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("SoundFX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 11 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "message_show"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("MessagePanel:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("SoundFX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 11 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [node name="HUD" type="Control"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -14,8 +206,60 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="MessagePanel" type="Panel" parent="."]
+[node name="BattlePanel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -683.0
+margin_top = -267.0
+margin_right = 683.0
+rect_min_size = Vector2( 0, 267 )
+rect_scale = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 683, 500 )
+theme = ExtResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BattlePanel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -247.0
+margin_right = -20.0
+margin_bottom = -20.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattlePanel/HBoxContainer"]
+margin_right = 226.0
+margin_bottom = 227.0
+rect_min_size = Vector2( 226, 0 )
+alignment = 2
+
+[node name="AttackButton" parent="BattlePanel/HBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
+margin_left = 0.0
+margin_top = 77.0
+margin_right = 226.0
+margin_bottom = 150.0
+
+[node name="TechButton" parent="BattlePanel/HBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
 visible = false
+margin_left = 0.0
+margin_top = 77.0
+margin_right = 226.0
+margin_bottom = 150.0
+
+[node name="ItemButton" parent="BattlePanel/HBoxContainer/VBoxContainer" instance=ExtResource( 5 )]
+margin_left = 0.0
+margin_top = 154.0
+margin_right = 226.0
+margin_bottom = 227.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BattlePanel/HBoxContainer"]
+margin_left = 230.0
+margin_right = 230.0
+margin_bottom = 227.0
+
+[node name="MessagePanel" type="Panel" parent="."]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -24,38 +268,115 @@ margin_left = -300.0
 margin_top = -200.0
 margin_right = 300.0
 margin_bottom = -50.0
+rect_scale = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 300, 300 )
 theme = ExtResource( 2 )
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MessagePanel"]
+[node name="BackgroundImage" type="TextureRect" parent="MessagePanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -18.0
-margin_bottom = -48.0
+texture = ExtResource( 6 )
+
+[node name="Photo" type="TextureRect" parent="MessagePanel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -231.0
+margin_right = 200.0
+margin_bottom = -31.0
+rect_min_size = Vector2( 200, 200 )
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="Speaker" type="Label" parent="MessagePanel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -29.0
+margin_right = 200.0
+margin_bottom = -2.0
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 8 )
+custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
+text = "Name"
+align = 1
+valign = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MessagePanel"]
+margin_left = 200.0
+margin_top = 10.0
+margin_right = 590.0
+margin_bottom = 140.0
+theme = ExtResource( 2 )
 scroll_horizontal_enabled = false
 
 [node name="Message" type="Label" parent="MessagePanel/ScrollContainer"]
-margin_right = 552.0
-margin_bottom = 77.0
-rect_min_size = Vector2( 552, 70 )
+margin_right = 378.0
+margin_bottom = 118.0
+rect_min_size = Vector2( 378, 118 )
 theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
 text = "Lorem ipsum dolor sit amet, doctus omittam ei vim, prima appareat id est."
 autowrap = true
+percent_visible = 0.0
 
-[node name="Speaker" type="Label" parent="MessagePanel"]
+[node name="InvestigationPanel" type="Panel" parent="."]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -20.5
-margin_top = -37.0
-margin_right = 20.5
-margin_bottom = -10.0
+margin_left = -300.0
+margin_top = -200.0
+margin_right = 300.0
+margin_bottom = -50.0
+rect_scale = Vector2( 0, 0 )
+rect_pivot_offset = Vector2( 300, 300 )
 theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 4 )
-text = "Name"
-align = 1
-valign = 1
+
+[node name="BackgroundImage" type="TextureRect" parent="InvestigationPanel"]
+margin_right = 600.0
+margin_bottom = 150.0
+texture = ExtResource( 6 )
+
+[node name="Logo" type="TextureRect" parent="InvestigationPanel"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 30.0
+margin_top = -50.0
+margin_right = 130.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 100 )
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InvestigationPanel"]
+margin_left = 157.0
+margin_top = 10.0
+margin_right = 590.0
+margin_bottom = 140.0
+theme = ExtResource( 2 )
+scroll_horizontal_enabled = false
+
+[node name="Description" type="Label" parent="InvestigationPanel/ScrollContainer"]
+margin_right = 421.0
+margin_bottom = 118.0
+rect_min_size = Vector2( 421, 118 )
+theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
+text = "Lorem ipsum dolor sit amet, doctus omittam ei vim, prima appareat id est."
+autowrap = true
+
+[node name="SoundFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/battle_hide = SubResource( 6 )
+anims/battle_show = SubResource( 5 )
+anims/investigation_hide = SubResource( 1 )
+anims/investigation_show = SubResource( 2 )
+anims/message_hide = SubResource( 3 )
+anims/message_show = SubResource( 4 )
 
