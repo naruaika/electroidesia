@@ -1,11 +1,19 @@
 extends KinematicBody
 
+export(String) var character_name = ""
+export(float) var hit_point = 0.0
+export(float) var mana_point = 0.0
+
 const SPEED = 15
 const GRAVITATION = -9.8 * 2
 
 var velocity = Vector3()
+var is_attacking = false
 
 onready var camera = get_node("/root").get_camera()
+
+func _ready() -> void:
+	GameManager.set_character(character_name, hit_point, mana_point)
 
 func _physics_process(delta: float) -> void:
 	if not GameManager.is_interrupted:
@@ -13,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		# Play character idle animation
 		# if current_animation != "idle"
-		if $AnimationPlayer.current_animation != "idle":
+		if $AnimationPlayer.current_animation != "idle" and not is_attacking:
 			$AnimationPlayer.play("idle")
 			
 			# Reset velocity
@@ -64,4 +72,10 @@ func process_movement(delta: float) -> void:
 		# if current_animation != "idle"
 		if $AnimationPlayer.current_animation != "idle":
 			$AnimationPlayer.play("idle")
-	
+
+func attack() -> void:
+	is_attacking = true
+	$AnimationPlayer.play("slash", -1, 2)
+
+func on_attack_finished() -> void:
+	is_attacking = false

@@ -55,13 +55,25 @@ func new_game() -> void:
 	story_data = parse_json(to_json(story_data).replace("Aleace", get_player_name()))
 
 func load_game() -> void:
-	goto_scene("res://maps/Firstland.tscn")
+	pass
 
 """
 	Handle game adventure
 """
 var _user_data = {
 	"player_name" : "",
+	"character_name" : "",
+	"hit_point" : [0.0, 0.0],
+	"mana_point" : [0.0, 0.0],
+	"experience_point" : [0.0, 0.0],
+	"weapon_name" : "",
+	"weapon_elemental" : "",
+	"weapon_physical_attack" : 0.0,
+	"weapon_physical_defense" : 0.0,
+	"weapon_magical_attack" : 0.0,
+	"weapon_magical_defense" : 0.0,
+	"skills" : [],
+	"backpack" : [],
 	"story_number" : 0.0
 }
 var story_data
@@ -77,6 +89,24 @@ func set_player_name(new_name: String) -> void:
 
 func get_player_name() -> String:
 	return _user_data["player_name"]
+
+func set_character(char_name: String, hp: float, mp: float) -> void:
+	_user_data["character_name"] = char_name
+	_user_data["hit_point"][0] = hp
+	_user_data["hit_point"][1] = hp
+	_user_data["mana_point"][0] = mp
+	_user_data["mana_point"][1] = mp
+
+func set_weapon(wp_name: String, wp_el: String, wp_pa: float, wp_pd: float, wp_ma: float, wp_md: float) -> void:
+	_user_data["weapon_name"] = wp_name
+	_user_data["weapon_elemental"] = wp_el
+	_user_data["weapon_physical_attack"] = wp_pa
+	_user_data["weapon_physical_defense"] = wp_pd
+	_user_data["weapon_magical_attack"] = wp_ma
+	_user_data["weapon_magical_defense"] = wp_md
+
+func get_player_statistics() -> Array:
+	return [_user_data["hit_point"], _user_data["mana_point"]]
 
 func set_story_number() -> void:
 	_user_data["story_number"] += 1

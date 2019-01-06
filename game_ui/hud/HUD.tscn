@@ -1,16 +1,21 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://game_ui/hud/HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/gui/default_theme/default_theme.tres" type="Theme" id=2]
 [ext_resource path="res://game_ui/hud/AttackButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://game_ui/hud/TechButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game_ui/hud/ItemButton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/gui/default_theme/panel.png" type="Texture" id=6]
+[ext_resource path="res://assets/gui/default_theme/small_panel.png" type="Texture" id=6]
 [ext_resource path="res://assets/gui/hud/Aleace.png" type="Texture" id=7]
-[ext_resource path="res://assets/gui/default_theme/font_cookie_regular_24.tres" type="DynamicFont" id=8]
-[ext_resource path="res://assets/gui/default_theme/font_amble_regular_24.tres" type="DynamicFont" id=9]
-[ext_resource path="res://assets/gui/hud/investigation_logo.png" type="Texture" id=10]
-[ext_resource path="res://assets/sounds/show_panel.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/gui/default_theme/bar.png" type="Texture" id=8]
+[ext_resource path="res://assets/gui/default_theme/hp_bar.png" type="Texture" id=9]
+[ext_resource path="res://assets/gui/default_theme/font_amble_regular_30.tres" type="DynamicFont" id=10]
+[ext_resource path="res://assets/gui/default_theme/mp_bar.png" type="Texture" id=11]
+[ext_resource path="res://assets/gui/default_theme/panel.png" type="Texture" id=12]
+[ext_resource path="res://assets/gui/default_theme/font_amble_regular_20.tres" type="DynamicFont" id=13]
+[ext_resource path="res://assets/gui/default_theme/font_amble_regular_24.tres" type="DynamicFont" id=14]
+[ext_resource path="res://assets/gui/hud/investigation_logo.png" type="Texture" id=15]
+[ext_resource path="res://assets/sounds/show_panel.ogg" type="AudioStream" id=16]
 
 [sub_resource type="Animation" id=6]
 
@@ -38,7 +43,7 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 11 )
+"stream": ExtResource( 16 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -69,7 +74,7 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 11 )
+"stream": ExtResource( 16 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -100,7 +105,7 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 11 )
+"stream": ExtResource( 16 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -131,7 +136,7 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 11 )
+"stream": ExtResource( 16 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -162,7 +167,7 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 11 )
+"stream": ExtResource( 16 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -193,7 +198,7 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 11 )
+"stream": ExtResource( 16 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -211,55 +216,130 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -683.0
-margin_top = -267.0
-margin_right = 683.0
-rect_min_size = Vector2( 0, 267 )
+margin_left = -663.0
+margin_top = -187.0
+margin_right = 663.0
+margin_bottom = -20.0
+rect_min_size = Vector2( 0, 167 )
 rect_scale = Vector2( 0, 0 )
 rect_pivot_offset = Vector2( 683, 500 )
 theme = ExtResource( 2 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BattlePanel"]
-anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = -247.0
-margin_right = -20.0
-margin_bottom = -20.0
+theme = ExtResource( 2 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BattlePanel/HBoxContainer"]
-margin_right = 226.0
-margin_bottom = 227.0
-rect_min_size = Vector2( 226, 0 )
+[node name="Menu" type="VBoxContainer" parent="BattlePanel/HBoxContainer"]
+editor/display_folded = true
+margin_right = 150.0
+margin_bottom = 167.0
+rect_min_size = Vector2( 150, 0 )
+theme = ExtResource( 2 )
 alignment = 2
 
-[node name="AttackButton" parent="BattlePanel/HBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
-margin_left = 0.0
-margin_top = 77.0
-margin_right = 226.0
-margin_bottom = 150.0
+[node name="AttackButton" parent="BattlePanel/HBoxContainer/Menu" instance=ExtResource( 3 )]
 
-[node name="TechButton" parent="BattlePanel/HBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
-visible = false
-margin_left = 0.0
-margin_top = 77.0
-margin_right = 226.0
-margin_bottom = 150.0
+[node name="TechButton" parent="BattlePanel/HBoxContainer/Menu" instance=ExtResource( 4 )]
+margin_top = 59.0
+margin_bottom = 108.0
 
-[node name="ItemButton" parent="BattlePanel/HBoxContainer/VBoxContainer" instance=ExtResource( 5 )]
-margin_left = 0.0
-margin_top = 154.0
-margin_right = 226.0
-margin_bottom = 227.0
+[node name="ItemButton" parent="BattlePanel/HBoxContainer/Menu" instance=ExtResource( 5 )]
+margin_top = 118.0
+margin_bottom = 167.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BattlePanel/HBoxContainer"]
-margin_left = 230.0
-margin_right = 230.0
-margin_bottom = 227.0
+[node name="Container" type="VBoxContainer" parent="BattlePanel/HBoxContainer"]
+margin_left = 160.0
+margin_right = 1326.0
+margin_bottom = 167.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="PLayerList" type="HBoxContainer" parent="BattlePanel/HBoxContainer/Container"]
+margin_top = 67.0
+margin_right = 1166.0
+margin_bottom = 167.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource( 2 )
+
+[node name="PlayerStatistics" type="Panel" parent="BattlePanel/HBoxContainer/Container/PLayerList"]
+margin_right = 280.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 280, 0 )
+
+[node name="BackgroundImage" type="TextureRect" parent="BattlePanel/HBoxContainer/Container/PLayerList/PlayerStatistics"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -100.0
+margin_right = 280.0
+texture = ExtResource( 6 )
+stretch_mode = 3
+
+[node name="Photo" type="TextureRect" parent="BattlePanel/HBoxContainer/Container/PLayerList/PlayerStatistics"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = -118.0
+margin_right = 112.0
+margin_bottom = -18.0
+rect_min_size = Vector2( 80, 80 )
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattlePanel/HBoxContainer/Container/PLayerList/PlayerStatistics"]
+editor/display_folded = true
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -191.0
+margin_top = -22.0
+margin_right = -28.0
+margin_bottom = 32.0
+theme = ExtResource( 2 )
+custom_constants/separation = 20
+
+[node name="HPBar" type="TextureProgress" parent="BattlePanel/HBoxContainer/Container/PLayerList/PlayerStatistics/VBoxContainer"]
+margin_right = 163.0
+margin_bottom = 17.0
+value = 50.0
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="BattlePanel/HBoxContainer/Container/PLayerList/PlayerStatistics/VBoxContainer/HPBar"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -37.0
+margin_right = 163.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
+custom_colors/font_color_shadow = Color( 0.101961, 0.101961, 0.101961, 1 )
+text = "50"
+align = 1
+
+[node name="MPBar" type="TextureProgress" parent="BattlePanel/HBoxContainer/Container/PLayerList/PlayerStatistics/VBoxContainer"]
+margin_top = 37.0
+margin_right = 163.0
+margin_bottom = 54.0
+value = 50.0
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="BattlePanel/HBoxContainer/Container/PLayerList/PlayerStatistics/VBoxContainer/MPBar"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -37.0
+margin_right = 163.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
+custom_colors/font_color_shadow = Color( 0.101961, 0.101961, 0.101961, 1 )
+text = "50"
+align = 1
 
 [node name="MessagePanel" type="Panel" parent="."]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -275,7 +355,7 @@ theme = ExtResource( 2 )
 [node name="BackgroundImage" type="TextureRect" parent="MessagePanel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 
 [node name="Photo" type="TextureRect" parent="MessagePanel"]
 anchor_top = 1.0
@@ -295,13 +375,14 @@ margin_top = -29.0
 margin_right = 200.0
 margin_bottom = -2.0
 theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 8 )
+custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
 text = "Name"
 align = 1
 valign = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MessagePanel"]
+editor/display_folded = true
 margin_left = 200.0
 margin_top = 10.0
 margin_right = 590.0
@@ -314,7 +395,7 @@ margin_right = 378.0
 margin_bottom = 118.0
 rect_min_size = Vector2( 378, 118 )
 theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 14 )
 custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
 text = "Lorem ipsum dolor sit amet, doctus omittam ei vim, prima appareat id est."
 autowrap = true
@@ -337,7 +418,7 @@ theme = ExtResource( 2 )
 [node name="BackgroundImage" type="TextureRect" parent="InvestigationPanel"]
 margin_right = 600.0
 margin_bottom = 150.0
-texture = ExtResource( 6 )
+texture = ExtResource( 12 )
 
 [node name="Logo" type="TextureRect" parent="InvestigationPanel"]
 anchor_top = 0.5
@@ -347,7 +428,7 @@ margin_top = -50.0
 margin_right = 130.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 100, 100 )
-texture = ExtResource( 10 )
+texture = ExtResource( 15 )
 expand = true
 stretch_mode = 6
 
@@ -364,13 +445,13 @@ margin_right = 421.0
 margin_bottom = 118.0
 rect_min_size = Vector2( 421, 118 )
 theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 14 )
 custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
 text = "Lorem ipsum dolor sit amet, doctus omittam ei vim, prima appareat id est."
 autowrap = true
 
 [node name="SoundFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
+stream = ExtResource( 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/battle_hide = SubResource( 6 )
