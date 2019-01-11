@@ -1,8 +1,8 @@
 extends KinematicBody
 
-export(String) var character_name = ""
-export(float) var hit_point = 0.0
-export(float) var mana_point = 0.0
+export var character_name: String = ""
+export var hit_point: float = 0.0
+export var mana_point: float = 0.0
 
 const SPEED = 15
 const GRAVITATION = -9.8 * 2
@@ -73,9 +73,23 @@ func process_movement(delta: float) -> void:
 		if $AnimationPlayer.current_animation != "idle":
 			$AnimationPlayer.play("idle")
 
-func attack() -> void:
+func attack(enemy_node: Node) -> void:
+	var attack_point = get_node("Skeleton/Weapon").weapon_physical_attack
+	
+	# Add damage to enemy
 	is_attacking = true
 	$AnimationPlayer.play("slash", -1, 2)
+	enemy_node.attacked(attack_point)
+	
+	# Show damage
+	yield($AnimationPlayer, "animation_finished")
+	var damage_text = load("res://game_ui/hud/DamageText.tscn").instance()
+	var screen_position = get_node("/root").get_camera().unproject_position(enemy_node.translation)
+	damage_text.text = str(attack_point)
+	damage_text.rect_position = Vector2(screen_position.x, screen_position.y)
+	get_node("/root/HUD").add_child(damage_text)
+	damage_text.show()
+	print("serang")
 
 func on_attack_finished() -> void:
 	is_attacking = false

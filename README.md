@@ -1,2 +1,3 @@
 # Electroidesia
-Simple indie game genre RPG adventure created with Godot 3.1 Alpha 4
+
+Simple indie game genre RPG adventure created with Godot 3.1 Beta 1

@@ -16,3 +16,9 @@ func _ready() -> void:
 	enemy_defense = enemy_defense + pow(enemy_defense, 2)
 	
 	enemy_current_hit_point = enemy_hit_point
+
+func attack() -> void:
+	GameManager.set_player_hp(GameManager.get_player_statistics()[0][0] - enemy_attack)
+
+func attacked(attack_point: float) -> void:
+	enemy_hit_point -= attack_point

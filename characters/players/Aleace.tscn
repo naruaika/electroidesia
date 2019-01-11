@@ -3,10 +3,10 @@
 [ext_resource path="res://characters/players/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/3d/players/aleace/aleace.material" type="Material" id=2]
 [ext_resource path="res://weapons/CavitationStaff.tscn" type="PackedScene" id=3]
-[ext_resource path="res://characters/players/weapon_slash.ogg" type="AudioStream" id=4]
-[ext_resource path="res://characters/players/walk_on_grass.ogg" type="AudioStream" id=5]
+[ext_resource path="res://characters/players/walk_on_grass.ogg" type="AudioStream" id=4]
+[ext_resource path="res://characters/players/weapon_slash.ogg" type="AudioStream" id=5]
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=1]
 
 
 [sub_resource type="ArrayMesh" id=2]
@@ -25,7 +25,7 @@ surfaces/0 = {
 "vertex_count": 1548
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=3]
 
 length = 1.25
 loop = true
@@ -247,7 +247,7 @@ tracks/30/imported = true
 tracks/30/enabled = true
 tracks/30/keys = PoolRealArray( 0, 1, 4.78035e-15, -2.02622e-09, -2.43392e-08, 3.00927e-36, -4.23516e-22, 7.10543e-15, 1, 1, 1, 1, 1.25, 1, 4.78035e-15, -2.02622e-09, -2.43392e-08, 3.00927e-36, -4.23516e-22, 7.10543e-15, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=4]
 
 length = 0.5
 loop = true
@@ -478,12 +478,12 @@ tracks/31/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 5 )
+"stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 
 length = 1.25
 step = 0.05
@@ -714,7 +714,7 @@ tracks/31/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 4 )
+"stream": ExtResource( 5 )
 } ],
 "times": PoolRealArray( 0.5 )
 }
@@ -743,7 +743,7 @@ mana_point = 50.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1.25, 0, 0, 0, 1.955, 0, 0, 0, 1.1, 0, 2, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 1 )
 
 [node name="Skeleton" type="Skeleton" parent="."]
 transform = Transform( 2.42, 0, 0, 0, 2.42, 0, 0, 0, 2.42, 0, 0, 0 )
@@ -909,12 +909,12 @@ material/0 = null
 
 [node name="Weapon" parent="Skeleton" instance=ExtResource( 3 )]
 
-[node name="SoundFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
-anims/idle = SubResource( 8 )
-anims/run = SubResource( 9 )
-anims/slash = SubResource( 6 )
+anims/idle = SubResource( 3 )
+anims/run = SubResource( 4 )
+anims/slash = SubResource( 5 )
+
+[node name="SoundFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 

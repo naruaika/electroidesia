@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/3d/world/Material.material" type="Material" id=1]
+[ext_resource path="res://assets/3d/world/pallete.material" type="Material" id=1]
+
 
 
 [sub_resource type="ArrayMesh" id=1]

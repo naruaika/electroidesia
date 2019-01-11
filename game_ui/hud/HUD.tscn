@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://game_ui/hud/HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/gui/default_theme/default_theme.tres" type="Theme" id=2]
@@ -17,9 +17,42 @@
 [ext_resource path="res://assets/gui/hud/investigation_logo.png" type="Texture" id=15]
 [ext_resource path="res://assets/sounds/show_panel.ogg" type="AudioStream" id=16]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=1]
 
-resource_name = "battle_hide"
+resource_name = "attack_disable"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("BattlePanel/HBoxContainer/Menu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "attack_enable"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("BattlePanel/HBoxContainer/Menu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("BattlePanel:rect_scale")
@@ -48,9 +81,8 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 
-resource_name = "battle_show"
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("BattlePanel:rect_scale")
@@ -79,9 +111,8 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=5]
 
-resource_name = "investigation_hide"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("InvestigationPanel:rect_scale")
@@ -110,9 +141,8 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=6]
 
-resource_name = "investigation_show"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("InvestigationPanel:rect_scale")
@@ -141,9 +171,8 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=7]
 
-resource_name = "message_hide"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("MessagePanel:rect_scale")
@@ -172,9 +201,8 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=8]
 
-resource_name = "message_show"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("MessagePanel:rect_scale")
@@ -212,6 +240,7 @@ __meta__ = {
 }
 
 [node name="BattlePanel" type="Panel" parent="."]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -231,7 +260,6 @@ anchor_bottom = 1.0
 theme = ExtResource( 2 )
 
 [node name="Menu" type="VBoxContainer" parent="BattlePanel/HBoxContainer"]
-editor/display_folded = true
 margin_right = 150.0
 margin_bottom = 167.0
 rect_min_size = Vector2( 150, 0 )
@@ -290,7 +318,6 @@ expand = true
 stretch_mode = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BattlePanel/HBoxContainer/Container/PLayerList/PlayerStatistics"]
-editor/display_folded = true
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -348,7 +375,6 @@ margin_left = -300.0
 margin_top = -200.0
 margin_right = 300.0
 margin_bottom = -50.0
-rect_scale = Vector2( 0, 0 )
 rect_pivot_offset = Vector2( 300, 300 )
 theme = ExtResource( 2 )
 
@@ -380,12 +406,12 @@ custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
 text = "Name"
 align = 1
 valign = 1
+clip_text = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MessagePanel"]
-editor/display_folded = true
-margin_left = 200.0
+margin_left = 180.0
 margin_top = 10.0
-margin_right = 590.0
+margin_right = 570.0
 margin_bottom = 140.0
 theme = ExtResource( 2 )
 scroll_horizontal_enabled = false
@@ -424,18 +450,19 @@ texture = ExtResource( 12 )
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 30.0
-margin_top = -50.0
+margin_top = -39.0
 margin_right = 130.0
-margin_bottom = 50.0
+margin_bottom = 61.0
 rect_min_size = Vector2( 100, 100 )
 texture = ExtResource( 15 )
 expand = true
 stretch_mode = 6
 
 [node name="ScrollContainer" type="ScrollContainer" parent="InvestigationPanel"]
-margin_left = 157.0
+editor/display_folded = true
+margin_left = 147.0
 margin_top = 10.0
-margin_right = 590.0
+margin_right = 580.0
 margin_bottom = 140.0
 theme = ExtResource( 2 )
 scroll_horizontal_enabled = false
@@ -452,12 +479,15 @@ autowrap = true
 
 [node name="SoundFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
+pitch_scale = 2.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/battle_hide = SubResource( 6 )
-anims/battle_show = SubResource( 5 )
-anims/investigation_hide = SubResource( 1 )
-anims/investigation_show = SubResource( 2 )
-anims/message_hide = SubResource( 3 )
-anims/message_show = SubResource( 4 )
+anims/attack_disable = SubResource( 1 )
+anims/attack_enable = SubResource( 2 )
+anims/battle_hide = SubResource( 3 )
+anims/battle_show = SubResource( 4 )
+anims/investigation_hide = SubResource( 5 )
+anims/investigation_show = SubResource( 6 )
+anims/message_hide = SubResource( 7 )
+anims/message_show = SubResource( 8 )
 

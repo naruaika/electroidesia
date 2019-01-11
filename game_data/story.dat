@@ -1,14 +1,28 @@
 [
     [
-        ["Aleace", "Where am I?"],
-        ["Aleace", "The atmosphere here feels so tangible... Also this place is very wide..."],
-        ["Aleace", "What are these trees around me? Is it just ornaments?"],
-        ["Aleace", "By the way, did I fail to enter my mind palace!?"],
+        ["Aleace", "Where am I? The atmosphere here feels so tangible... Also this place is very wide..."],
+        ["Aleace", "How beautiful these trees are! What are they? By the way, did I fail to enter my mind palace!?"],
         ["Aleace", "All I know is the truth that my character hasn't changed."]
     ],
     [
-        ["Aleace", "Is the wind blowing too big!?"],
-        ["Aleace", "No, but the mushrooms are moving by it own legs! Very impressive!"]
+        ["Mathea", "Hello, are you lost?"],
+        ["Aleace", "Err, yes."],
+        ["Mathea", "Introduce, my name is Mathea. How about you?"],
+        ["Aleace", "My name is Aleace."],
+        ["Mathea", "Nice to meet you, Aleace. Thank you!"],
+        ["Aleace", "..."],
+        ["Mathea", "Ha-ha, do you know, everyone who enters here and gets lost always denies that they are lost."],
+        ["Mathea", "But only this time I heard an honest person say he was lost. Therefore I will help you, just ask me anything."],
+        ["Aleace", "Who are you?"],
+        ["Mathea", "I'm just an old woman who lives here since 40 years ago and welcomes the arrival of everyone here."],
+        ["Aleace", "40 years!? Did you just say that you got lost here all that time?"],
+        ["Mathea", "Yes, and everyone who comes here cannot return to the real world, whatever they do."],
+        ["Aleace", "Why are you, people and me trapped here?"],
+        ["Mathea", "I'll explain later, let's walk a little."]
+    ],
+    [
+        ["Aleace", "Is the wind blowing too big!? No, but the mushrooms are moving by it own legs! Very impressive!"],
+        ["Mathea", "No time to explain, take out your weapon, we fight!"]
     ],
     [
         ["Aleace", "Ah, looks like I found my house. Is there someone inside?"]

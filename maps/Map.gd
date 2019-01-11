@@ -1,8 +1,6 @@
 extends Spatial
 
 func _ready() -> void:
-	# Add player node as child
-	
 	# Reset camera
 	reset_camera()
 	

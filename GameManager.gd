@@ -51,7 +51,9 @@ func goto_scene(path: String) -> void:
 	Handle first game appearance
 """
 func new_game() -> void:
-	goto_scene("res://maps/Firstland.tscn")
+	goto_scene("res://maps/ElectroidesiaForest.tscn")
+	
+	# Synchronise story data with custom player name
 	story_data = parse_json(to_json(story_data).replace("Aleace", get_player_name()))
 
 func load_game() -> void:
@@ -97,6 +99,14 @@ func set_character(char_name: String, hp: float, mp: float) -> void:
 	_user_data["mana_point"][0] = mp
 	_user_data["mana_point"][1] = mp
 
+func set_player_hp(current_hp: float, max_hp: float = 0) -> void:
+	_user_data["hit_point"][0] = current_hp
+	if max_hp > 0:
+		_user_data["hit_point"][1] = max_hp
+	
+	var player_statistics = GameManager.get_player_statistics()
+	HUD.set_player_statistics(player_statistics[0], player_statistics[1])
+
 func set_weapon(wp_name: String, wp_el: String, wp_pa: float, wp_pd: float, wp_ma: float, wp_md: float) -> void:
 	_user_data["weapon_name"] = wp_name
 	_user_data["weapon_elemental"] = wp_el
@@ -108,8 +118,8 @@ func set_weapon(wp_name: String, wp_el: String, wp_pa: float, wp_pd: float, wp_m
 func get_player_statistics() -> Array:
 	return [_user_data["hit_point"], _user_data["mana_point"]]
 
-func set_story_number() -> void:
-	_user_data["story_number"] += 1
+func set_story_number(number: int) -> void:
+	_user_data["story_number"] = number
 
 func get_story_number() -> int:
 	return int(_user_data["story_number"])

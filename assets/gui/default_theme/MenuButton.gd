@@ -1,6 +1,6 @@
 extends TextureButton
 
-export(String) var scene_to_load = ""
+export var scene_to_load: String = ""
 
 func _on_MenuButton_focus_entered() -> void:
 	$ButtonFocus.play()

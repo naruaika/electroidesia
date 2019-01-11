@@ -35,9 +35,11 @@ valign = 1
 
 [node name="ButtonFocus" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+pitch_scale = 2.0
 
 [node name="ButtonPress" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+pitch_scale = 2.0
 
 [connection signal="focus_entered" from="." to="." method="_on_HUDButton_focus_entered"]
 [connection signal="pressed" from="." to="." method="_on_HUDButton_pressed"]
