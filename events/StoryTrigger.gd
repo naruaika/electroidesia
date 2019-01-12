@@ -22,14 +22,15 @@ func _event() -> bool:
 	# Disable player movement
 	GameManager.is_interrupted = true
 	
-	animation_story = get_child(1)
-	# Play animation before
-	if animation_story:
-		if animation_story.has_animation("before"):
-			animation_story.play("before")
-			yield(animation_story, "animation_finished")
-	# Get current game story
-	story_data = GameManager.story_data[story_number]
+	if get_child_count() > 0:
+		animation_story = get_child(1)
+		# Play animation before
+		if animation_story:
+			if animation_story.has_animation("before"):
+				animation_story.play("before")
+				yield(animation_story, "animation_finished")
+		# Get current game story
+		story_data = GameManager.story_data[story_number]
 	
 	# Show dialogues
 	HUD.message_show()

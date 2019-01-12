@@ -738,8 +738,6 @@ tracks/32/keys = {
 ]]
 script = ExtResource( 1 )
 character_name = "Aleace"
-hit_point = 80.0
-mana_point = 50.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1.25, 0, 0, 0, 1.955, 0, 0, 0, 1.1, 0, 2, 0 )

@@ -329,8 +329,6 @@ anims/fade_out = SubResource( 1 )
 [node name="Aleace" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0967407, 0 )
 character_name = null
-hit_point = null
-mana_point = null
 
 [node name="Mathea" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
@@ -1562,6 +1560,7 @@ polygon = PoolVector2Array( 25.8736, -0.167569, 28.1792, -7.78238, 38.6357, -12.
 [node name="Stories" type="Spatial" parent="."]
 
 [node name="StoryTrigger" parent="Stories" instance=ExtResource( 15 )]
+enable = false
 story_number = 0
 
 [node name="StoryTrigger2" parent="Stories" instance=ExtResource( 15 )]

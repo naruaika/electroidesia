@@ -20,13 +20,12 @@ func battle_hide() -> void:
 	$AnimationPlayer.play("battle_hide")
 
 func attack_menu_show() -> void:
-	var menu = $BattlePanel/HBoxContainer/Menu
-	menu.get_child(0).grab_focus()
+	$BattlePanel/HBoxContainer/Menu.get_child(0).grab_focus()
 	attack_menu_focus = true
 	$AnimationPlayer.play("attack_enable")
 
 func attack_menu_hide() -> void:
-	var menu = $BattlePanel/HBoxContainer/Menu
+	# Check if attack menu is already hidden
 	if attack_menu_focus != false:
 		for button in $BattlePanel/HBoxContainer/Menu.get_children():
 			button.release_focus()

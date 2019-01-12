@@ -1,0 +1,13 @@
+{
+    "Aleace" : {
+        "type" : "Sorcerer",
+        "hit_point" : 80,
+        "mana_point" : 50
+    },
+    "Dragon Mushroom" : {
+        "elemental" : "Earth",
+        "hit_point" : 15,
+        "attack" : [11, 0],
+        "defense" : [5, 0]
+    }
+}

@@ -14,6 +14,10 @@ func _input(event: InputEvent) -> void:
 			match(HUD.get_node("BattlePanel/HBoxContainer/Menu").get_focus_owner().get_name()):
 				"AttackButton":
 					combat()
+				"TechButton":
+					pass
+				"ItemButton":
+					pass
 
 func start_battle(body: Node) -> void:
 	if body.is_in_group("player"):
@@ -52,8 +56,7 @@ func start_battle(body: Node) -> void:
 		player.global_rotate(Vector3(0, 1, 0), deg2rad(180))
 		
 		# Show player statistics
-		var player_statistics = GameManager.get_player_statistics()
-		HUD.set_player_statistics(player_statistics[0], player_statistics[1])
+		HUD.set_player_statistics(player.hit_point, player.mana_point)
 		HUD.battle_show()
 		
 		"""
@@ -78,7 +81,7 @@ func combat() -> void:
 	if index_battler == 0:
 		yield(battlers[index_battler], "attack_ended")
 	# Check if no more active enemies or players
-	if battlers[1].current_hit_point <= 0:
+	if battlers[1].hit_point[0] <= 0:
 		yield(get_tree().create_timer(1.0), "timeout")
 		battlers[1].queue_free()
 		battlers.remove(1)

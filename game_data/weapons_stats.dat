@@ -1,0 +1,9 @@
+{
+    "Cavitation Staff" : {
+        "owner" : "Aleace",
+        "attack" : [15, 18],
+        "defense" : [12, 14],
+        "elemental" : "Water",
+        "description" : "Cavitation stuff is made of California redwood, the tallest tree in the world."
+    }
+}

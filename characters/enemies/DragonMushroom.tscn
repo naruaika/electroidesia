@@ -27,10 +27,7 @@ surfaces/0 = {
 "enemy",
 ]]
 script = ExtResource( 1 )
-enemy_name = "Dragon Mushroom"
-hit_point = 15.0
-physical_attack = 11.0
-physical_defense = 5.0
+character_name = "Dragon Mushroom"
 level = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
