@@ -299,7 +299,6 @@ ambient_light_color = Color( 0.560784, 0.560784, 0.560784, 1 )
 glow_enabled = true
 glow_intensity = 2.0
 glow_bloom = 0.02
-glow_blend_mode = 0
 glow_hdr_threshold = 1.2
 adjustment_enabled = true
 
@@ -327,7 +326,7 @@ autoplay = "fade_out"
 anims/fade_out = SubResource( 1 )
 
 [node name="Aleace" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.8644, 0.0967407, 24.5442 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.71149, 0.0967407, 45.7714 )
 character_name = null
 
 [node name="Mathea" parent="." instance=ExtResource( 3 )]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://game_ui/hud/HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/gui/default_theme/default_theme.tres" type="Theme" id=2]
@@ -15,12 +15,14 @@
 [ext_resource path="res://assets/gui/default_theme/font_amble_regular_20.tres" type="DynamicFont" id=13]
 [ext_resource path="res://assets/gui/default_theme/font_amble_regular_24.tres" type="DynamicFont" id=14]
 [ext_resource path="res://assets/gui/hud/investigation_logo.png" type="Texture" id=15]
-[ext_resource path="res://assets/sounds/show_panel.ogg" type="AudioStream" id=16]
+[ext_resource path="res://assets/gui/default_theme/centered_panel.png" type="Texture" id=16]
+[ext_resource path="res://assets/gui/default_theme/font_amble_regular_60.tres" type="DynamicFont" id=17]
+[ext_resource path="res://assets/sounds/show_panel.ogg" type="AudioStream" id=18]
 
 [sub_resource type="Animation" id=1]
 
 resource_name = "attack_disable"
-length = 0.2
+length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("BattlePanel/HBoxContainer/Menu:modulate")
 tracks/0/interp = 1
@@ -28,7 +30,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
+"times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
@@ -37,7 +39,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=2]
 
 resource_name = "attack_enable"
-length = 0.2
+length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("BattlePanel/HBoxContainer/Menu:modulate")
 tracks/0/interp = 1
@@ -45,7 +47,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
+"times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -76,7 +78,7 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 16 )
+"stream": ExtResource( 18 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -106,7 +108,7 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 16 )
+"stream": ExtResource( 18 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -136,7 +138,7 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 16 )
+"stream": ExtResource( 18 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -166,9 +168,43 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 16 )
+"stream": ExtResource( 18 )
 } ],
 "times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=9]
+
+resource_name = "levelup_hide"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("LevelUpPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+
+resource_name = "levelup_show"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("LevelUpPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -196,7 +232,7 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 16 )
+"stream": ExtResource( 18 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -226,7 +262,7 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 16 )
+"stream": ExtResource( 18 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -240,6 +276,7 @@ __meta__ = {
 }
 
 [node name="BattlePanel" type="Panel" parent="."]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -370,6 +407,7 @@ text = "50"
 align = 1
 
 [node name="MessagePanel" type="Panel" parent="."]
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -481,8 +519,58 @@ custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
 text = "Lorem ipsum dolor sit amet, doctus omittam ei vim, prima appareat id est."
 autowrap = true
 
+[node name="LevelUpPanel" type="Panel" parent="."]
+editor/display_folded = true
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+
+[node name="Container" type="CenterContainer" parent="LevelUpPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="LevelUpPanel/Container"]
+margin_left = 321.0
+margin_top = 245.0
+margin_right = 1044.0
+margin_bottom = 523.0
+texture = ExtResource( 16 )
+stretch_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelUpPanel/Container"]
+margin_left = 485.0
+margin_top = 348.0
+margin_right = 880.0
+margin_bottom = 420.0
+alignment = 1
+
+[node name="Label" type="Label" parent="LevelUpPanel/Container/HBoxContainer"]
+margin_right = 239.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 17 )
+custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
+text = "You gain"
+
+[node name="GainedEXP" type="Label" parent="LevelUpPanel/Container/HBoxContainer"]
+margin_left = 249.0
+margin_right = 284.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 17 )
+custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
+text = "0"
+
+[node name="Label2" type="Label" parent="LevelUpPanel/Container/HBoxContainer"]
+margin_left = 294.0
+margin_right = 395.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 17 )
+custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
+text = "EXP"
+
 [node name="SoundFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 16 )
+stream = ExtResource( 18 )
 pitch_scale = 2.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -492,6 +580,8 @@ anims/battle_hide = SubResource( 3 )
 anims/battle_show = SubResource( 4 )
 anims/investigation_hide = SubResource( 5 )
 anims/investigation_show = SubResource( 6 )
+anims/levelup_hide = SubResource( 9 )
+anims/levelup_show = SubResource( 10 )
 anims/message_hide = SubResource( 7 )
 anims/message_show = SubResource( 8 )
 

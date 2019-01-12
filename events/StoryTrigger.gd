@@ -19,7 +19,7 @@ func _event() -> bool:
 	if story_number != GameManager.get_story_number():
 		return false
 	
-	# Disable player movement
+	# Disable player movements
 	GameManager.is_interrupted = true
 	
 	if get_child_count() > 0:
@@ -65,7 +65,7 @@ func _process(delta: float) -> void:
 			else:
 				GameManager.set_story_number(story_number + 1)
 			
-			# Enable player movement
+			# Enable player movements
 			GameManager.is_interrupted = false
 			
 			# Hide dialogues

@@ -4,26 +4,47 @@ var index_battler: int = 0
 var battlers: Array = []
 var target: Node
 var battler_selector: Node
+var is_attacking: bool = false
+var is_leveling_up: bool = false
+
+var gained_experience_point = 0
 
 onready var camera = get_node("/root").get_camera()
 
 func _ready() -> void:
 	set_process_input(false)
+	
+	# Calculate gained_experience_point
+	for child in get_children():
+		if child.is_in_group("enemy"):
+			gained_experience_point += child.hit_point[1]
+			gained_experience_point += child.attack_point[1]
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("movement_right"):
-		change_target(1)
-	elif Input.is_action_just_pressed("movement_left"):
-		change_target(-1)
-	elif Input.is_action_just_pressed("ui_accept"):
-		set_process_input(false)
-		match(HUD.get_node("BattlePanel/HBoxContainer/Menu").get_focus_owner().get_name()):
-			"AttackButton":
-				combat()
-			"TechButton":
-				pass
-			"ItemButton":
-				pass
+	if is_leveling_up:
+		if Input.is_action_just_pressed("ui_accept"):
+			HUD.levelup_hide()
+			
+			# Enable player movements
+			yield(HUD.animation_node, "animation_finished")
+			GameManager.is_interrupted = false
+			
+			# Delete this node
+			queue_free()
+	elif not is_attacking:
+		if Input.is_action_just_pressed("movement_right"):
+			change_target(1)
+		elif Input.is_action_just_pressed("movement_left"):
+			change_target(-1)
+		elif Input.is_action_just_pressed("ui_accept"):
+			is_attacking = true
+			match(HUD.get_node("BattlePanel/HBoxContainer/Menu").get_focus_owner().get_name()):
+				"AttackButton":
+					combat()
+				"TechButton":
+					pass
+				"ItemButton":
+					pass
 
 func start_battle(body: Node) -> void:
 	if body.is_in_group("player"):
@@ -104,12 +125,20 @@ func combat() -> void:
 			break
 	if active_enemy_exist:
 		change_battler()
-	else:
-		# End battle
-		GameManager.is_interrupted = false
+	else: # End of battle
 		battlers[0].get_node("Skeleton/Weapon").visible = false
 		HUD.battle_hide()
-		queue_free()
+		
+		# Give EXP to player battler from current battle
+		yield(HUD.animation_node, "animation_finished")
+		for battler in battlers:
+			battler.level_up(gained_experience_point)
+		
+		# Show player level up information
+		HUD.levelup_show(gained_experience_point)
+		is_leveling_up = true
+	
+	is_attacking = false
 
 func change_battler() -> void:
 	index_battler += 1
@@ -119,10 +148,10 @@ func change_battler() -> void:
 	if battlers[index_battler].is_in_group("player"):
 		HUD.attack_menu_show()
 		battler_selector.show()
-		set_process_input(true)
 	else:
 		$Timer.start(1.0)
 		HUD.attack_menu_hide()
+		is_attacking = true
 
 func show_target_selector() -> void:
 	# Get first enemy
@@ -133,8 +162,9 @@ func show_target_selector() -> void:
 	
 	# Instance battler selector for attack target
 	battler_selector = load("res://assets/3d/BattlerSelector.tscn").instance()
-	battler_selector.global_transform.origin = to_local(target.get_node("AboveHead").global_transform.origin)
+	# FIXME: fixing battler_selector size; this method resizes batler_selector size by its parent (BattlerTrigger) size
 	add_child(battler_selector)
+	battler_selector.global_transform.origin = target.get_node("AboveHead").global_transform.origin
 
 func change_target(direction: int = 0) -> void:
 	# Get enemy list from battlers
