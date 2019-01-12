@@ -19,6 +19,12 @@ func _ready() -> void:
 func attack(player_node: Node) -> void:
 	GameManager.set_player_hp(GameManager.get_player_statistics()[0][0] - physical_attack)
 	
+	var damage_text = load("res://game_ui/hud/DamageText.tscn").instance()
+	var screen_position = get_node("/root").get_camera().unproject_position(player_node.global_transform.origin)
+	damage_text.text = str(physical_attack)
+	damage_text.rect_position = Vector2(screen_position.x - (damage_text.rect_size.x / 2), screen_position.y - (damage_text.rect_size.y / 2))
+	get_node("/root/HUD").add_child(damage_text)
+	
 	emit_signal("attack_ended")
 
 func attacked(attack_point: float) -> void:

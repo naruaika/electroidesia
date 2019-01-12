@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://characters/players/Aleace.tscn" type="PackedScene" id=2]
@@ -13,19 +13,20 @@
 [ext_resource path="res://assets/3d/world/Latite5.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/3d/world/Latite3.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/3d/world/Tree.tscn" type="PackedScene" id=13]
-[ext_resource path="res://events/StoryTrigger.tscn" type="PackedScene" id=14]
-[ext_resource path="res://assets/gui/default_theme/default_theme.tres" type="Theme" id=15]
-[ext_resource path="res://game_ui/tutorials/Tutorial.gd" type="Script" id=16]
-[ext_resource path="res://assets/gui/default_theme/fullscreen_panel.png" type="Texture" id=17]
-[ext_resource path="res://assets/gui/default_theme/font_amble_regular_60.tres" type="DynamicFont" id=18]
-[ext_resource path="res://assets/gui/tutorials/movement_picture.png" type="Texture" id=19]
-[ext_resource path="res://assets/gui/tutorials/movement_keys.png" type="Texture" id=20]
-[ext_resource path="res://assets/gui/tutorials/battle_picture.png" type="Texture" id=21]
-[ext_resource path="res://assets/gui/tutorials/battle_keys.png" type="Texture" id=22]
-[ext_resource path="res://events/BattleTrigger.tscn" type="PackedScene" id=23]
-[ext_resource path="res://characters/enemies/DragonMushroom.tscn" type="PackedScene" id=24]
-[ext_resource path="res://characters/enemies/DragonMushroom2.tscn" type="PackedScene" id=25]
-[ext_resource path="res://maps/forest.ogg" type="AudioStream" id=26]
+[ext_resource path="res://assets/3d/world/Aloevera.tscn" type="PackedScene" id=14]
+[ext_resource path="res://events/StoryTrigger.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/gui/default_theme/default_theme.tres" type="Theme" id=16]
+[ext_resource path="res://game_ui/tutorials/Tutorial.gd" type="Script" id=17]
+[ext_resource path="res://assets/gui/default_theme/fullscreen_panel.png" type="Texture" id=18]
+[ext_resource path="res://assets/gui/default_theme/font_amble_regular_60.tres" type="DynamicFont" id=19]
+[ext_resource path="res://assets/gui/tutorials/movement_picture.png" type="Texture" id=20]
+[ext_resource path="res://assets/gui/tutorials/movement_keys.png" type="Texture" id=21]
+[ext_resource path="res://assets/gui/tutorials/battle_picture.png" type="Texture" id=22]
+[ext_resource path="res://assets/gui/tutorials/battle_keys.png" type="Texture" id=23]
+[ext_resource path="res://events/BattleTrigger.tscn" type="PackedScene" id=24]
+[ext_resource path="res://characters/enemies/DragonMushroom.tscn" type="PackedScene" id=25]
+[ext_resource path="res://characters/enemies/DragonMushroom2.tscn" type="PackedScene" id=26]
+[ext_resource path="res://maps/forest.ogg" type="AudioStream" id=27]
 
 [sub_resource type="Animation" id=1]
 
@@ -345,7 +346,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57628e-07, 0, -0.0503316 )
 stream = ExtResource( 4 )
 
 [node name="Floor" type="MeshInstance" parent="."]
-editor/display_folded = true
 transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
@@ -475,6 +475,12 @@ transform = Transform( 2.22581, 0, 0, 0, 2.22582, 0, 0, 0, 2.22582, -69.156, -1.
 
 [node name="Electroidesia208" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 2.22581, 0, 0, 0, 2.22582, 0, 0, 0, 2.22582, -186.707, -1.00477, -165.968 )
+
+[node name="Electroidesia209" parent="Decorations" instance=ExtResource( 6 )]
+transform = Transform( 0.908054, 1.48134e-07, 3.38892, -1.48134e-07, 3.50847, -1.13667e-07, -3.3889, -1.13667e-07, 0.908058, -205.583, -1.00477, -176.573 )
+
+[node name="Electroidesia210" parent="Decorations" instance=ExtResource( 6 )]
+transform = Transform( 1.75422, 4.58669e-07, -3.03842, -1.39958e-06, 3.50847, -2.78424e-07, 3.03841, 1.35129e-06, 1.75423, -189.829, -1.00477, -154.436 )
 
 [node name="Electroidesia205" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -8.41339e-08, -8.41344e-08, -1.92477, 8.41339e-08, 1.92477, -8.41344e-08, 1.92476, -8.41344e-08, -8.41344e-08, -67.4928, -1.25672, -110.893 )
@@ -1034,6 +1040,9 @@ transform = Transform( -2.30034e-06, 2.30034e-06, 52.6256, -2.30034e-06, 52.6256
 [node name="Latite38" parent="Decorations" instance=ExtResource( 10 )]
 transform = Transform( 47.695, 9.72166e-07, 22.2406, -9.72166e-07, 52.6256, -2.15524e-07, -22.2406, -2.15524e-07, 47.695, -154.894, -2.00928, -123.048 )
 
+[node name="Latite49" parent="Decorations" instance=ExtResource( 10 )]
+transform = Transform( 9.13848, -0.196272, 51.8257, 0.134878, 52.6251, 0.175516, -51.8259, 0.102349, 9.1389, -210.9, -4.16175, -155.415 )
+
 [node name="Latite48" parent="Decorations" instance=ExtResource( 10 )]
 transform = Transform( 18.0344, 1.85878e-07, -35.961, -7.43174e-07, 40.2297, -1.64758e-07, 35.961, 7.38175e-07, 18.0344, -50.713, -2.00928, 13.0105 )
 
@@ -1436,8 +1445,109 @@ transform = Transform( 7.00715, 0, 0, 0, 7.00715, 0, 0, 0, 7.00715, -63.5283, -0
 [node name="Latite12" parent="Decorations" instance=ExtResource( 12 )]
 transform = Transform( 1.2942, 0, -3.67811, 0, 3.89916, 0, 3.67811, 0, 1.2942, -67.5784, -0.611816, 76.0071 )
 
+[node name="Aloevera" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 9.36695, 0, 0, 0, 9.36695, 0, 0, 0, 9.36695, 3.17417, 0.293457, -7.56492 )
+
+[node name="Aloevera2" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -31.432, 0.293457, 4.77416 )
+
+[node name="Aloevera3" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 13.065, 0, 0, 0, 13.065, 0, 0, 0, 13.065, -33.8511, 0.293457, -19.8574 )
+
+[node name="Aloevera33" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 5.4935, -2.01492e-07, -4.60959, 2.01492e-07, 7.17125, -7.3337e-08, 4.60959, -7.3337e-08, 5.4935, -31.0753, 0.293457, -20.813 )
+
+[node name="Aloevera34" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 3.43206, -1.25882e-07, -2.87984, 1.25882e-07, 4.48023, -4.58172e-08, 2.87984, -4.58172e-08, 3.43206, -36.9908, 0.293457, -17.8097 )
+
+[node name="Aloevera4" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -19.4164, 0.293457, 26.4242 )
+
+[node name="Aloevera5" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, 18.9424, 0.293457, 30.1666 )
+
+[node name="Aloevera6" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -18.8101, 0.293457, 78.5236 )
+
+[node name="Aloevera7" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, 24.0326, 0.293457, 99.3087 )
+
+[node name="Aloevera8" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -63.1374, 0.293457, 125.608 )
+
+[node name="Aloevera9" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -58.4714, 0.293457, 85.7348 )
+
+[node name="Aloevera10" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -98.9811, 0.293457, 88.492 )
+
+[node name="Aloevera11" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -27.9301, 0.293457, 146.181 )
+
+[node name="Aloevera12" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -140.464, 0.293457, 82.1232 )
+
+[node name="Aloevera13" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -121.997, 0.293457, 43.4575 )
+
+[node name="Aloevera14" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -72.6553, 0.293457, 42.0148 )
+
+[node name="Aloevera15" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -93.7194, 0.293457, 76.6407 )
+
+[node name="Aloevera16" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -127.768, 0.293457, 119.923 )
+
+[node name="Aloevera17" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -76.7343, 0.293457, -10.017 )
+
+[node name="Aloevera18" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -149.359, 0.293457, -35.534 )
+
+[node name="Aloevera19" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -51.6099, 0.293457, -123.862 )
+
+[node name="Aloevera20" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -137.19, 0.293457, -90.101 )
+
+[node name="Aloevera21" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, 34.3626, 0.293457, -127.002 )
+
+[node name="Aloevera22" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -142.977, 0.293457, -58.5831 )
+
+[node name="Aloevera23" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -135.464, 0.293457, -48.3388 )
+
+[node name="Aloevera24" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -142.53, 0.293457, -53.8347 )
+
+[node name="Aloevera25" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 5.68781, 0.00114958, -5.68781, -0.00115388, 8.04378, 0.000471868, 5.68781, 0.000482257, 5.68781, -136.256, 0.292969, -51.5254 )
+
+[node name="Aloevera31" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 5.68781, 0.00114958, -5.68781, -0.00115388, 8.04378, 0.000471868, 5.68781, 0.000482257, 5.68781, 95.1189, 0.292969, -91.1949 )
+
+[node name="Aloevera32" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 1.21017, 0.000984641, -13.8323, -0.00199164, 13.8851, 0.000814156, 13.8323, 0.00191311, 1.21017, 97.6646, 0.292969, -87.0127 )
+
+[node name="Aloevera26" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 8.85407, -0.00103636, 5.1119, 0.00103386, 10.2238, 0.000282026, -5.1119, 0.000272689, 8.85407, -131.243, 0.293457, -55.2178 )
+
+[node name="Aloevera27" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 10.8737, 0.00126968, -6.27791, -0.00127275, 12.5558, 0.000334889, 6.27791, 0.000346356, 10.8737, -140.418, 0.293457, -47.4139 )
+
+[node name="Aloevera28" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 8.58067, 0.000877161, -4.33651, -0.000879048, 9.61422, 0.000205324, 4.33651, 0.000213245, 8.58067, -146.633, 0.276855, -53.0822 )
+
+[node name="Aloevera29" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -145.259, 0.293457, -48.6396 )
+
+[node name="Aloevera30" parent="Decorations" instance=ExtResource( 14 )]
+transform = Transform( 9.92922, 0, 0, 0, 9.92922, 0, 0, 0, 9.92922, -140.467, 0.293457, -51.5752 )
+
 [node name="Boundaries" type="StaticBody" parent="."]
-editor/display_folded = true
 
 [node name="CollisionPolygon" type="CollisionPolygon" parent="Boundaries"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -22.947, 4.75528, 24.2101 )
@@ -1445,18 +1555,16 @@ depth = 10.0
 polygon = PoolVector2Array( 6.26749, 8.50844, 4.54923, 17.2716, -12.8911, 12.2027, -15.1248, -2.66024, -0.43372, -10.822, 8.67305, -10.9938, 16.0616, -11.0797, 17.4167, -4.52743, 13.1226, -3.13816, 15.2635, 4.31746, 13.4069, 9.05189 )
 
 [node name="CollisionPolygon2" type="CollisionPolygon" parent="Boundaries"]
-transform = Transform( 1, 0, 5.30863e-14, 5.30863e-14, 1.62921e-07, -1, 0, 1, 1.62921e-07, -20.1772, 0, 25.2215 )
+transform = Transform( 1, 0, 5.30863e-14, 5.30863e-14, 1.62921e-07, -1, 0, 1, 1.62921e-07, -20.1684, 0.00341797, 25.2463 )
 depth = 10.0
-polygon = PoolVector2Array( 25.8736, -0.167569, 28.1792, -7.78238, 38.6357, -12.006, 36.242, -24.8468, 26.1043, -34.555, 24.9997, -42.8661, 6.0006, -42.8956, -7.41757, -30.9726, -17.5252, -34.9387, -17.5243, -41.4376, -3.57115, -58.2973, 22.0308, -61.4776, 58.1942, -48.265, 56.2198, -19.6558, 73.7185, -14.9598, 87.9356, -14.5576, 89.775, -28.7212, 85.9119, -42.9178, 73.8853, -49.8139, 73.6478, -62.8383, 68.1026, -78.7519, 53.1548, -79.9597, 45.1855, -103.033, 35.3639, -114.492, 41.2641, -124.414, 121.303, -125.677, 119.73, 74.8179, -79.875, 74.9672, -79.4247, -116.396, -67.9217, -108.228, -58.8651, -82.271, -56.2529, -71.9072, -63.6087, -59.1426, -54.5221, -41.4021, -59.9308, -29.9356, -46.7336, -30.5847, -33.2377, -16.6044, -39.8553, -14.3985, -47.8767, -21.8183, -55.8981, -14.3985, -46.0719, 4.05064, -66.9274, 19.8928, -56.5013, 36.2096, -42.9586, 33.6094, -31.6909, 33.0001, -24.6158, 37.1272, -14.8875, 35.6532, -1.83012, 47.1491, 16.4593, 38.5713, 28.5447, 31.5745, 35.8703, 20.8706, 25.2762, 11.9857 )
+polygon = PoolVector2Array( 25.8736, -0.167569, 28.1792, -7.78238, 38.6357, -12.006, 36.242, -24.8468, 26.1043, -34.555, 24.9997, -42.8661, 6.0006, -42.8956, -7.41757, -30.9726, -17.5252, -34.9387, -17.5243, -41.4376, -3.57115, -58.2973, 22.0308, -61.4776, 58.1942, -48.265, 56.2198, -19.6558, 73.7185, -14.9598, 87.9356, -14.5576, 89.775, -28.7212, 85.9119, -42.9178, 73.8853, -49.8139, 73.6478, -62.8383, 68.1026, -78.7519, 53.1548, -79.9597, 45.1855, -103.033, 28.9427, -105.66, 22.7415, -99.2578, 11.0907, -103.682, -11.3259, -93.0637, -28.1383, -104.714, -33.0856, -125.044, 120.125, -125.24, 119.73, 74.8179, -79.875, 74.9672, -79.4247, -116.396, -67.9217, -108.228, -58.8651, -82.271, -56.2529, -71.9072, -63.6087, -59.1426, -54.5221, -41.4021, -59.9308, -29.9356, -46.7336, -30.5847, -33.2377, -16.6044, -39.8553, -14.3985, -47.8767, -21.8183, -55.8981, -14.3985, -46.0719, 4.05064, -66.9274, 19.8928, -56.5013, 36.2096, -42.9586, 33.6094, -31.6909, 33.0001, -24.6158, 37.1272, -14.8875, 35.6532, -1.83012, 47.1491, 16.4593, 38.5713, 28.5447, 31.5745, 35.8703, 20.8706, 25.2762, 11.9857 )
 
 [node name="Stories" type="Spatial" parent="."]
-editor/display_folded = true
 
-[node name="StoryTrigger" parent="Stories" instance=ExtResource( 14 )]
-enable = false
+[node name="StoryTrigger" parent="Stories" instance=ExtResource( 15 )]
 story_number = 0
 
-[node name="StoryTrigger2" parent="Stories" instance=ExtResource( 14 )]
+[node name="StoryTrigger2" parent="Stories" instance=ExtResource( 15 )]
 editor/display_folded = true
 story_number = 1
 
@@ -1470,8 +1578,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_scale = Vector2( 0.8, 0.8 )
 rect_pivot_offset = Vector2( 683, 384 )
-theme = ExtResource( 15 )
-script = ExtResource( 16 )
+theme = ExtResource( 16 )
+script = ExtResource( 17 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1483,7 +1591,7 @@ margin_left = 50.0
 margin_top = 25.0
 margin_right = -50.0
 margin_bottom = -25.0
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Stories/StoryTrigger2/MovementTutorial"]
 editor/display_folded = true
@@ -1497,7 +1605,7 @@ margin_bottom = -100.0
 [node name="Title" type="Label" parent="Stories/StoryTrigger2/MovementTutorial/VBoxContainer"]
 margin_right = 1066.0
 margin_bottom = 72.0
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 19 )
 custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
 text = "Movement"
 align = 1
@@ -1513,7 +1621,7 @@ size_flags_vertical = 3
 margin_right = 528.0
 margin_bottom = 486.0
 size_flags_horizontal = 3
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 stretch_mode = 4
 
 [node name="TextureRect2" type="TextureRect" parent="Stories/StoryTrigger2/MovementTutorial/VBoxContainer/HBoxContainer"]
@@ -1521,14 +1629,14 @@ margin_left = 538.0
 margin_right = 1066.0
 margin_bottom = 486.0
 size_flags_horizontal = 3
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 stretch_mode = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stories/StoryTrigger2/MovementTutorial"]
 anims/hide = SubResource( 5 )
 anims/show = SubResource( 6 )
 
-[node name="StoryTrigger3" parent="Stories" instance=ExtResource( 14 )]
+[node name="StoryTrigger3" parent="Stories" instance=ExtResource( 15 )]
 editor/display_folded = true
 transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 45 )
 story_number = 2
@@ -1542,8 +1650,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_scale = Vector2( 0.8, 0.8 )
 rect_pivot_offset = Vector2( 683, 384 )
-theme = ExtResource( 15 )
-script = ExtResource( 16 )
+theme = ExtResource( 16 )
+script = ExtResource( 17 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1555,7 +1663,7 @@ margin_left = 50.0
 margin_top = 25.0
 margin_right = -50.0
 margin_bottom = -25.0
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Stories/StoryTrigger3/BattleTutorial"]
 anchor_right = 1.0
@@ -1568,7 +1676,7 @@ margin_bottom = -100.0
 [node name="Title" type="Label" parent="Stories/StoryTrigger3/BattleTutorial/VBoxContainer"]
 margin_right = 1066.0
 margin_bottom = 72.0
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 19 )
 custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
 text = "Battle"
 align = 1
@@ -1583,7 +1691,7 @@ size_flags_vertical = 3
 margin_right = 528.0
 margin_bottom = 486.0
 size_flags_horizontal = 3
-texture = ExtResource( 21 )
+texture = ExtResource( 22 )
 expand = true
 stretch_mode = 6
 
@@ -1592,7 +1700,7 @@ margin_left = 538.0
 margin_right = 1066.0
 margin_bottom = 486.0
 size_flags_horizontal = 3
-texture = ExtResource( 22 )
+texture = ExtResource( 23 )
 stretch_mode = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stories/StoryTrigger3/BattleTutorial"]
@@ -1601,24 +1709,24 @@ anims/show = SubResource( 9 )
 
 [node name="Battles" type="Spatial" parent="."]
 
-[node name="BattleTrigger" parent="Battles" instance=ExtResource( 23 )]
+[node name="BattleTrigger" parent="Battles" instance=ExtResource( 24 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36034, 0, 52.8743 )
 
-[node name="DragonMushroom" parent="Battles/BattleTrigger" instance=ExtResource( 24 )]
+[node name="DragonMushroom" parent="Battles/BattleTrigger" instance=ExtResource( 25 )]
 
-[node name="BattleTrigger2" parent="Battles" instance=ExtResource( 23 )]
+[node name="BattleTrigger2" parent="Battles" instance=ExtResource( 24 )]
 transform = Transform( 1.44059, 0, 0, 0, 1.44059, 0, 0, 0, 1.44059, -48.9202, 0, 8.79669 )
 
-[node name="DragonMushroom" parent="Battles/BattleTrigger2" instance=ExtResource( 24 )]
+[node name="DragonMushroom" parent="Battles/BattleTrigger2" instance=ExtResource( 25 )]
 transform = Transform( 0.69416, 0, 0, 0, 0.69416, 0, 0, 0, 0.69416, -1.93577, 0, 0.829618 )
 
-[node name="DragonMushroom2" parent="Battles/BattleTrigger2" instance=ExtResource( 24 )]
+[node name="DragonMushroom2" parent="Battles/BattleTrigger2" instance=ExtResource( 25 )]
 transform = Transform( 0.69416, 0, 0, 0, 0.69416, 0, 0, 0, 0.69416, 2.08248, 0, -2.08248 )
 
-[node name="BattleTrigger3" parent="Battles" instance=ExtResource( 23 )]
+[node name="BattleTrigger3" parent="Battles" instance=ExtResource( 24 )]
 transform = Transform( 2.0128, 0, 0, 0, 2.0128, 0, 0, 0, 2.0128, -56.7715, 0, -68.1455 )
 
-[node name="DragonMushroom2" parent="Battles/BattleTrigger3" instance=ExtResource( 25 )]
+[node name="DragonMushroom2" parent="Battles/BattleTrigger3" instance=ExtResource( 26 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.36536, 0, -2.58039 )
 
 [node name="Sun" type="DirectionalLight" parent="."]
@@ -1631,7 +1739,7 @@ environment = SubResource( 10 )
 
 [node name="EnvironmentSound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform( 1, -1.74846e-07, -3.01876e-11, -3.01876e-11, -0.000345306, 1, -1.74846e-07, -1, -0.000345306, 0, 11, 0 )
-stream = ExtResource( 26 )
+stream = ExtResource( 27 )
 unit_db = 80.0
 max_db = 1.0
 autoplay = true

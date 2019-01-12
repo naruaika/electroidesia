@@ -75,23 +75,26 @@ func process_movement(delta: float) -> void:
 		if $AnimationPlayer.current_animation != "idle":
 			$AnimationPlayer.play("idle")
 
+var target_node
+var attack_point
+
 func attack(enemy_node: Node) -> void:
-	var attack_point = get_node("Skeleton/Weapon").weapon_physical_attack
+	is_attacking = true
 	
 	# Add damage to enemy
-	is_attacking = true
-	$AnimationPlayer.play("slash", -1, 2)
+	attack_point = get_node("Skeleton/Weapon").weapon_physical_attack
 	enemy_node.attacked(attack_point)
+	$AnimationPlayer.play("slash", -1, 2)
+	target_node = enemy_node
 	
-	# Show damage
 	yield($AnimationPlayer, "animation_finished")
-	var damage_text = load("res://game_ui/hud/DamageText.tscn").instance()
-
-	var screen_position = get_node("/root").get_camera().unproject_position(enemy_node.translation)
-	damage_text.text = str(attack_point)
-	damage_text.rect_position = Vector2(screen_position.x, screen_position.y)
-	get_node("/root/HUD").add_child(damage_text)
-	damage_text.show()
 	
 	is_attacking = false
 	emit_signal("attack_ended")
+
+func show_damage() -> void:
+	var damage_text = load("res://game_ui/hud/DamageText.tscn").instance()
+	var screen_position = get_node("/root").get_camera().unproject_position(target_node.global_transform.origin)
+	damage_text.text = str(attack_point)
+	damage_text.rect_position = Vector2(screen_position.x - (damage_text.rect_size.x / 2), screen_position.y - (damage_text.rect_size.y / 2))
+	get_node("/root/HUD").add_child(damage_text)

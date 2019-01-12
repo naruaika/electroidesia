@@ -70,12 +70,16 @@ func start_battle(body: Node) -> void:
 		set_process_input(true)
 
 func combat() -> void:
-	battlers[index_battler].attack(battlers[1])
+	if battlers[index_battler].is_in_group("enemy"):
+		battlers[index_battler].attack(battlers[0])
+	else:
+		battlers[index_battler].attack(battlers[1])
 	
 	if index_battler == 0:
 		yield(battlers[index_battler], "attack_ended")
 	# Check if no more active enemies or players
 	if battlers[1].current_hit_point <= 0:
+		yield(get_tree().create_timer(1.0), "timeout")
 		battlers[1].queue_free()
 		battlers.remove(1)
 	var active_enemy_exist = false
@@ -97,7 +101,7 @@ func change_battler() -> void:
 		index_battler = 0
 	
 	if battlers[index_battler].is_in_group("enemy"):
-		$Timer.start(2.0)
+		$Timer.start(1.0)
 		HUD.attack_menu_hide()
 	else:
 		HUD.attack_menu_show()

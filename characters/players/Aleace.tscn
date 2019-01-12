@@ -718,6 +718,20 @@ tracks/31/keys = {
 } ],
 "times": PoolRealArray( 0.5 )
 }
+tracks/32/type = "method"
+tracks/32/path = NodePath(".")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show_damage"
+} ]
+}
 
 [node name="Aleace" type="KinematicBody" groups=[
 "player",
