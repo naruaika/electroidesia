@@ -1,7 +1,9 @@
 extends event
 
-var index_battler = 0
-var battlers = []
+var index_battler: int = 0
+var battlers: Array = []
+var target: Node
+var battler_selector: Node
 
 onready var camera = get_node("/root").get_camera()
 
@@ -9,15 +11,19 @@ func _ready() -> void:
 	set_process_input(false)
 
 func _input(event: InputEvent) -> void:
-	if battlers[index_battler].is_in_group("player"):
-		if Input.is_action_just_pressed("ui_accept"):
-			match(HUD.get_node("BattlePanel/HBoxContainer/Menu").get_focus_owner().get_name()):
-				"AttackButton":
-					combat()
-				"TechButton":
-					pass
-				"ItemButton":
-					pass
+	if Input.is_action_just_pressed("movement_right"):
+		change_target(1)
+	elif Input.is_action_just_pressed("movement_left"):
+		change_target(-1)
+	elif Input.is_action_just_pressed("ui_accept"):
+		set_process_input(false)
+		match(HUD.get_node("BattlePanel/HBoxContainer/Menu").get_focus_owner().get_name()):
+			"AttackButton":
+				combat()
+			"TechButton":
+				pass
+			"ItemButton":
+				pass
 
 func start_battle(body: Node) -> void:
 	if body.is_in_group("player"):
@@ -71,20 +77,26 @@ func start_battle(body: Node) -> void:
 		camera.translation.y = middle_point.y + 55
 		
 		set_process_input(true)
+		
+		show_target_selector()
 
 func combat() -> void:
-	if battlers[index_battler].is_in_group("enemy"):
-		battlers[index_battler].attack(battlers[0])
+	if battlers[index_battler].is_in_group("player"):
+		battlers[index_battler].attack(target)
+		battler_selector.hide()
 	else:
-		battlers[index_battler].attack(battlers[1])
+		battlers[index_battler].attack(battlers[0])
 	
-	if index_battler == 0:
+	# FIXME: "attack_ended" signal on enemy node is not working
+	if battlers[index_battler].is_in_group("player"):
 		yield(battlers[index_battler], "attack_ended")
 	# Check if no more active enemies or players
-	if battlers[1].hit_point[0] <= 0:
-		yield(get_tree().create_timer(1.0), "timeout")
-		battlers[1].queue_free()
-		battlers.remove(1)
+	if target.hit_point[0] <= 0:
+		# TODO: change this with disappear/exit animation
+		yield(get_tree().create_timer(0.5), "timeout")
+		target.queue_free()
+		battlers.erase(target)
+		change_target()
 	var active_enemy_exist = false
 	for battler in battlers:
 		if battler.is_in_group("enemy"):
@@ -93,6 +105,7 @@ func combat() -> void:
 	if active_enemy_exist:
 		change_battler()
 	else:
+		# End battle
 		GameManager.is_interrupted = false
 		battlers[0].get_node("Skeleton/Weapon").visible = false
 		HUD.battle_hide()
@@ -103,8 +116,48 @@ func change_battler() -> void:
 	if index_battler >= battlers.size():
 		index_battler = 0
 	
-	if battlers[index_battler].is_in_group("enemy"):
+	if battlers[index_battler].is_in_group("player"):
+		HUD.attack_menu_show()
+		battler_selector.show()
+		set_process_input(true)
+	else:
 		$Timer.start(1.0)
 		HUD.attack_menu_hide()
-	else:
-		HUD.attack_menu_show()
+
+func show_target_selector() -> void:
+	# Get first enemy
+	for battler in battlers:
+		if battler.is_in_group("enemy"):
+			target = battler
+			break
+	
+	# Instance battler selector for attack target
+	battler_selector = load("res://assets/3d/BattlerSelector.tscn").instance()
+	battler_selector.global_transform.origin = to_local(target.get_node("AboveHead").global_transform.origin)
+	add_child(battler_selector)
+
+func change_target(direction: int = 0) -> void:
+	# Get enemy list from battlers
+	var enemies = []
+	for battler in battlers:
+		if battler.is_in_group("enemy"):
+			enemies.append(battler)
+	
+	if enemies.size() > 0:
+		# Get index of current target
+		var index_target = 0
+		for enemy in enemies:
+			if enemy == target:
+				break
+			else:
+				index_target += 1
+		
+		# Get next target
+		index_target += direction
+		if index_target < 0:
+			index_target = enemies.size() - 1
+		else:
+			index_target %= enemies.size()
+		target = enemies[index_target]
+		
+		battler_selector.global_transform.origin = target.get_node("AboveHead").global_transform.origin

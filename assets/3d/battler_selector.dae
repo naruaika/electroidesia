@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Naufan Rusyda Faikar</author>
+      <authoring_tool>Blender 2.80.39 commit date:2019-01-02, commit time:18:59, hash:11f2c65128dc</authoring_tool>
+    </contributor>
+    <created>2019-01-12T21:01:44</created>
+    <modified>2019-01-12T21:01:44</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="pallete-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0 0 0 1</color>
+            </specular>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images/>
+  <library_materials>
+    <material id="pallete-material" name="pallete">
+      <instance_effect url="#pallete-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Cone-mesh" name="Cone">
+      <mesh>
+        <source id="Cone-mesh-positions">
+          <float_array id="Cone-mesh-positions-array" count="12">0 0.4999996 -1 0.4330127 -0.2500004 -1 -0.4330127 -0.2500004 -1 0 -4.01339e-7 0</float_array>
+          <technique_common>
+            <accessor source="#Cone-mesh-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cone-mesh-normals">
+          <float_array id="Cone-mesh-normals-array" count="12">0.840168 0.4850712 0.2425356 0 -0.9701425 0.2425356 -0.840168 0.4850713 0.2425356 1.83535e-7 0 -1</float_array>
+          <technique_common>
+            <accessor source="#Cone-mesh-normals-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cone-mesh-map-0">
+          <float_array id="Cone-mesh-map-0-array" count="24">0.07383006 0.9887099 0.1137099 0.9688301 0.1137099 0.9887099 0.1136699 0.9687901 0.07379001 0.9886699 0.07379001 0.9687901 0.07383006 0.96871 0.1137099 0.9488301 0.1137099 0.96871 0.1136699 0.9487901 0.07379001 0.9686699 0.07379001 0.9487901</float_array>
+          <technique_common>
+            <accessor source="#Cone-mesh-map-0-array" count="12" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Cone-mesh-vertices">
+          <input semantic="POSITION" source="#Cone-mesh-positions"/>
+        </vertices>
+        <polylist material="pallete-material" count="4">
+          <input semantic="VERTEX" source="#Cone-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cone-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Cone-mesh-map-0" offset="2" set="1"/>
+          <vcount>3 3 3 3 </vcount>
+          <p>0 0 0 3 0 1 1 0 2 1 1 3 3 1 4 2 1 5 2 2 6 3 2 7 0 2 8 0 3 9 1 3 10 2 3 11</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_animations>
+    <animation id="action_container-Cone" name="Cone">
+      <animation id="Cone_ConeAction_transform" name="Cone">
+        <source id="Cone_ConeAction_transform-input">
+          <float_array id="Cone_ConeAction_transform-input-array" count="21">0 0.04166662 0.08333331 0.125 0.1666666 0.2083333 0.25 0.2916666 0.3333333 0.375 0.4166666 0.4583333 0.5 0.5416667 0.5833333 0.625 0.6666667 0.7083333 0.75 0.7916667 0.8333333</float_array>
+          <technique_common>
+            <accessor source="#Cone_ConeAction_transform-input-array" count="21" stride="1">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cone_ConeAction_transform-output">
+          <float_array id="Cone_ConeAction_transform-output-array" count="336">1 0 0 0 0 -1 3.25841e-7 0 0 -3.25841e-7 -1 0 0 0 0 1 0.9510565 -0.309017 1.00691e-7 0 -0.309017 -0.9510565 3.09894e-7 0 0 -3.25841e-7 -1 0 0 0 0 1 0.8090169 -0.5877853 1.91525e-7 0 -0.5877853 -0.8090169 2.63611e-7 0 0 -3.25841e-7 -1 0 0 0 0 1 0.5877852 -0.8090171 2.63611e-7 0 -0.8090171 -0.5877852 1.91525e-7 0 0 -3.25841e-7 -1 0 0 0 0 1 0.3090169 -0.9510565 3.09894e-7 0 -0.9510565 -0.3090169 1.0069e-7 0 0 -3.25841e-7 -1 0 0 0 0 1 -1.62921e-7 -1 3.25841e-7 0 -1 1.62921e-7 -5.30863e-14 0 0 -3.25841e-7 -1 0 0 0 0 1 -0.3090172 -0.9510565 5.36643e-7 0 -0.9510565 0.3090172 -1.74366e-7 0 0 -5.6426e-7 -1 0 0 0 0 1 -0.5877854 -0.8090169 4.56496e-7 0 -0.8090169 0.5877854 -3.31664e-7 0 0 -5.6426e-7 -1 0 0 0 0 1 -0.8090172 -0.587785 3.31664e-7 0 -0.587785 0.8090172 -4.56496e-7 0 0 -5.6426e-7 -1 0 0 0 0 1 -0.9510567 -0.3090166 1.74366e-7 0 -0.3090166 0.9510567 -5.36643e-7 0 0 -5.6426e-7 -1 0 0 0 0 1 -1 3.25841e-7 -1.83859e-13 0 3.25841e-7 1 -5.6426e-7 0 0 -5.6426e-7 -1 0 0 0 0 1 -0.9510564 0.3090174 -1.74366e-7 0 0.3090174 0.9510564 -5.36643e-7 0 0 -5.6426e-7 -1 0 0 0 0 1 -0.8090168 0.5877855 -3.31664e-7 0 0.5877855 0.8090168 -4.56496e-7 0 0 -5.6426e-7 -1 0 0 0 0 1 -0.5877851 0.8090171 -4.56496e-7 0 0.8090171 0.5877851 -3.31664e-7 0 0 -5.6426e-7 -1 0 0 0 0 1 -0.3090166 0.9510566 -5.36643e-7 0 0.9510566 0.3090166 -1.74366e-7 0 0 -5.6426e-7 -1 0 0 0 0 1 4.88762e-7 1 -8.02679e-7 0 1 -4.88762e-7 3.92319e-13 0 0 -8.02679e-7 -1 0 0 0 0 1 0.3090176 0.9510563 -7.63393e-7 0 0.9510563 -0.3090176 2.48042e-7 0 0 -8.02679e-7 -1 0 0 0 0 1 0.5877855 0.8090168 -6.4938e-7 0 0.8090168 -0.5877855 4.71803e-7 0 0 -8.02679e-7 -1 0 0 0 0 1 0.8090172 0.5877849 -4.71802e-7 0 0.5877849 -0.8090172 6.49381e-7 0 0 -8.02679e-7 -1 0 0 0 0 1 0.9510567 0.3090165 -2.48041e-7 0 0.3090165 -0.9510567 7.63393e-7 0 0 -8.02679e-7 -1 0 0 0 0 1 1 -6.51683e-7 5.23092e-13 0 -6.51683e-7 -1 8.02679e-7 0 0 -8.02679e-7 -1 0 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Cone_ConeAction_transform-output-array" count="21" stride="16">
+              <param name="TRANSFORM" type="float4x4"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cone_ConeAction_transform-interpolation">
+          <Name_array id="Cone_ConeAction_transform-interpolation-array" count="21">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+          <technique_common>
+            <accessor source="#Cone_ConeAction_transform-interpolation-array" count="21" stride="1">
+              <param name="INTERPOLATION" type="name"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="Cone_ConeAction_transform-sampler">
+          <input semantic="INPUT" source="#Cone_ConeAction_transform-input"/>
+          <input semantic="OUTPUT" source="#Cone_ConeAction_transform-output"/>
+          <input semantic="INTERPOLATION" source="#Cone_ConeAction_transform-interpolation"/>
+        </sampler>
+        <channel source="#Cone_ConeAction_transform-sampler" target="Cone/transform"/>
+      </animation>
+    </animation>
+  </library_animations>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Cone" name="Cone" type="NODE">
+        <matrix sid="transform">1 -6.51683e-7 5.23092e-13 0 -6.51683e-7 -1 8.02679e-7 0 0 -8.02679e-7 -1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Cone-mesh" name="Cone">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="pallete-material" target="#pallete-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
