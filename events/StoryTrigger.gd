@@ -11,7 +11,6 @@ export var story_number: int = -1
 export var next_story_number: int = -1
 
 var animation_story
-var has_animation: bool = false
 
 func _ready() -> void:
 	set_process(false)

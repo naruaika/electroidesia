@@ -8,8 +8,9 @@ func _ready() -> void:
 	HUD.visible = true
 
 func _physics_process(delta: float) -> void:
-	# Make camera look at active player
-	reset_camera()
+	if not GameManager.is_interrupted:
+		# Make camera look at active player
+		reset_camera()
 
 func reset_camera() -> void:
 	# Check if player exists in tree
@@ -18,7 +19,7 @@ func reset_camera() -> void:
 	var players = get_tree().get_nodes_in_group("player")
 	if players:
 		# Get first player in group
-		var player_location = players[0].translation
+		var player_location = players[0].global_transform.origin
 		
 		# Get active camera
 		var camera = get_node("/root").get_camera()

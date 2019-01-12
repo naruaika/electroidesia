@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://characters/enemies/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/3d/monsters/dragon_mushroom/dragon_mushroom.material" type="Material" id=2]
-[ext_resource path="res://events/BattleTrigger.tscn" type="PackedScene" id=3]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -29,9 +28,10 @@ surfaces/0 = {
 ]]
 script = ExtResource( 1 )
 enemy_name = "Dragon Mushroom"
-enemy_hit_point = 100.0
-enemy_attack = 20.0
-enemy_defense = 5.0
+hit_point = 15.0
+physical_attack = 11.0
+physical_defense = 5.0
+level = 1
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
@@ -40,8 +40,6 @@ shape = SubResource( 1 )
 [node name="DragonMushroom" type="MeshInstance" parent="."]
 mesh = SubResource( 2 )
 material/0 = null
-
-[node name="BattleArea" parent="." instance=ExtResource( 3 )]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

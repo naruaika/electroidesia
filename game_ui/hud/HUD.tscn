@@ -240,7 +240,6 @@ __meta__ = {
 }
 
 [node name="BattlePanel" type="Panel" parent="."]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -267,12 +266,16 @@ theme = ExtResource( 2 )
 alignment = 2
 
 [node name="AttackButton" parent="BattlePanel/HBoxContainer/Menu" instance=ExtResource( 3 )]
+margin_top = 118.0
+margin_bottom = 167.0
 
 [node name="TechButton" parent="BattlePanel/HBoxContainer/Menu" instance=ExtResource( 4 )]
+visible = false
 margin_top = 59.0
 margin_bottom = 108.0
 
 [node name="ItemButton" parent="BattlePanel/HBoxContainer/Menu" instance=ExtResource( 5 )]
+visible = false
 margin_top = 118.0
 margin_bottom = 167.0
 
@@ -375,6 +378,7 @@ margin_left = -300.0
 margin_top = -200.0
 margin_right = 300.0
 margin_bottom = -50.0
+rect_scale = Vector2( 0, 0 )
 rect_pivot_offset = Vector2( 300, 300 )
 theme = ExtResource( 2 )
 

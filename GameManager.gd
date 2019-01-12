@@ -52,9 +52,6 @@ func goto_scene(path: String) -> void:
 """
 func new_game() -> void:
 	goto_scene("res://maps/ElectroidesiaForest.tscn")
-	
-	# Synchronise story data with custom player name
-	story_data = parse_json(to_json(story_data).replace("Aleace", get_player_name()))
 
 func load_game() -> void:
 	pass

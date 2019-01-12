@@ -1,5 +1,7 @@
 extends KinematicBody
 
+signal attack_ended()
+
 export var character_name: String = ""
 export var hit_point: float = 0.0
 export var mana_point: float = 0.0
@@ -84,12 +86,12 @@ func attack(enemy_node: Node) -> void:
 	# Show damage
 	yield($AnimationPlayer, "animation_finished")
 	var damage_text = load("res://game_ui/hud/DamageText.tscn").instance()
+
 	var screen_position = get_node("/root").get_camera().unproject_position(enemy_node.translation)
 	damage_text.text = str(attack_point)
 	damage_text.rect_position = Vector2(screen_position.x, screen_position.y)
 	get_node("/root/HUD").add_child(damage_text)
 	damage_text.show()
-	print("serang")
-
-func on_attack_finished() -> void:
+	
 	is_attacking = false
+	emit_signal("attack_ended")

@@ -5,7 +5,7 @@ var attack_menu_focus = false
 func set_message(message: String, speaker: String = "") -> void:
 	$MessagePanel/ScrollContainer/Message.text = message
 	$MessagePanel/ScrollContainer/Message.visible_characters = 0
-	$MessagePanel/Speaker.text = speaker
+	$MessagePanel/Speaker.text = GameManager.get_player_name() if speaker == "Aleace" else speaker
 	$MessagePanel/Photo.texture = load("res://assets/gui/hud/" + speaker + ".png")
 
 func set_description(description: String) -> void:
@@ -19,17 +19,19 @@ func battle_show() -> void:
 func battle_hide() -> void:
 	$AnimationPlayer.play("battle_hide")
 
-func toggle_attack_menu() -> void:
+func attack_menu_show() -> void:
 	var menu = $BattlePanel/HBoxContainer/Menu
-	if attack_menu_focus:
+	menu.get_child(0).grab_focus()
+	attack_menu_focus = true
+	$AnimationPlayer.play("attack_enable")
+
+func attack_menu_hide() -> void:
+	var menu = $BattlePanel/HBoxContainer/Menu
+	if attack_menu_focus != false:
 		for button in $BattlePanel/HBoxContainer/Menu.get_children():
 			button.release_focus()
 		attack_menu_focus = false
 		$AnimationPlayer.play("attack_disable")
-	else:
-		menu.get_child(0).grab_focus()
-		attack_menu_focus = true
-		$AnimationPlayer.play("attack_enable")
 
 func set_player_statistics(hp: Array, mp: Array) -> void:
 	var container = $BattlePanel/HBoxContainer/Container/PLayerList/PlayerStatistics/VBoxContainer/
