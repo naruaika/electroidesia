@@ -1,9 +1,5 @@
 extends Node
 
-"""
-	Handle game data
-"""
-
 func _ready() -> void:
 	var root = get_node("/root")
 	current_scene = root.get_child(root.get_child_count() - 1)
@@ -28,8 +24,8 @@ func _ready() -> void:
 	
 	# Load world objects data
 	file = File.new()
-	file.open(_world_objects_path, File.READ)
-	world_objects_data = parse_json(file.get_as_text())
+	file.open(_knowledges_path, File.READ)
+	knowledges_data = parse_json(file.get_as_text())
 	file.close()
 
 func _input(event: InputEvent) -> void:
@@ -66,6 +62,9 @@ func goto_scene(path: String) -> void:
 """
 	Handle first game appearance
 """
+func goto_mainmenu() -> void:
+	goto_scene("res://game_ui/title_screen/TitleScreen.tscn")
+
 func new_game() -> void:
 	goto_scene("res://maps/ElectroidesiaForest.tscn")
 
@@ -80,17 +79,21 @@ var _user_data = {
 	"backpack" : [],
 	"story_number" : 0.0
 }
+var user_setting = {
+	"background_music" : true
+}
 var characters_stats_data
 var story_data
 var weapons_stats_data
-var world_objects_data
+var knowledges_data
 
 var _characters_stats_path = "res://game_data/characters_stats.json"
 var _story_path = "res://game_data/story.json"
 var _weapons_stats_path = "res://game_data/weapons_stats.json"
-var _world_objects_path = "res://game_data/world_objects.json"
+var _knowledges_path = "res://game_data/knowledges.json"
 
 var is_interrupted = false
+var is_locked = false
 
 func set_player_name(new_name: String) -> void:
 	_user_data["player_name"] = new_name

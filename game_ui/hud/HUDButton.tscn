@@ -33,10 +33,6 @@ text = "Button"
 align = 1
 valign = 1
 
-[node name="ButtonFocus" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-pitch_scale = 2.0
-
 [node name="ButtonPress" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 pitch_scale = 2.0

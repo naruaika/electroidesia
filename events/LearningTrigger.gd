@@ -1,7 +1,6 @@
-extends Area
+extends Spatial
 
-export(int) var object_no = 0
-export(Array) var dropping_goods = []
+export var knowledge_name: String = ""
 
 var is_learning = false
 
@@ -17,23 +16,22 @@ func _on_LearningTrigger_body_exited(body: Node) -> void:
 		if not is_learning:
 			set_process_input(false)
 
-var scroll_height = 17
-
 func _input(event: InputEvent) -> void:
 	var container = HUD.get_node("InvestigationPanel/ScrollContainer")
+	var scroll_height = 31
 	
-	if event.is_action_pressed("ui_select"):
+	if event.is_action_pressed("ui_accept"):
 		if is_learning:
 			is_learning = false
 			GameManager.is_interrupted = false
 			HUD.investigation_hide()
-		else:
+		elif not GameManager.is_interrupted:
 			is_learning = true
 			GameManager.is_interrupted = true
-			HUD.investigation_show()
 			container.scroll_vertical = 0
-			HUD.set_description(GameManager.objects_data[object_no][1])
-	elif event.is_action_pressed("ui_down"):
+			HUD.set_description(GameManager.knowledges_data[knowledge_name])
+			HUD.investigation_show()
+	elif Input.is_action_pressed("movement_backward"):
 		container.scroll_vertical += scroll_height
-	elif event.is_action_pressed("ui_up"):
+	elif Input.is_action_pressed("movement_forward"):
 		container.scroll_vertical -= scroll_height

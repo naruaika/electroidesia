@@ -20,6 +20,12 @@ func _ready() -> void:
 			gained_experience_point += child.hit_point[1]
 			gained_experience_point += child.attack_point[1]
 
+func _process(delta: float) -> void:
+	if GameManager.is_locked:
+		HUD.battle_hide()
+		GameManager.get_node("BGM/Battle").stop()
+		queue_free()
+
 func _input(event: InputEvent) -> void:
 	if is_leveling_up:
 		if Input.is_action_just_pressed("ui_accept"):
@@ -31,7 +37,7 @@ func _input(event: InputEvent) -> void:
 			
 			# Delete this node
 			queue_free()
-	elif not is_attacking:
+	elif battlers[index_battler].is_in_group("player") and not is_attacking:
 		if Input.is_action_just_pressed("movement_right"):
 			change_target(1)
 		elif Input.is_action_just_pressed("movement_left"):
@@ -101,7 +107,8 @@ func start_battle(body: Node) -> void:
 		
 		show_target_selector()
 		
-		GameManager.get_node("BGM/Battle").play()
+		if GameManager.user_setting["background_music"]:
+			GameManager.get_node("BGM/Battle").play()
 
 func combat() -> void:
 	if battlers[index_battler].is_in_group("player"):

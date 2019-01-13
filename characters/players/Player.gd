@@ -39,6 +39,9 @@ func _ready() -> void:
 	# FIXME: handle retention
 	hit_point[0] = hit_point[1]
 	mana_point[0] = mana_point[1]
+	
+	# FIXME: remove this hardcoded line
+	HUD.set_player_statistics(hit_point, mana_point)
 
 func _physics_process(delta: float) -> void:
 	if not GameManager.is_interrupted:
@@ -114,6 +117,10 @@ func attack(enemy_node: Node) -> void:
 
 func attacked(damage_point: float) -> void:
 	hit_point[0] -= damage_point
+	
+	if hit_point[0] <= 0:
+		GameManager.get_node("AnimationPlayer").play("game_over_show")
+		GameManager.is_locked = true
 	
 	HUD.set_player_statistics(hit_point, mana_point)
 

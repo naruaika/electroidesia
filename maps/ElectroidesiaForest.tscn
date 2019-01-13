@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://characters/players/Aleace.tscn" type="PackedScene" id=2]
@@ -14,19 +14,28 @@
 [ext_resource path="res://assets/3d/world/Latite3.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/3d/world/Tree.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/3d/world/Aloevera.tscn" type="PackedScene" id=14]
-[ext_resource path="res://events/StoryTrigger.tscn" type="PackedScene" id=15]
-[ext_resource path="res://assets/gui/default_theme/default_theme.tres" type="Theme" id=16]
-[ext_resource path="res://game_ui/tutorials/Tutorial.gd" type="Script" id=17]
-[ext_resource path="res://assets/gui/default_theme/fullscreen_panel.png" type="Texture" id=18]
-[ext_resource path="res://assets/gui/default_theme/font_amble_regular_60.tres" type="DynamicFont" id=19]
-[ext_resource path="res://assets/gui/tutorials/movement_picture.png" type="Texture" id=20]
-[ext_resource path="res://assets/gui/tutorials/movement_keys.png" type="Texture" id=21]
-[ext_resource path="res://assets/gui/tutorials/battle_picture.png" type="Texture" id=22]
-[ext_resource path="res://assets/gui/tutorials/battle_keys.png" type="Texture" id=23]
-[ext_resource path="res://events/BattleTrigger.tscn" type="PackedScene" id=24]
-[ext_resource path="res://characters/enemies/DragonMushroom.tscn" type="PackedScene" id=25]
-[ext_resource path="res://characters/enemies/DragonMushroom2.tscn" type="PackedScene" id=26]
-[ext_resource path="res://maps/forest.ogg" type="AudioStream" id=27]
+[ext_resource path="res://assets/3d/world/Manchineel.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/3d/world/Pay.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/3d/world/Portal.tscn" type="PackedScene" id=17]
+[ext_resource path="res://events/StoryTrigger.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/gui/default_theme/default_theme.tres" type="Theme" id=19]
+[ext_resource path="res://game_ui/tutorials/Tutorial.gd" type="Script" id=20]
+[ext_resource path="res://assets/gui/default_theme/fullscreen_panel.png" type="Texture" id=21]
+[ext_resource path="res://assets/gui/default_theme/font_amble_regular_60.tres" type="DynamicFont" id=22]
+[ext_resource path="res://assets/gui/tutorials/movement_picture.png" type="Texture" id=23]
+[ext_resource path="res://assets/gui/tutorials/movement_keys.png" type="Texture" id=24]
+[ext_resource path="res://assets/gui/tutorials/battle_picture.png" type="Texture" id=25]
+[ext_resource path="res://assets/gui/tutorials/battle_keys.png" type="Texture" id=26]
+[ext_resource path="res://assets/gui/tutorials/learning_screen.png" type="Texture" id=27]
+[ext_resource path="res://events/BattleTrigger.tscn" type="PackedScene" id=28]
+[ext_resource path="res://characters/enemies/DragonMushroom.tscn" type="PackedScene" id=29]
+[ext_resource path="res://characters/enemies/DragonMushroom2.tscn" type="PackedScene" id=30]
+[ext_resource path="res://maps/ManchineelToxicityArea.gd" type="Script" id=31]
+[ext_resource path="res://assets/3d/world/WeatherVane.tscn" type="PackedScene" id=32]
+[ext_resource path="res://assets/3d/world/SignPost.tscn" type="PackedScene" id=33]
+[ext_resource path="res://maps/forest.ogg" type="AudioStream" id=34]
+[ext_resource path="res://maps/ToBeContinue.gd" type="Script" id=35]
+[ext_resource path="res://assets/gui/default_theme/font_amble_regular_30.tres" type="DynamicFont" id=36]
 
 [sub_resource type="Animation" id=1]
 
@@ -69,7 +78,7 @@ points = PoolVector3Array( 1, 0, 1, -1, 0, -1, -1, 0, 1, 1, 0, -1 )
 [sub_resource type="Animation" id=4]
 
 resource_name = "before"
-length = 2.0
+length = 2.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("../../Mathea:translation")
 tracks/0/interp = 2
@@ -99,10 +108,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 180, 0 ) ]
+"values": [ Vector3( 0, 180, 0 ), Vector3( 0, 155, 0 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -292,6 +301,161 @@ tracks/1/keys = {
 "values": [ Vector2( 0.8, 0.8 ), Vector2( 1.05, 0.9 ), Vector2( 1, 1.1 ), Vector2( 1, 1 ), Vector2( 1.05, 0.9 ), Vector2( 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=11]
+
+resource_name = "before"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../../Mathea:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -8.6009, 0, 44.6305 ), Vector3( -38.5815, 0, 50.1903 ), Vector3( -57.7515, 0, -7.79914 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Mathea:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 2, 2.1, 6, 6.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 30, 0 ), Vector3( 0, -55, 0 ), Vector3( 0, -55, 0 ), Vector3( 0, -160, 0 ), Vector3( 0, -160, 0 ), Vector3( 0, -330, 0 ) ]
+}
+tracks/2/type = "animation"
+tracks/2/path = NodePath("../../Mathea/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": PoolStringArray( "run", "idle" ),
+"times": PoolRealArray( 0, 6 )
+}
+
+[sub_resource type="Animation" id=12]
+
+resource_name = "hide"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.00392157 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.8, 0.8 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=13]
+
+resource_name = "show"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.00392157 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 1.05, 0.9 ), Vector2( 1, 1.1 ), Vector2( 1, 1 ), Vector2( 1.05, 0.9 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+
+resource_name = "before"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../../Mathea:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -330, 0 ), Vector3( 0, 180, 0 ), Vector3( 0, 180, 0 ), Vector3( 0, 225, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Mathea:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -57.7515, 0, -7.79914 ), Vector3( -55.7059, 0, -79.0961 ) ]
+}
+tracks/2/type = "animation"
+tracks/2/path = NodePath("../../Mathea/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": PoolStringArray( "run", "idle" ),
+"times": PoolRealArray( 0, 5 )
+}
+
+[sub_resource type="BoxShape" id=17]
+
+
 [sub_resource type="Environment" id=10]
 
 background_mode = 1
@@ -301,9 +465,59 @@ glow_intensity = 2.0
 glow_bloom = 0.02
 glow_hdr_threshold = 1.2
 adjustment_enabled = true
+adjustment_brightness = 1.02
+
+[sub_resource type="BoxShape" id=15]
+
+
+[sub_resource type="Animation" id=16]
+
+resource_name = "fade_in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "goto_titlescreen"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Panel/CenterContainer/Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="ElectroidesiaForest" type="Spatial"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Camera" type="Camera" parent="."]
 editor/display_folded = true
@@ -330,7 +544,7 @@ character_name = null
 
 [node name="Mathea" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
-transform = Transform( -1, 0, -5.6426e-07, 0, 1, 0, 5.6426e-07, 0, -1, -3.15584, 0, 25.9168 )
+transform = Transform( -0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, -0.984808, -3.15584, 0, 25.9168 )
 
 [node name="Skeleton" parent="Mathea" index="1"]
 editor/display_folded = true
@@ -363,7 +577,10 @@ __meta__ = {
 
 [node name="Decorations" type="Spatial" parent="."]
 editor/display_folded = true
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.1688, -2.2158 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Electroidesia" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 1.68539, 0, 0, 0, 1.6854, 0, 0, 0, 1.6854, 12.9305, -1.00477, -19.7444 )
@@ -390,7 +607,7 @@ transform = Transform( 1.68539, 0, 0, 0, 1.6854, 0, 0, 0, 1.6854, 51.7201, -1.00
 transform = Transform( 0.9667, -6.03479e-08, -1.3806, 6.03475e-08, 1.6854, -3.14151e-08, 1.38059, -3.14151e-08, 0.966706, -162.917, -1.00477, 7.95315 )
 
 [node name="Electroidesia186" parent="Decorations" instance=ExtResource( 6 )]
-transform = Transform( -1.00556, -1.64042e-07, -3.75284, 1.64041e-07, 3.88523, -2.13784e-07, 3.75282, -2.13784e-07, -1.00557, -181.952, -1.00477, 120.083 )
+transform = Transform( -1.00556, -1.64042e-07, -3.75284, 1.64041e-07, 3.88523, -2.13784e-07, 3.75282, -2.13784e-07, -1.00557, -185.245, -1.00477, 127.306 )
 
 [node name="Electroidesia193" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -1.00556, -1.64042e-07, -3.75284, 1.64041e-07, 3.88523, -2.13784e-07, 3.75282, -2.13784e-07, -1.00557, -146.666, -1.00477, 179.712 )
@@ -401,14 +618,8 @@ transform = Transform( -1.00556, -1.64042e-07, -3.75284, 1.64041e-07, 3.88523, -
 [node name="Electroidesia194" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 1.00556, -0.00504741, -3.75284, 1.09675e-06, 3.88523, -0.00522516, 3.75282, 0.00135131, 1.00556, -76.2957, -1.00477, 186.363 )
 
-[node name="Electroidesia195" parent="Decorations" instance=ExtResource( 6 )]
-transform = Transform( -3.75281, 0.0100922, 1.00557, 0.0123611, 3.8852, 0.00713943, -1.00554, 0.0100954, -3.75284, -194.413, -1.00477, 197.548 )
-
 [node name="Electroidesia52" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -1.56273, -9.75559e-08, -2.23182, 9.75553e-08, 2.72455, -1.87403e-07, 2.2318, -1.87403e-07, -1.56274, 46.1218, -1.00477, 34.3796 )
-
-[node name="Electroidesia118" parent="Decorations" instance=ExtResource( 6 )]
-transform = Transform( -2.58524, -1.61388e-07, -3.69212, 1.61387e-07, 4.50725, -3.10023e-07, 3.6921, -3.10023e-07, -2.58525, 105.317, -1.00477, 126.399 )
 
 [node name="Electroidesia146" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 1.65088, 1.83327e-07, 4.19403, -1.83326e-07, 4.50725, -1.24855e-07, -4.194, -1.24855e-07, 1.65089, 155.12, -1.00477, -123.383 )
@@ -443,9 +654,6 @@ transform = Transform( 2.68314, -2.08982e-07, 0.473113, 3.01771e-07, 2.72455, -5
 [node name="Electroidesia181" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 1.92653, -6.70122e-07, -1.92655, 4.06662e-07, 2.72455, -5.41031e-07, 1.92653, 9.50115e-08, 1.92655, -150.619, -1.00477, 46.6836 )
 
-[node name="Electroidesia147" parent="Decorations" instance=ExtResource( 6 )]
-transform = Transform( -0.705161, -1.15036e-07, -2.63171, 1.15035e-07, 2.72455, -1.49917e-07, 2.63169, -1.49917e-07, -0.705165, 139.355, -1.00477, -179.105 )
-
 [node name="Electroidesia121" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -2.70267, 2.0831e-08, 0.476557, -2.08308e-08, 2.74438, -2.38099e-07, -0.476554, -2.38099e-07, -2.70269, 101.766, -1.00477, 34.3796 )
 
@@ -464,26 +672,44 @@ transform = Transform( 0.592948, -1.73137e-07, -3.96091, 1.73136e-07, 4.00505, -
 [node name="Electroidesia11" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 1.68539, 0, 0, 0, 1.6854, 0, 0, 0, 1.6854, -181.649, -1.00477, 7.27946 )
 
-[node name="Electroidesia183" parent="Decorations" instance=ExtResource( 6 )]
-transform = Transform( 1.08335, -5.64354e-08, -1.29109, 5.64351e-08, 1.6854, -2.63163e-08, 1.29108, -2.63163e-08, 1.08335, -193.477, -1.00477, 105.3 )
-
 [node name="Electroidesia204" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 2.22581, 0, 0, 0, 2.22582, 0, 0, 0, 2.22582, -69.156, -1.00477, -127.188 )
 
 [node name="Electroidesia208" parent="Decorations" instance=ExtResource( 6 )]
-transform = Transform( 2.22581, 0, 0, 0, 2.22582, 0, 0, 0, 2.22582, -186.707, -1.00477, -165.968 )
+transform = Transform( 2.22581, 0, 0, 0, 2.22582, 0, 0, 0, 2.22582, -100.311, -1.12049, -189.496 )
+
+[node name="Electroidesia216" parent="Decorations" instance=ExtResource( 6 )]
+transform = Transform( -2.19199, 7.52562e-08, -0.38651, -7.52559e-08, 2.22582, 8.60182e-07, 0.386508, 8.60182e-07, -2.192, -108.306, -1.12049, -200.455 )
+
+[node name="Electroidesia214" parent="Decorations" instance=ExtResource( 6 )]
+transform = Transform( 0.565571, -0.00757968, 1.55388, 0.00758711, 1.6536, 0.00530457, -1.55387, 0.00531523, 0.565599, -115.755, -1.12049, -194.348 )
+
+[node name="Electroidesia215" parent="Decorations" instance=ExtResource( 6 )]
+transform = Transform( -0.287151, 0.0065416, -1.62849, 0.00758648, 1.6536, 0.00530473, 1.62848, -0.00655003, -0.287178, -92.2542, -1.12049, -198.359 )
 
 [node name="Electroidesia209" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 0.908054, 1.48134e-07, 3.38892, -1.48134e-07, 3.50847, -1.13667e-07, -3.3889, -1.13667e-07, 0.908058, -205.583, -1.00477, -176.573 )
 
+[node name="Electroidesia211" parent="Decorations" instance=ExtResource( 6 )]
+transform = Transform( 0.908054, 1.48134e-07, 3.38892, -1.48134e-07, 3.50847, -1.13667e-07, -3.3889, -1.13667e-07, 0.908058, -183.948, -1.00477, -190.784 )
+
+[node name="Electroidesia212" parent="Decorations" instance=ExtResource( 6 )]
+transform = Transform( 2.22581, 0.0023398, 1.03792, -0.00166508, 2.45593, -0.00196563, -1.03792, 0.00107777, 2.22583, -166.836, -1.00477, -195.239 )
+
+[node name="Electroidesia213" parent="Decorations" instance=ExtResource( 6 )]
+transform = Transform( -1.57863, -0.00249038, 1.88135, -0.000596427, 2.45593, 0.00275049, -1.88134, 0.00131109, -1.57864, -155.385, -1.00477, -181.407 )
+
+[node name="Electroidesia217" parent="Decorations" instance=ExtResource( 6 )]
+transform = Transform( 1.64512, -0.000662954, 0.949815, -0.000461669, 1.89963, 0.00212555, -0.949809, -0.00207162, 1.64513, -149.369, -1.00477, -197.31 )
+
 [node name="Electroidesia210" parent="Decorations" instance=ExtResource( 6 )]
-transform = Transform( 1.75422, 4.58669e-07, -3.03842, -1.39958e-06, 3.50847, -2.78424e-07, 3.03841, 1.35129e-06, 1.75423, -189.829, -1.00477, -154.436 )
+transform = Transform( 3.02425, 1.06529e-06, -1.77852, -1.39958e-06, 3.50847, -2.78424e-07, 1.77851, 9.49481e-07, 3.02427, -176.466, -0.981333, -163.769 )
 
 [node name="Electroidesia205" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( -8.41339e-08, -8.41344e-08, -1.92477, 8.41339e-08, 1.92477, -8.41344e-08, 1.92476, -8.41344e-08, -8.41344e-08, -67.4928, -1.25672, -110.893 )
 
 [node name="Electroidesia207" parent="Decorations" instance=ExtResource( 6 )]
-transform = Transform( -8.41339e-08, -8.41344e-08, -1.92477, 8.41339e-08, 1.92477, -8.41344e-08, 1.92476, -8.41344e-08, -8.41344e-08, -174.453, -1.25672, -148.28 )
+transform = Transform( -1.18597e-07, -1.18598e-07, -2.71319, 1.18597e-07, 2.71319, -1.18598e-07, 2.71318, -1.18598e-07, -1.18598e-07, -170.641, -1.28162, -137.889 )
 
 [node name="Electroidesia185" parent="Decorations" instance=ExtResource( 6 )]
 transform = Transform( 1.08335, -5.64354e-08, -1.29109, 5.64351e-08, 1.6854, -2.63163e-08, 1.29108, -2.63163e-08, 1.08335, -144.818, -1.00477, 133.666 )
@@ -531,7 +757,10 @@ transform = Transform( 0.517638, 2.07558e-07, -1.93185, -1.53975e-07, 2, 1.73622
 transform = Transform( 0.517638, 2.07558e-07, -1.93185, -1.53975e-07, 2, 1.73622e-07, 1.93185, 1.03791e-07, 0.517638, 77.3356, 0.3376, 60.3233 )
 
 [node name="Electroidesia180" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( -1.28558, -3.7583e-08, -1.53209, -1.71449e-07, 2, 9.48015e-08, 1.53209, 1.92275e-07, -1.28558, -187.484, 0.337599, 56.4261 )
+transform = Transform( -1.28558, -3.7583e-08, -1.53209, -1.71449e-07, 2, 9.48015e-08, 1.53209, 1.92275e-07, -1.28558, -186.528, 0.337599, 53.717 )
+
+[node name="Electroidesia183" parent="Decorations" instance=ExtResource( 7 )]
+transform = Transform( 1.28056, 1.82596e-07, -1.53629, -1.71449e-07, 2, 9.48015e-08, 1.53629, 7.0998e-08, 1.28056, -171.07, 0.337599, 49.7329 )
 
 [node name="Electroidesia138" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 1.14715, 2.6044e-07, -1.6383, -1.66806e-07, 2, 2.01139e-07, 1.6383, 2.12707e-08, 1.14715, 66.2677, 0.337601, -168.683 )
@@ -551,29 +780,17 @@ transform = Transform( -1.81262, -2.79894e-07, 0.845236, -2.75365e-07, 2, 7.1763
 [node name="Electroidesia102" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( -1.99239, -2.24351e-07, -0.174311, -2.30799e-07, 2, 6.39056e-08, 0.174311, 8.3778e-08, -1.99239, 84.1029, 0.337601, 172.965 )
 
-[node name="Electroidesia133" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( 1.89649, 1.78133e-07, 0.635073, -2.66178e-07, 2, 2.33894e-07, -0.635073, -3.0631e-07, 1.89649, 164.865, 0.337596, -173.617 )
-
-[node name="Electroidesia107" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( -1.93185, -1.91214e-07, -0.517638, -2.15792e-07, 2, 6.65518e-08, 0.517638, 1.20135e-07, -1.93185, 141.798, 0.337601, 141.307 )
-
 [node name="Electroidesia153" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 1.7574, 1.37417e-07, 0.954747, -2.80152e-07, 2, 2.27814e-07, -0.954747, -3.33917e-07, 1.7574, 116.165, 0.337599, -129.355 )
-
-[node name="Electroidesia112" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( 0.845236, 2.37609e-07, -1.81262, -1.59187e-07, 2, 1.87942e-07, 1.81262, 6.48442e-08, 0.845236, 145.223, 0.3376, 91.1528 )
 
 [node name="Electroidesia137" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( -1.24541, -2.66612e-07, 1.56491, -3.06823e-07, 2, 9.65569e-08, -1.56491, -1.79949e-07, -1.24541, 124.555, 0.337602, -79.7879 )
 
 [node name="Electroidesia116" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( -1.6383, -2.81909e-07, 1.14715, -2.88562e-07, 2, 7.93831e-08, -1.14715, -1.00485e-07, -1.6383, 144.848, 0.337602, 79.2749 )
+transform = Transform( -1.6383, -2.81909e-07, 1.14715, -2.88562e-07, 2, 7.93831e-08, -1.14715, -1.00485e-07, -1.6383, 114.466, 0.337602, 72.7856 )
 
 [node name="Electroidesia145" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 1.86101, 2.77156e-07, -0.732547, -2.06398e-07, 2, 2.32343e-07, 0.732547, -1.40599e-07, 1.86101, 127.695, 0.337605, -68.3265 )
-
-[node name="Electroidesia160" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( -1.89649, -1.78133e-07, -0.635073, -2.10658e-07, 2, 6.80972e-08, 0.635073, 1.31465e-07, -1.89649, 108.293, 0.337603, -195.771 )
 
 [node name="Electroidesia72" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( -2.12353, -9.28224e-08, -2.12353, -2.65178e-07, 3.00313, 1.33907e-07, 2.12353, 2.82196e-07, -2.12353, 35.6931, 0.3376, -31.7734 )
@@ -602,9 +819,6 @@ transform = Transform( -1.26956, 1.72529e-07, -4.28982, -3.45797e-07, 4.47373, 2
 [node name="Electroidesia86" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( -2.12353, -4.13467e-07, 2.12353, -4.50823e-07, 3.00313, 1.33907e-07, -2.12353, -2.24093e-07, -2.12353, 72.0748, 0.337601, 139.357 )
 
-[node name="Electroidesia126" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( 2.56097, 4.2371e-07, -1.5685, -2.89439e-07, 3.00312, 3.38673e-07, 1.5685, -1.37638e-07, 2.56097, 184.413, 0.337598, -143.751 )
-
 [node name="Electroidesia89" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( -1.72252, -3.91067e-07, 2.46002, -4.65531e-07, 3.00313, 1.51436e-07, -2.46002, -2.94481e-07, -1.72252, 14.6741, 0.337601, 181.996 )
 
@@ -614,23 +828,14 @@ transform = Transform( 1.29215, -1.13993e-07, 3.55017, -6.05556e-07, 3.77801, 3.
 [node name="Electroidesia100" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( -0.749002, -4.09988e-07, 4.2478, -6.99866e-07, 4.31333, 2.92907e-07, -4.2478, -6.38371e-07, -0.749002, 64.7305, -0.601364, 176.503 )
 
-[node name="Electroidesia123" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( 1.7209, 5.03754e-07, -3.95516, -3.41303e-07, 4.31333, 4.0087e-07, 3.95516, 1.53026e-07, 1.7209, 182.874, -0.601369, -181.585 )
-
-[node name="Electroidesia104" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( -1.02713, -3.355e-07, 2.82202, -4.81355e-07, 3.00313, 1.81832e-07, -2.82202, -3.90135e-07, -1.02713, 123.413, 0.337601, 148.102 )
-
 [node name="Electroidesia131" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 1.65815, 3.86703e-07, -2.50386, -2.48553e-07, 3.00312, 2.99209e-07, 2.50386, 4.20258e-08, 1.65815, 132.453, 0.337598, -140.257 )
-
-[node name="Electroidesia109" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( -2.60078, -1.96673e-07, -1.50156, -2.92365e-07, 3.00313, 1.13046e-07, 1.50156, 2.44083e-07, -2.60078, 155.107, 0.3376, 108.079 )
 
 [node name="Electroidesia134" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 2.17789, 1.03513e-07, 2.06775, -4.48385e-07, 3.00312, 3.21928e-07, -2.06775, -5.42191e-07, 2.17789, 110.989, 0.337601, -93.9356 )
 
 [node name="Electroidesia113" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( 1.50156, -1.73535e-08, 2.60078, -4.71684e-07, 3.00312, 2.92365e-07, -2.60078, -5.54673e-07, 1.50156, 160.238, 0.3376, 85.7834 )
+transform = Transform( 1.50156, -1.73535e-08, 2.60078, -4.71684e-07, 3.00312, 2.92365e-07, -2.60078, -5.54673e-07, 1.50156, 155.251, 0.3376, 67.1378 )
 
 [node name="Electroidesia142" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( -0.85223, 1.15815e-07, -2.87966, -2.32126e-07, 3.00312, 1.89477e-07, 2.87966, 2.76354e-07, -0.85223, 111.21, 0.337604, -71.0584 )
@@ -666,19 +871,10 @@ transform = Transform( 3.8561, -6.35253e-07, 1.79813, 3.36879e-07, 4.25473, 7.80
 transform = Transform( -0.377302, 6.5731e-07, -4.31258, 6.11244e-07, 4.32905, 6.06344e-07, 4.31258, -5.56071e-07, -0.377302, -120.855, 0.337599, 190.295 )
 
 [node name="Electroidesia199" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( 3.74907, -5.46806e-08, -2.16453, 5.17349e-07, 4.32906, 7.86714e-07, 2.16453, -9.39989e-07, 3.74907, -124.204, 0.337599, 146.094 )
+transform = Transform( 3.74907, -5.46806e-08, -2.16453, 5.17349e-07, 4.32906, 7.86714e-07, 2.16453, -9.39989e-07, 3.74907, -129.94, 0.337599, 149.387 )
 
 [node name="Electroidesia99" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 2.86452, -2.79722e-07, -5.96046e-08, 2.79722e-07, 2.86452, 5.37341e-07, 5.96046e-08, -5.37341e-07, 2.86452, 40.7025, 0.337599, 170.083 )
-
-[node name="Electroidesia103" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( 2.821, -3.47038e-07, 0.497419, 2.57979e-07, 2.86452, 5.35439e-07, -0.497419, -4.82507e-07, 2.821, 98.5562, 0.3376, 146.006 )
-
-[node name="Electroidesia130" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( -2.62666, 4.20923e-07, -1.14287, 3.29678e-07, 2.86452, 2.97314e-07, 1.14287, 1.41093e-07, -2.62666, 157.111, 0.337597, -144.028 )
-
-[node name="Electroidesia108" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( -0.979724, -2.91604e-07, 2.69177, 1.62061e-07, 2.86452, 3.69304e-07, -2.69177, 2.78597e-07, -0.979724, 157.359, 0.3376, 132.921 )
 
 [node name="Electroidesia154" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 1.58162, 1.89167e-07, -2.3883, 3.84118e-07, 2.86452, 4.81263e-07, 2.3883, -5.85984e-07, 1.58162, 102.994, 0.337599, -117.564 )
@@ -723,7 +919,7 @@ transform = Transform( 0.497768, -2.1313e-07, 2.82299, 2.1313e-07, 2.86653, 1.78
 transform = Transform( -2.02695, 1.53031e-07, -2.02695, -1.53031e-07, 2.86653, 3.69448e-07, 2.02695, 3.69447e-07, -2.02695, -17.4168, 0.3376, -61.4158 )
 
 [node name="Electroidesia203" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( -2.02695, 1.53031e-07, -2.02695, -1.53031e-07, 2.86653, 3.69448e-07, 2.02695, 3.69447e-07, -2.02695, -22.1772, 0.3376, -127.879 )
+transform = Transform( 1.39043, -7.47043e-08, 1.15556, -9.65171e-08, 1.80793, 2.33012e-07, -1.15556, -2.40892e-07, 1.39043, 21.1842, 0.3376, -97.5611 )
 
 [node name="Electroidesia206" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( -1.39319, -0.00042637, -1.66033, -0.000287079, 2.16741, -0.0003157, 1.66033, 1.6987e-05, -1.39319, -81.1588, 0.3376, -118.176 )
@@ -755,29 +951,17 @@ transform = Transform( -0.845236, 7.9232e-08, 1.81262, -7.92319e-08, 2, -1.24369
 [node name="Electroidesia98" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( -1.6383, 5.01437e-08, 1.14715, -5.01436e-08, 2, -1.59035e-07, -1.14715, -1.59035e-07, -1.6383, 70.7651, 0.337599, 152.196 )
 
-[node name="Electroidesia124" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( 1.86101, -3.20207e-08, -0.732548, 3.20207e-08, 2, -6.07521e-09, 0.732548, -6.07523e-09, 1.86101, 182.687, 0.337596, -156.541 )
-
-[node name="Electroidesia105" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( -1.81262, 3.69465e-08, 0.845236, -3.69464e-08, 2, -1.66655e-07, -0.845236, -1.66655e-07, -1.81262, 125.056, 0.337599, 123.17 )
-
 [node name="Electroidesia151" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 1.95995, -1.74084e-08, -0.398257, 1.74084e-08, 2, -1.75075e-09, 0.398257, -1.75072e-09, 1.95995, 136.682, 0.337599, -115.632 )
 
 [node name="Electroidesia156" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( -1.7574, -4.17333e-08, -0.954746, 4.17333e-08, 2, -1.64241e-07, 0.954746, -1.64241e-07, -1.7574, 131.815, 0.3376, -153.757 )
 
-[node name="Electroidesia110" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( -0.517638, -8.44439e-08, -1.93185, 8.44439e-08, 2, -1.10049e-07, 1.93185, -1.10049e-07, -0.517638, 130.269, 0.3376, 110.79 )
-
 [node name="Electroidesia135" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 0.0518654, 8.73933e-08, 1.99933, -8.73933e-08, 2, -8.51556e-08, -1.99933, -8.51556e-08, 0.0518654, 134.506, 0.3376, -102.376 )
 
 [node name="Electroidesia163" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 1.24541, -6.84045e-08, -1.56491, 6.84045e-08, 2, -3.2984e-08, 1.56491, -3.2984e-08, 1.24541, 124.961, 0.337601, -165.31 )
-
-[node name="Electroidesia114" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( -0.517638, 8.44439e-08, 1.93185, -8.44439e-08, 2, -1.10049e-07, -1.93185, -1.10049e-07, -0.517638, 126.707, 0.337599, 81.6619 )
 
 [node name="Electroidesia155" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 0.954746, -7.68184e-08, -1.7574, 7.68184e-08, 2, -4.56894e-08, 1.7574, -4.56894e-08, 0.954746, 144.776, 0.337603, -74.8868 )
@@ -815,17 +999,8 @@ transform = Transform( -0.845236, 7.9232e-08, 1.81262, -7.92319e-08, 2, -1.24369
 [node name="Electroidesia101" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( -1.6383, 5.01437e-08, 1.14715, -5.01436e-08, 2, -1.59035e-07, -1.14715, -1.59035e-07, -1.6383, 79.853, 0.3376, 158.03 )
 
-[node name="Electroidesia132" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( 1.86101, -3.20207e-08, -0.732548, 3.20207e-08, 2, -6.07521e-09, 0.732548, -6.07523e-09, 1.86101, 172.487, 0.337596, -160.089 )
-
-[node name="Electroidesia106" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( -1.81262, 3.69465e-08, 0.845236, -3.69464e-08, 2, -1.66655e-07, -0.845236, -1.66655e-07, -1.81262, 135.019, 0.3376, 127.337 )
-
 [node name="Electroidesia152" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 1.95995, -1.74084e-08, -0.398257, 1.74084e-08, 2, -1.75075e-09, 0.398257, -1.75072e-09, 1.95995, 126.021, 0.337599, -117.355 )
-
-[node name="Electroidesia111" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( -0.970164, -1.58266e-07, -3.6207, 1.58266e-07, 3.74843, -2.06256e-07, 3.6207, -2.06256e-07, -0.970164, 132.643, 0.3376, 100.254 )
 
 [node name="Electroidesia136" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 0.0972066, 1.63794e-07, 3.74717, -1.63794e-07, 3.74842, -1.596e-07, -3.74717, -1.596e-07, 0.0972066, 134.66, 0.337601, -91.5774 )
@@ -886,9 +1061,6 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -171.261, 0.3376, 84.6055 )
 
 [node name="Electroidesia198" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 0.174312, 1.50421e-07, -1.99239, -1.50421e-07, 2, 1.37836e-07, 1.99239, 1.37836e-07, 0.174312, -159.214, 0.3376, 78.4961 )
-
-[node name="Electroidesia191" parent="Decorations" instance=ExtResource( 7 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -190.856, 0.3376, 90.8184 )
 
 [node name="Electroidesia192" parent="Decorations" instance=ExtResource( 7 )]
 transform = Transform( 3.05291, 0, 0, 0, 3.05291, 0, 0, 0, 3.05291, -192.289, 0.3376, 73.6134 )
@@ -1026,7 +1198,7 @@ transform = Transform( -4.8473e-07, 4.8473e-07, 11.0893, -4.8473e-07, 11.0893, -
 transform = Transform( -10.7115, 1.25457e-07, 2.87013, -1.25457e-07, 11.0893, -9.52943e-07, -2.87013, -9.52943e-07, -10.7115, 41.2169, -2.00928, -190.393 )
 
 [node name="Latite36" parent="Decorations" instance=ExtResource( 10 )]
-transform = Transform( -4.8473e-07, 4.8473e-07, 11.0893, -4.8473e-07, 11.0893, -4.8473e-07, -11.0893, -4.8473e-07, -4.8473e-07, -140.347, -2.00928, -98.85 )
+transform = Transform( -4.8473e-07, 4.8473e-07, 11.0893, -4.8473e-07, 11.0893, -4.8473e-07, -11.0893, -4.8473e-07, -4.8473e-07, -85.0936, -2.00928, -74.3395 )
 
 [node name="Latite37" parent="Decorations" instance=ExtResource( 10 )]
 transform = Transform( -4.8473e-07, 4.8473e-07, 11.0893, -4.8473e-07, 11.0893, -4.8473e-07, -11.0893, -4.8473e-07, -4.8473e-07, -138.493, -2.00928, -168.592 )
@@ -1038,13 +1210,13 @@ transform = Transform( -2.30034e-06, 2.30034e-06, 52.6256, -2.30034e-06, 52.6256
 transform = Transform( 47.695, 9.72166e-07, 22.2406, -9.72166e-07, 52.6256, -2.15524e-07, -22.2406, -2.15524e-07, 47.695, -154.894, -2.00928, -123.048 )
 
 [node name="Latite49" parent="Decorations" instance=ExtResource( 10 )]
-transform = Transform( 9.13848, -0.196272, 51.8257, 0.134878, 52.6251, 0.175516, -51.8259, 0.102349, 9.1389, -210.9, -4.16175, -155.415 )
+transform = Transform( 14.1487, -0.30388, 80.2396, 0.208826, 81.4773, 0.271744, -80.24, 0.158463, 14.1494, -205.81, -4.15931, -156.266 )
 
 [node name="Latite48" parent="Decorations" instance=ExtResource( 10 )]
 transform = Transform( 18.0344, 1.85878e-07, -35.961, -7.43174e-07, 40.2297, -1.64758e-07, 35.961, 7.38175e-07, 18.0344, -50.713, -2.00928, 13.0105 )
 
 [node name="Latite26" parent="Decorations" instance=ExtResource( 10 )]
-transform = Transform( -7.2726e-07, 7.2726e-07, 16.6378, -7.2726e-07, 16.6378, -7.2726e-07, -16.6378, -7.2726e-07, -7.2726e-07, -153.567, -2.00928, -71.3809 )
+transform = Transform( -7.2726e-07, 7.2726e-07, 16.6378, -7.2726e-07, 16.6378, -7.2726e-07, -16.6378, -7.2726e-07, -7.2726e-07, -143.787, -2.00928, -45.4473 )
 
 [node name="Latite39" parent="Decorations" instance=ExtResource( 10 )]
 transform = Transform( -16.0709, 1.88229e-07, 4.30617, -1.88229e-07, 16.6378, -1.42974e-06, -4.30617, -1.42974e-06, -16.0709, 35.7281, -2.00928, -157.982 )
@@ -1079,6 +1251,9 @@ transform = Transform( -77.2798, 0, 0, 0, 58.6471, 0, 0, 0, -77.2798, -184.067, 
 [node name="Latite41" parent="Decorations" instance=ExtResource( 12 )]
 transform = Transform( -20.0015, 2.4762e-06, -74.6466, 3.26291e-06, 58.6471, 2.50372e-06, 74.6466, -1.90005e-06, -20.0015, 7.24111, -1.01328e-06, -176.589 )
 
+[node name="Latite51" parent="Decorations" instance=ExtResource( 12 )]
+transform = Transform( -116.544, -6.81686e-07, 20.5498, -8.98257e-07, 89.8087, 7.85933e-08, -20.5498, -5.96319e-08, -116.544, 166.161, -1.01328e-06, -173.123 )
+
 [node name="Latite31" parent="Decorations" instance=ExtResource( 12 )]
 transform = Transform( -44.9481, -3.19752e-06, 96.3914, -4.2134e-06, 80.7129, 2.68423e-06, -96.3914, -2.03705e-06, -44.9481, -214.636, 0, -37.6662 )
 
@@ -1089,22 +1264,25 @@ transform = Transform( -56.5203, 0, 0, 0, 42.8928, 0, 0, 0, -56.5203, -179.963, 
 transform = Transform( -14.6285, 1.81102e-06, -54.5944, 2.3864e-06, 42.8928, 1.83115e-06, 54.5944, -1.38964e-06, -14.6285, 2.57601, -1.3113e-06, -176.783 )
 
 [node name="Latite27" parent="Decorations" instance=ExtResource( 10 )]
-transform = Transform( -3.16961e-07, 3.16961e-07, 7.25122, -3.16961e-07, 7.25122, -3.16961e-07, -7.25122, -3.16961e-07, -3.16961e-07, -137.899, 0, -58.2389 )
+transform = Transform( -3.16961e-07, 3.16961e-07, 7.25122, -3.16961e-07, 7.25122, -3.16961e-07, -7.25122, -3.16961e-07, -3.16961e-07, -122.564, 0, -32.7687 )
 
 [node name="Latite34" parent="Decorations" instance=ExtResource( 10 )]
-transform = Transform( -3.16961e-07, 3.16961e-07, 7.25122, -3.16961e-07, 7.25122, -3.16961e-07, -7.25122, -3.16961e-07, -3.16961e-07, -162.012, 0, -149.868 )
+transform = Transform( -3.16961e-07, 3.16961e-07, 7.25122, -3.16961e-07, 7.25122, -3.16961e-07, -7.25122, -3.16961e-07, -3.16961e-07, -148.29, 0.00830078, -163.713 )
 
 [node name="Latite44" parent="Decorations" instance=ExtResource( 10 )]
 transform = Transform( -7.00414, 8.20355e-08, 1.87675, -8.20356e-08, 7.25122, -6.23122e-07, -1.87675, -6.23122e-07, -7.00414, -101.713, 1.07288e-06, -176.411 )
 
 [node name="Latite35" parent="Decorations" instance=ExtResource( 10 )]
-transform = Transform( -7.14106, -5.50398e-08, -1.25916, 5.50395e-08, 7.25122, -6.29106e-07, 1.25916, -6.29106e-07, -7.14106, -135.544, 0, -98.2381 )
+transform = Transform( -7.14106, -5.50398e-08, -1.25916, 5.50395e-08, 7.25122, -6.29106e-07, 1.25916, -6.29106e-07, -7.14106, -88.1771, 0, -78.8837 )
 
 [node name="Latite33" parent="Decorations" instance=ExtResource( 10 )]
 transform = Transform( -58.2075, -3.01607e-06, 83.129, -2.87712e-06, 97.108, 1.85854e-06, -83.129, -1.20926e-06, -58.2075, -196.345, -19.0898, -111.616 )
 
 [node name="Latite40" parent="Decorations" instance=ExtResource( 10 )]
 transform = Transform( -95.3616, 2.15142e-06, -34.7088, 2.27373e-06, 97.108, 2.34485e-07, 34.7088, -5.45791e-07, -95.3616, -58.3805, -19.0898, -176.157 )
+
+[node name="Latite50" parent="Decorations" instance=ExtResource( 10 )]
+transform = Transform( -186.774, 4.21375e-06, -67.9804, 4.45331e-06, 190.195, 4.5926e-07, 67.9804, -1.06898e-06, -186.774, 148.131, -19.0898, 136.183 )
 
 [node name="Latite16" parent="Decorations" instance=ExtResource( 10 )]
 transform = Transform( 2.83249, 3.5949e-07, 0.499444, -3.05161e-07, 2.87618, -3.39569e-07, -0.499444, 2.8142e-07, 2.83249, -14.6734, 0.000976562, -31.6226 )
@@ -1172,9 +1350,6 @@ transform = Transform( -4.65438, 1.01969e-06, -0.820689, 8.69646e-07, 4.72619, 9
 [node name="Tree62" parent="Decorations" instance=ExtResource( 13 )]
 transform = Transform( -3.34191, -2.19101e-07, 3.34192, 6.87693e-07, 4.72619, 9.9755e-07, -3.34192, 1.19165e-06, -3.34191, -178.359, 0.0292963, 34.7162 )
 
-[node name="Tree97" parent="Decorations" instance=ExtResource( 13 )]
-transform = Transform( -3.34191, -2.19101e-07, 3.34192, 6.87693e-07, 4.72619, 9.9755e-07, -3.34192, 1.19165e-06, -3.34191, -146.27, 0.0292963, 146.48 )
-
 [node name="Tree115" parent="Decorations" instance=ExtResource( 13 )]
 transform = Transform( -3.34191, -2.19101e-07, 3.34192, 6.87693e-07, 4.72619, 9.9755e-07, -3.34192, 1.19165e-06, -3.34191, -114.654, 0.0292963, 133.077 )
 
@@ -1199,11 +1374,8 @@ transform = Transform( 3.89422, -2.82476e-07, -3.89423, 7.91564e-07, 5.50727, 3.
 [node name="Tree63" parent="Decorations" instance=ExtResource( 13 )]
 transform = Transform( -0.956331, 3.26386e-07, -5.42359, 8.58415e-07, 5.50727, 1.8006e-07, 5.42359, -8.14107e-07, -0.956331, -180.296, -5.06639e-07, 41.7609 )
 
-[node name="Tree92" parent="Decorations" instance=ExtResource( 13 )]
-transform = Transform( -0.956331, 3.26386e-07, -5.42359, 8.58415e-07, 5.50727, 1.8006e-07, 5.42359, -8.14107e-07, -0.956331, -148.208, -5.06639e-07, 153.525 )
-
 [node name="Tree98" parent="Decorations" instance=ExtResource( 13 )]
-transform = Transform( -0.956331, 3.26386e-07, -5.42359, 8.58415e-07, 5.50727, 1.8006e-07, 5.42359, -8.14107e-07, -0.956331, -142.709, -5.06639e-07, 145.277 )
+transform = Transform( -0.956331, 3.26386e-07, -5.42359, 8.58415e-07, 5.50727, 1.8006e-07, 5.42359, -8.14107e-07, -0.956331, -137.929, -5.06639e-07, 133.274 )
 
 [node name="Tree111" parent="Decorations" instance=ExtResource( 13 )]
 transform = Transform( -0.956331, 3.26386e-07, -5.42359, 8.58415e-07, 5.50727, 1.8006e-07, 5.42359, -8.14107e-07, -0.956331, -111.093, -5.06639e-07, 131.874 )
@@ -1262,17 +1434,11 @@ transform = Transform( -6.47646, 1.27661e-06, 5.82939e-06, 1.27661e-06, 6.47647,
 [node name="Tree67" parent="Decorations" instance=ExtResource( 13 )]
 transform = Transform( -3.71474, -5.61111e-07, 5.30521, 1.04472e-06, 6.47646, 1.41651e-06, -5.30521, 1.66826e-06, -3.71474, -169.51, 8.9407e-08, 54.5454 )
 
-[node name="Tree108" parent="Decorations" instance=ExtResource( 13 )]
-transform = Transform( -3.71474, -5.61111e-07, 5.30521, 1.04472e-06, 6.47646, 1.41651e-06, -5.30521, 1.66826e-06, -3.71474, -105.806, 8.9407e-08, 152.907 )
-
 [node name="Tree47" parent="Decorations" instance=ExtResource( 13 )]
 transform = Transform( -6.12319, 1.20698e-06, 5.51142e-06, 1.20698e-06, 6.1232, 1.22511e-06, -5.51142e-06, 1.22511e-06, -6.12319, 71.495, 0, 38.5135 )
 
 [node name="Tree64" parent="Decorations" instance=ExtResource( 13 )]
 transform = Transform( -3.51211, -5.30504e-07, 5.01583, 9.87731e-07, 6.1232, 1.33924e-06, -5.01583, 1.57726e-06, -3.51211, -172.969, -2.98023e-07, 39.1321 )
-
-[node name="Tree91" parent="Decorations" instance=ExtResource( 13 )]
-transform = Transform( -3.51211, -5.30504e-07, 5.01583, 9.87731e-07, 6.1232, 1.33924e-06, -5.01583, 1.57726e-06, -3.51211, -140.88, -2.98023e-07, 150.896 )
 
 [node name="Tree107" parent="Decorations" instance=ExtResource( 13 )]
 transform = Transform( -3.51211, -5.30504e-07, 5.01583, 9.87731e-07, 6.1232, 1.33924e-06, -5.01583, 1.57726e-06, -3.51211, -109.264, -2.98023e-07, 137.493 )
@@ -1282,9 +1448,6 @@ transform = Transform( -4.16859, 9.13266e-07, -0.735031, 7.78879e-07, 4.2329, 8.
 
 [node name="Tree57" parent="Decorations" instance=ExtResource( 13 )]
 transform = Transform( -2.99311, -1.96233e-07, 2.99311, 6.15916e-07, 4.2329, 8.93432e-07, -2.99311, 1.06727e-06, -2.99311, -173.48, -6.55651e-07, 20.0929 )
-
-[node name="Tree136" parent="Decorations" instance=ExtResource( 13 )]
-transform = Transform( 0.368924, -1.08545e-06, 4.21679, 5.62428e-07, 4.2329, 1.04039e-06, -4.21679, 4.69611e-07, 0.368924, -198.041, -1.72853e-06, 119.795 )
 
 [node name="Tree120" parent="Decorations" instance=ExtResource( 13 )]
 transform = Transform( -2.99311, -1.96233e-07, 2.99311, 6.15916e-07, 4.2329, 8.93432e-07, -2.99311, 1.06727e-06, -2.99311, -100.668, -6.55651e-07, 130.139 )
@@ -1353,10 +1516,13 @@ transform = Transform( 1.48609, -5.89813e-07, 1.77105, 9.37338e-07, 2.55426, 1.1
 transform = Transform( -4.77346, 1.04578e-06, -0.841685, 8.91895e-07, 4.8471, 9.64233e-07, 0.841685, 7.94707e-07, -4.77346, -80.7534, 0, 18.3465 )
 
 [node name="Tree68" parent="Decorations" instance=ExtResource( 13 )]
-transform = Transform( -4.77346, 1.04578e-06, -0.841685, 8.91895e-07, 4.8471, 9.64233e-07, 0.841685, 7.94707e-07, -4.77346, -150.322, 0, -87.3227 )
+transform = Transform( -2.1409, 1.25902e-06, -4.34867, 8.91895e-07, 4.8471, 9.64233e-07, 4.34867, -3.74292e-07, -2.1409, -146.999, 0, -13.2964 )
 
 [node name="Tree69" parent="Decorations" instance=ExtResource( 13 )]
-transform = Transform( 4.39296, -1.27067e-06, 2.04847, 7.65562e-07, 4.8471, 1.36491e-06, -2.04847, -9.13487e-07, 4.39296, -131.155, 0, -106.73 )
+transform = Transform( 4.39296, -1.27067e-06, 2.04847, 7.65562e-07, 4.8471, 1.36491e-06, -2.04847, -9.13487e-07, 4.39296, -136.529, 0, -106.486 )
+
+[node name="Tree76" parent="Decorations" instance=ExtResource( 13 )]
+transform = Transform( 3.73741, -1.08105e-06, 1.74278, 6.51319e-07, 4.12378, 1.16123e-06, -1.74278, -7.7717e-07, 3.73741, -149.859, 0, -26.8938 )
 
 [node name="Tree70" parent="Decorations" instance=ExtResource( 13 )]
 transform = Transform( 4.39296, -1.27067e-06, 2.04847, 7.65562e-07, 4.8471, 1.36491e-06, -2.04847, -9.13487e-07, 4.39296, -87.0684, 0, -140.805 )
@@ -1408,9 +1574,6 @@ transform = Transform( -4.58446, 1.32606e-06, -2.13776, 9.85824e-07, 5.05839, 1.
 
 [node name="Tree66" parent="Decorations" instance=ExtResource( 13 )]
 transform = Transform( -4.38069, 1.60815e-07, 2.5292, 7.81825e-07, 5.05839, 1.03253e-06, -2.5292, 1.28511e-06, -4.38069, -157.61, -0.193848, 17.8694 )
-
-[node name="Tree134" parent="Decorations" instance=ExtResource( 13 )]
-transform = Transform( -0.878377, -1.05046e-06, 4.98154, 6.74629e-07, 5.05839, 1.18562e-06, -4.98154, 8.70261e-07, -0.878377, -186.138, -0.193848, 130.522 )
 
 [node name="Tree114" parent="Decorations" instance=ExtResource( 13 )]
 transform = Transform( -4.38069, 1.60815e-07, 2.5292, 7.81825e-07, 5.05839, 1.03253e-06, -2.5292, 1.28511e-06, -4.38069, -92.5314, -0.193848, 139.943 )
@@ -1506,22 +1669,22 @@ transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -149.359, 0.293457, -35.534 )
 transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -51.6099, 0.293457, -123.862 )
 
 [node name="Aloevera20" parent="Decorations" instance=ExtResource( 14 )]
-transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -137.19, 0.293457, -90.101 )
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -100.567, 0.293457, -55.2156 )
 
 [node name="Aloevera21" parent="Decorations" instance=ExtResource( 14 )]
 transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, 34.3626, 0.293457, -127.002 )
 
 [node name="Aloevera22" parent="Decorations" instance=ExtResource( 14 )]
-transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -142.977, 0.293457, -58.5831 )
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -127.642, 0.293457, -33.1129 )
 
 [node name="Aloevera23" parent="Decorations" instance=ExtResource( 14 )]
-transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -135.464, 0.293457, -48.3388 )
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -120.129, 0.293457, -22.8686 )
 
 [node name="Aloevera24" parent="Decorations" instance=ExtResource( 14 )]
-transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -142.53, 0.293457, -53.8347 )
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -127.195, 0.293457, -28.3645 )
 
 [node name="Aloevera25" parent="Decorations" instance=ExtResource( 14 )]
-transform = Transform( 5.68781, 0.00114958, -5.68781, -0.00115388, 8.04378, 0.000471868, 5.68781, 0.000482257, 5.68781, -136.256, 0.292969, -51.5254 )
+transform = Transform( 5.68781, 0.00114958, -5.68781, -0.00115388, 8.04378, 0.000471868, 5.68781, 0.000482257, 5.68781, -120.921, 0.292969, -26.0552 )
 
 [node name="Aloevera31" parent="Decorations" instance=ExtResource( 14 )]
 transform = Transform( 5.68781, 0.00114958, -5.68781, -0.00115388, 8.04378, 0.000471868, 5.68781, 0.000482257, 5.68781, 95.1189, 0.292969, -91.1949 )
@@ -1530,22 +1693,121 @@ transform = Transform( 5.68781, 0.00114958, -5.68781, -0.00115388, 8.04378, 0.00
 transform = Transform( 1.21017, 0.000984641, -13.8323, -0.00199164, 13.8851, 0.000814156, 13.8323, 0.00191311, 1.21017, 97.6646, 0.292969, -87.0127 )
 
 [node name="Aloevera26" parent="Decorations" instance=ExtResource( 14 )]
-transform = Transform( 8.85407, -0.00103636, 5.1119, 0.00103386, 10.2238, 0.000282026, -5.1119, 0.000272689, 8.85407, -131.243, 0.293457, -55.2178 )
+transform = Transform( 8.85407, -0.00103636, 5.1119, 0.00103386, 10.2238, 0.000282026, -5.1119, 0.000272689, 8.85407, -115.908, 0.293457, -29.7476 )
 
 [node name="Aloevera27" parent="Decorations" instance=ExtResource( 14 )]
-transform = Transform( 10.8737, 0.00126968, -6.27791, -0.00127275, 12.5558, 0.000334889, 6.27791, 0.000346356, 10.8737, -140.418, 0.293457, -47.4139 )
+transform = Transform( 10.8737, 0.00126968, -6.27791, -0.00127275, 12.5558, 0.000334889, 6.27791, 0.000346356, 10.8737, -125.083, 0.293457, -21.9437 )
 
 [node name="Aloevera28" parent="Decorations" instance=ExtResource( 14 )]
-transform = Transform( 8.58067, 0.000877161, -4.33651, -0.000879048, 9.61422, 0.000205324, 4.33651, 0.000213245, 8.58067, -146.633, 0.276855, -53.0822 )
+transform = Transform( 8.58067, 0.000877161, -4.33651, -0.000879048, 9.61422, 0.000205324, 4.33651, 0.000213245, 8.58067, -133.943, 0.276855, -48.5945 )
 
 [node name="Aloevera29" parent="Decorations" instance=ExtResource( 14 )]
-transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -145.259, 0.293457, -48.6396 )
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, -129.924, 0.293457, -23.1694 )
 
 [node name="Aloevera30" parent="Decorations" instance=ExtResource( 14 )]
-transform = Transform( 9.92922, 0, 0, 0, 9.92922, 0, 0, 0, 9.92922, -140.467, 0.293457, -51.5752 )
+transform = Transform( 9.92922, 0, 0, 0, 9.92922, 0, 0, 0, 9.92922, -125.132, 0.293457, -26.105 )
+
+[node name="Manchineel2" parent="Decorations" instance=ExtResource( 15 )]
+transform = Transform( 9.20626, -0.992052, 12.1799, 0.507053, 15.2674, 0.860266, -12.2097, -0.113984, 9.21951, -151.878, 0, -99.3679 )
+
+[node name="Manchineel4" parent="Decorations" instance=ExtResource( 15 )]
+transform = Transform( 7.76895, 0, 13.1808, 0, 15.3, 0, -13.1808, 0, 7.76895, -140.964, 0, -85.0246 )
+
+[node name="Manchineel5" parent="Decorations" instance=ExtResource( 15 )]
+transform = Transform( 5.29443, -11.3559, 8.7808, 5.76637, 10.2532, 9.78322, -13.1456, -0.0760238, 7.82791, -151.878, -7.15256e-07, -91.303 )
+
+[node name="Manchineel6" parent="Decorations" instance=ExtResource( 15 )]
+transform = Transform( 13.5403, -6.16682, 3.56655, 2.95674, 11.8338, 9.23629, -6.48133, -7.48476, 11.6645, -157.133, -7.15256e-07, -79.8014 )
+
+[node name="Manchineel3" parent="Decorations" instance=ExtResource( 15 )]
+transform = Transform( 14.864, 0, 3.62668, 0, 15.3, 0, -3.62668, 0, 14.864, -150.934, 0, -83.6794 )
+
+[node name="Pay6" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -0.528905, 4.63629e-08, 1.40366, -1.62299e-09, 1.5, -5.01566e-08, -1.40366, -1.92041e-08, -0.528905, -81.7159, 0, -69.3529 )
+
+[node name="Pay7" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -1.41524, -2.08641e-07, 0.49709, -1.78139e-07, 1.5, 1.22419e-07, -0.49709, 5.64675e-08, -1.41524, -78.9107, 9.09495e-13, -77.6207 )
+
+[node name="Pay8" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -1.21894, 6.90029e-07, -0.874177, 3.26132e-07, 1.5, 7.29267e-07, 0.874177, 4.02558e-07, -1.21894, -83.7864, 1.81899e-12, -83.9981 )
+
+[node name="Pay12" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( 0.277127, 7.15884e-07, -1.47418, 3.52359e-07, 1.5, 7.94663e-07, 1.47418, -4.93108e-07, 0.277127, -127.137, 1.81899e-12, -57.0042 )
+
+[node name="Pay13" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -0.846443, 8.08524e-07, -1.23836, 3.42051e-07, 1.5, 7.4555e-07, 1.23836, 1.38322e-07, -0.846443, -118.461, 1.81899e-12, -58.547 )
+
+[node name="Pay21" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -1.45318, 2.52968e-07, 0.371852, 4.63619e-07, 1.5, 7.91357e-07, -0.371852, 8.81587e-07, -1.45318, -93.732, 1.81899e-12, -27.2686 )
+
+[node name="Pay22" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( 0.371852, -7.6834e-07, 1.45318, 5.45256e-07, 1.5, 6.53571e-07, -1.45318, 3.66215e-07, 0.371852, -95.8707, 1.81899e-12, -18.5801 )
+
+[node name="Pay23" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -1.48006, 4.97104e-07, 0.243784, 5.9812e-07, 1.5, 5.72621e-07, -0.243784, 6.62217e-07, -1.48006, 92.3498, 1.81899e-12, -100.782 )
+
+[node name="Pay24" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -0.977087, -4.48609e-08, 1.13811, 5.9812e-07, 1.5, 5.72621e-07, -1.13811, 8.2682e-07, -0.977087, 90.8019, 1.81899e-12, -91.9905 )
+
+[node name="Pay25" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -0.977087, -4.48609e-08, 1.13811, 5.9812e-07, 1.5, 5.72621e-07, -1.13811, 8.2682e-07, -0.977087, 84.1771, 1.81899e-12, -86.2325 )
+
+[node name="Pay26" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -1.30742, 2.63059e-07, 0.735292, 6.15728e-07, 1.5, 5.58182e-07, -0.735292, 7.88346e-07, -1.30742, 77.6142, 1.81899e-12, -80.5983 )
+
+[node name="Pay27" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( 1.47418, -6.3546e-07, 0.277127, 5.30523e-07, 1.5, 6.1742e-07, -0.277127, -5.08776e-07, 1.47418, 64.6452, 1.59162e-12, -69.889 )
+
+[node name="Pay28" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( 0.404555, 4.17797e-07, -1.44441, 7.11006e-07, 1.5, 6.33014e-07, 1.44441, -8.55385e-07, 0.404555, 56.0487, 2.04636e-12, -67.7098 )
+
+[node name="Pay29" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( 0.977087, 4.48609e-08, -1.13811, 6.97617e-07, 1.5, 6.58041e-07, 1.13811, -9.57954e-07, 0.977087, 49.4048, 2.04636e-12, -62.1491 )
+
+[node name="Pay30" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -1.41524, 4.07343e-07, 0.49709, 6.2614e-07, 1.5, 5.53469e-07, -0.49709, 7.29693e-07, -1.41524, 49.6214, 2.07478e-12, -62.0769 )
+
+[node name="Pay31" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -0.649229, -2.74299e-07, 1.35222, 5.88761e-07, 1.5, 5.86952e-07, -1.35222, 7.84801e-07, -0.649229, 46.6606, 2.16005e-12, -53.6276 )
+
+[node name="Pay14" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( 0.0169283, 7.7925e-07, -1.4999, 3.53484e-07, 1.5, 7.83289e-07, 1.4999, -3.62301e-07, 0.0169283, -136.269, 1.81899e-12, -130.973 )
+
+[node name="Pay17" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -1.49272, 3.63521e-07, -0.147589, 2.94372e-07, 1.5, 7.173e-07, 0.147589, 6.84855e-07, -1.49272, 18.1282, -2.43486e-07, 9.15829 )
+
+[node name="Pay15" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -0.846443, 8.08524e-07, -1.23836, 3.42051e-07, 1.5, 7.4555e-07, 1.23836, 1.38322e-07, -0.846443, -127.531, 1.81899e-12, -130.829 )
+
+[node name="Pay18" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -1.30742, -1.32646e-07, 0.735291, 2.5578e-07, 1.5, 7.254e-07, -0.735291, 7.5765e-07, -1.30742, 18.7459, 1.31259e-07, 17.8759 )
+
+[node name="Pay16" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -1.47418, 4.27541e-07, -0.277127, 3.00034e-07, 1.5, 7.1811e-07, 0.277127, 6.50317e-07, -1.47418, -120.453, 2.04636e-12, -125.918 )
+
+[node name="Pay19" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -1.35685, -0.00261967, -0.639485, -0.0026197, 1.5, -0.000586325, 0.639485, 0.000586471, -1.35686, -13.6684, 2.44007e-07, 45.3138 )
+
+[node name="Pay20" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -1.47827, 0.0010773, 0.254417, 0.00107748, 1.5, -9.10075e-05, -0.254417, 9.30637e-05, -1.47827, -9.83201, 2.42144e-07, 53.3222 )
+
+[node name="Pay9" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -1.47418, -2.09078e-07, -0.277127, -2.3659e-07, 1.5, 1.26869e-07, 0.277127, 1.68395e-07, -1.47418, -91.6532, 1.13687e-12, -75.0722 )
+
+[node name="Pay10" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( -1.49272, -2.13089e-07, -0.147589, -2.2681e-07, 1.5, 1.28269e-07, 0.147589, 1.49963e-07, -1.49272, -92.5178, 1.13687e-12, -83.8554 )
+
+[node name="Pay11" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( 0.0169282, -2.00181e-07, -1.4999, -3.35972e-07, 1.5, -2.03985e-07, 1.4999, 3.38252e-07, 0.0169282, -92.5178, 1.81899e-12, -83.6279 )
+
+[node name="Portal" parent="Decorations" instance=ExtResource( 17 )]
+transform = Transform( -4.36682e-08, 0.00436787, -0.99999, -0.00438101, 0.999981, 0.00436783, 0.99999, 0.00438097, 1.9092e-05, -130.916, -0.0117188, -200.249 )
 
 [node name="Boundaries" type="StaticBody" parent="."]
 editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionPolygon" type="CollisionPolygon" parent="Boundaries"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -22.947, 4.75528, 24.2101 )
@@ -1555,15 +1817,17 @@ polygon = PoolVector2Array( 6.26749, 8.50844, 4.54923, 17.2716, -12.8911, 12.202
 [node name="CollisionPolygon2" type="CollisionPolygon" parent="Boundaries"]
 transform = Transform( 1, 0, 5.30863e-14, 5.30863e-14, 1.62921e-07, -1, 0, 1, 1.62921e-07, -20.1684, 0.00341797, 25.2463 )
 depth = 10.0
-polygon = PoolVector2Array( 25.8736, -0.167569, 28.1792, -7.78238, 38.6357, -12.006, 36.242, -24.8468, 26.1043, -34.555, 24.9997, -42.8661, 6.0006, -42.8956, -7.41757, -30.9726, -17.5252, -34.9387, -17.5243, -41.4376, -3.57115, -58.2973, 22.0308, -61.4776, 58.1942, -48.265, 56.2198, -19.6558, 73.7185, -14.9598, 87.9356, -14.5576, 89.775, -28.7212, 85.9119, -42.9178, 73.8853, -49.8139, 73.6478, -62.8383, 68.1026, -78.7519, 53.1548, -79.9597, 45.1855, -103.033, 28.9427, -105.66, 22.7415, -99.2578, 11.0907, -103.682, -11.3259, -93.0637, -28.1383, -104.714, -33.0856, -125.044, 120.125, -125.24, 119.73, 74.8179, -79.875, 74.9672, -79.4247, -116.396, -67.9217, -108.228, -58.8651, -82.271, -56.2529, -71.9072, -63.6087, -59.1426, -54.5221, -41.4021, -59.9308, -29.9356, -46.7336, -30.5847, -33.2377, -16.6044, -39.8553, -14.3985, -47.8767, -21.8183, -55.8981, -14.3985, -46.0719, 4.05064, -66.9274, 19.8928, -56.5013, 36.2096, -42.9586, 33.6094, -31.6909, 33.0001, -24.6158, 37.1272, -14.8875, 35.6532, -1.83012, 47.1491, 16.4593, 38.5713, 28.5447, 31.5745, 35.8703, 20.8706, 25.2762, 11.9857 )
+polygon = PoolVector2Array( 25.8736, -0.167569, 28.1792, -7.78238, 38.6357, -12.006, 36.242, -24.8468, 26.1043, -34.555, 24.9997, -42.8661, 6.0006, -42.8956, -7.41757, -30.9726, -17.5252, -34.9387, -17.5243, -41.4376, -3.57115, -58.2973, 20.4522, -58.2668, 47.6683, -47.6311, 56.2198, -19.6558, 73.7185, -14.9598, 87.9356, -14.5576, 89.775, -28.7212, 85.9119, -42.9178, 73.8853, -49.8139, 73.6478, -62.8383, 68.1026, -78.7519, 53.1548, -79.9597, 45.1855, -103.033, 28.9427, -105.66, 22.7415, -99.2578, 11.0907, -103.682, -11.3259, -93.0637, -28.1383, -104.714, -33.0856, -125.044, 120.125, -125.24, 119.73, 74.8179, -79.875, 74.9672, -79.7426, -125.343, -68.0766, -125.308, -58.8651, -82.271, -56.2529, -71.9072, -63.6087, -59.1426, -54.5221, -41.4021, -59.9308, -29.9356, -46.7336, -30.5847, -39.8553, -14.3985, -50.7846, -5.87884, -48.8315, 5.69352, -66.9274, 19.8928, -56.5013, 36.2096, -42.9586, 33.6094, -31.6909, 33.0001, -24.6158, 37.1272, -14.8875, 35.6532, -1.83012, 47.1491, 26.2059, 45.4058, 43.7524, 22.8705, 25.2762, 11.9857 )
 
 [node name="Stories" type="Spatial" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="StoryTrigger" parent="Stories" instance=ExtResource( 15 )]
-enable = false
+[node name="StoryTrigger" parent="Stories" instance=ExtResource( 18 )]
 story_number = 0
 
-[node name="StoryTrigger2" parent="Stories" instance=ExtResource( 15 )]
+[node name="StoryTrigger2" parent="Stories" instance=ExtResource( 18 )]
 editor/display_folded = true
 story_number = 1
 
@@ -1577,8 +1841,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_scale = Vector2( 0.8, 0.8 )
 rect_pivot_offset = Vector2( 683, 384 )
-theme = ExtResource( 16 )
-script = ExtResource( 17 )
+theme = ExtResource( 19 )
+script = ExtResource( 20 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1590,7 +1854,7 @@ margin_left = 50.0
 margin_top = 25.0
 margin_right = -50.0
 margin_bottom = -25.0
-texture = ExtResource( 18 )
+texture = ExtResource( 21 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Stories/StoryTrigger2/MovementTutorial"]
 editor/display_folded = true
@@ -1604,7 +1868,7 @@ margin_bottom = -100.0
 [node name="Title" type="Label" parent="Stories/StoryTrigger2/MovementTutorial/VBoxContainer"]
 margin_right = 1066.0
 margin_bottom = 72.0
-custom_fonts/font = ExtResource( 19 )
+custom_fonts/font = ExtResource( 22 )
 custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
 text = "Movement"
 align = 1
@@ -1620,7 +1884,7 @@ size_flags_vertical = 3
 margin_right = 528.0
 margin_bottom = 486.0
 size_flags_horizontal = 3
-texture = ExtResource( 20 )
+texture = ExtResource( 23 )
 stretch_mode = 4
 
 [node name="TextureRect2" type="TextureRect" parent="Stories/StoryTrigger2/MovementTutorial/VBoxContainer/HBoxContainer"]
@@ -1628,14 +1892,14 @@ margin_left = 538.0
 margin_right = 1066.0
 margin_bottom = 486.0
 size_flags_horizontal = 3
-texture = ExtResource( 21 )
+texture = ExtResource( 24 )
 stretch_mode = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stories/StoryTrigger2/MovementTutorial"]
 anims/hide = SubResource( 5 )
 anims/show = SubResource( 6 )
 
-[node name="StoryTrigger3" parent="Stories" instance=ExtResource( 15 )]
+[node name="StoryTrigger3" parent="Stories" instance=ExtResource( 18 )]
 editor/display_folded = true
 transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 45 )
 story_number = 2
@@ -1644,13 +1908,14 @@ story_number = 2
 anims/before = SubResource( 7 )
 
 [node name="BattleTutorial" type="Panel" parent="Stories/StoryTrigger3"]
+editor/display_folded = true
 modulate = Color( 1, 1, 1, 0.00392157 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_scale = Vector2( 0.8, 0.8 )
 rect_pivot_offset = Vector2( 683, 384 )
-theme = ExtResource( 16 )
-script = ExtResource( 17 )
+theme = ExtResource( 19 )
+script = ExtResource( 20 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1662,9 +1927,10 @@ margin_left = 50.0
 margin_top = 25.0
 margin_right = -50.0
 margin_bottom = -25.0
-texture = ExtResource( 18 )
+texture = ExtResource( 21 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Stories/StoryTrigger3/BattleTutorial"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 150.0
@@ -1675,7 +1941,7 @@ margin_bottom = -100.0
 [node name="Title" type="Label" parent="Stories/StoryTrigger3/BattleTutorial/VBoxContainer"]
 margin_right = 1066.0
 margin_bottom = 72.0
-custom_fonts/font = ExtResource( 19 )
+custom_fonts/font = ExtResource( 22 )
 custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
 text = "Battle"
 align = 1
@@ -1690,7 +1956,7 @@ size_flags_vertical = 3
 margin_right = 528.0
 margin_bottom = 486.0
 size_flags_horizontal = 3
-texture = ExtResource( 22 )
+texture = ExtResource( 25 )
 expand = true
 stretch_mode = 6
 
@@ -1699,35 +1965,158 @@ margin_left = 538.0
 margin_right = 1066.0
 margin_bottom = 486.0
 size_flags_horizontal = 3
-texture = ExtResource( 23 )
+texture = ExtResource( 26 )
 stretch_mode = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stories/StoryTrigger3/BattleTutorial"]
 anims/hide = SubResource( 8 )
 anims/show = SubResource( 9 )
 
+[node name="StoryTrigger4" parent="Stories" instance=ExtResource( 18 )]
+editor/display_folded = true
+transform = Transform( -6.77527e-08, 0, -3.875, 0, 1, 0, 1, 0, -1.09278e-07, -46.7153, 0, -3.82693 )
+story_number = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stories/StoryTrigger4"]
+anims/before = SubResource( 11 )
+
+[node name="LearningTutorial" type="Panel" parent="Stories/StoryTrigger4"]
+editor/display_folded = true
+modulate = Color( 1, 1, 1, 0.00392157 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 0.8, 0.8 )
+rect_pivot_offset = Vector2( 683, 384 )
+theme = ExtResource( 19 )
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Stories/StoryTrigger4/LearningTutorial"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 25.0
+margin_right = -50.0
+margin_bottom = -25.0
+texture = ExtResource( 21 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Stories/StoryTrigger4/LearningTutorial"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -533.0
+margin_top = -284.0
+margin_right = 533.0
+margin_bottom = 284.0
+
+[node name="Title" type="Label" parent="Stories/StoryTrigger4/LearningTutorial/VBoxContainer"]
+margin_right = 1066.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 22 )
+custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
+text = "Learning"
+align = 1
+
+[node name="HBoxContainer" type="TextureRect" parent="Stories/StoryTrigger4/LearningTutorial/VBoxContainer"]
+margin_top = 82.0
+margin_right = 1066.0
+margin_bottom = 568.0
+size_flags_vertical = 3
+texture = ExtResource( 27 )
+expand = true
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stories/StoryTrigger4/LearningTutorial"]
+anims/hide = SubResource( 12 )
+anims/show = SubResource( 13 )
+
+[node name="StoryTrigger5" parent="Stories" instance=ExtResource( 18 )]
+editor/display_folded = true
+transform = Transform( 1.155, 0, 0, 0, 1, 0, 0, 0, 1, -64.1704, 0, -87.155 )
+story_number = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stories/StoryTrigger5"]
+anims/before = SubResource( 14 )
+
 [node name="Battles" type="Spatial" parent="."]
 editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="BattleTrigger" parent="Battles" instance=ExtResource( 24 )]
+[node name="BattleTrigger" parent="Battles" instance=ExtResource( 28 )]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36034, 0, 52.8743 )
 
-[node name="DragonMushroom" parent="Battles/BattleTrigger" instance=ExtResource( 25 )]
+[node name="DragonMushroom" parent="Battles/BattleTrigger" instance=ExtResource( 29 )]
 
-[node name="BattleTrigger2" parent="Battles" instance=ExtResource( 24 )]
+[node name="BattleTrigger2" parent="Battles" instance=ExtResource( 28 )]
+editor/display_folded = true
 transform = Transform( 1.44059, 0, 0, 0, 1.44059, 0, 0, 0, 1.44059, -48.9202, 0, 8.79669 )
 
-[node name="DragonMushroom" parent="Battles/BattleTrigger2" instance=ExtResource( 25 )]
+[node name="DragonMushroom" parent="Battles/BattleTrigger2" instance=ExtResource( 29 )]
 transform = Transform( 0.69416, 0, 0, 0, 0.69416, 0, 0, 0, 0.69416, -1.93577, 0, 0.829618 )
 
-[node name="DragonMushroom2" parent="Battles/BattleTrigger2" instance=ExtResource( 25 )]
+[node name="DragonMushroom2" parent="Battles/BattleTrigger2" instance=ExtResource( 29 )]
 transform = Transform( 0.69416, 0, 0, 0, 0.69416, 0, 0, 0, 0.69416, 2.08248, 0, -2.08248 )
 
-[node name="BattleTrigger3" parent="Battles" instance=ExtResource( 24 )]
-transform = Transform( 2.0128, 0, 0, 0, 2.0128, 0, 0, 0, 2.0128, -56.7715, 0, -68.1455 )
+[node name="BattleTrigger4" parent="Battles" instance=ExtResource( 28 )]
+transform = Transform( 2.28776, 0, 0, 0, 2.28776, 0, 0, 0, 2.28776, -59.2876, 0, -20.9023 )
 
-[node name="DragonMushroom2" parent="Battles/BattleTrigger3" instance=ExtResource( 26 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.36536, 0, -2.58039 )
+[node name="DragonMushroom2" parent="Battles/BattleTrigger4" instance=ExtResource( 29 )]
+transform = Transform( 0.379814, 0, 0.216348, 0, 0.43711, 0, -0.216348, 0, 0.379814, -0.427841, 0, 0.496361 )
+
+[node name="DragonMushroom" parent="Battles/BattleTrigger4" instance=ExtResource( 29 )]
+transform = Transform( -0.273057, 0, -0.341328, 0, 0.43711, 0, 0.341328, 0, -0.273057, 3.55773, 0, -0.496655 )
+
+[node name="BattleTrigger3" parent="Battles" instance=ExtResource( 28 )]
+transform = Transform( 2.0128, 0, 0, 0, 2.0128, 0, 0, 0, 2.0128, -60.9076, 0, -83.2053 )
+
+[node name="DragonMushroom2" parent="Battles/BattleTrigger3" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.269051, 0, -0.36747 )
+
+[node name="DragonMushroom3" parent="Battles/BattleTrigger3" instance=ExtResource( 29 )]
+transform = Transform( 0.383131, 0, 0.316293, 0, 0.49682, 0, -0.316293, 0, 0.383131, -3.87632, 0, 3.8112 )
+
+[node name="ManchineelToxicityArea" type="Area" parent="Battles"]
+transform = Transform( 0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, -52.7646, 0, -46.249 )
+script = ExtResource( 31 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Battles/ManchineelToxicityArea"]
+transform = Transform( 17.15, 0, 0, 0, 17.15, 0, 0, 0, 17.15, 0, 0, 0 )
+shape = SubResource( 17 )
+
+[node name="Weathervane" parent="Battles/ManchineelToxicityArea" instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9099, 0, 7.25995 )
+
+[node name="Timer" type="Timer" parent="Battles/ManchineelToxicityArea"]
+wait_time = 3.0
+autostart = true
+
+[node name="Learn" type="Spatial" parent="."]
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SignPost" parent="Learn" instance=ExtResource( 33 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -56.9047, 1, -22.2678 )
+knowledge_name = "Manchineel Toxicity"
+
+[node name="SignPost2" parent="Learn" instance=ExtResource( 33 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -43.4262, 1, -27.8401 )
+knowledge_name = "Manchineel"
+
+[node name="SignPost3" parent="Learn" instance=ExtResource( 33 )]
+transform = Transform( 0.289807, 0, 0.407445, 0, 0.5, 0, -0.407445, 0, 0.289807, -61.9896, 1, 28.7112 )
+knowledge_name = "Electroidesia"
+
+[node name="SignPost4" parent="Learn" instance=ExtResource( 33 )]
+transform = Transform( 0.238037, 0, 0.439703, 0, 0.5, 0, -0.439703, 0, 0.238037, -18.6865, 1, -0.720443 )
+knowledge_name = "Latite"
 
 [node name="Sun" type="DirectionalLight" parent="."]
 transform = Transform( -0.481923, 0.683685, -0.54802, -0.165687, 0.543052, 0.823191, 0.860406, 0.487514, -0.148431, 0, 31, 0 )
@@ -1739,12 +2128,57 @@ environment = SubResource( 10 )
 
 [node name="EnvironmentSound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform( 1, -1.74846e-07, -3.01876e-11, -3.01876e-11, -0.000345306, 1, -1.74846e-07, -1, -0.000345306, 0, 11, 0 )
-stream = ExtResource( 27 )
+stream = ExtResource( 34 )
 unit_db = 30.0
 max_db = 1.0
 autoplay = true
 max_distance = 300.0
 doppler_tracking = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
+[node name="ToBeContinue" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.5927, 0, -102.547 )
+script = ExtResource( 35 )
+
+[node name="CollisionShape" type="CollisionShape" parent="ToBeContinue"]
+transform = Transform( 9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0, 0 )
+shape = SubResource( 15 )
+
+[node name="Panel" type="Panel" parent="ToBeContinue"]
+editor/display_folded = true
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 19 )
+
+[node name="ColorRect" type="ColorRect" parent="ToBeContinue/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="ToBeContinue/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="ToBeContinue/Panel/CenterContainer"]
+margin_left = 569.0
+margin_top = 365.0
+margin_right = 797.0
+margin_bottom = 402.0
+custom_fonts/font = ExtResource( 36 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "To be continue..."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ToBeContinue"]
+anims/fade_in = SubResource( 16 )
+
+[connection signal="body_entered" from="Battles/ManchineelToxicityArea" to="Battles/ManchineelToxicityArea" method="_on_ManchineelToxicityArea_body_entered"]
+[connection signal="body_exited" from="Battles/ManchineelToxicityArea" to="Battles/ManchineelToxicityArea" method="_on_ManchineelToxicityArea_body_exited"]
+[connection signal="timeout" from="Battles/ManchineelToxicityArea/Timer" to="Battles/ManchineelToxicityArea" method="_on_Timer_timeout"]
+[connection signal="body_entered" from="ToBeContinue" to="ToBeContinue" method="_on_ToBeContinue_body_entered"]
 
 [editable path="Mathea"]
+
+[editable path="Battles/ManchineelToxicityArea/Weathervane"]

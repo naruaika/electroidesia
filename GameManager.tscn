@@ -1,26 +1,102 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://GameManager.gd" type="Script" id=1]
 [ext_resource path="res://assets/gui/title_screen/title_screen.ogg" type="AudioStream" id=2]
 [ext_resource path="res://assets/sounds/battle.ogg" type="AudioStream" id=3]
 [ext_resource path="res://assets/sounds/typewriter.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/gui/default_theme/default_theme.tres" type="Theme" id=5]
+[ext_resource path="res://assets/gui/default_theme/font_amble_regular_30.tres" type="DynamicFont" id=6]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "game_over_show"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("GameOver:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GameOver/CenterContainer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "goto_mainmenu"
+} ]
+}
 
 [node name="GameManager" type="Node"]
 pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="BGM" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="TitleScreen" type="AudioStreamPlayer" parent="BGM"]
 stream = ExtResource( 2 )
+volume_db = -10.0
 
 [node name="Battle" type="AudioStreamPlayer" parent="BGM"]
 stream = ExtResource( 3 )
 volume_db = -10.0
 
 [node name="SFX" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Typewriter" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource( 4 )
 pitch_scale = 1.5
+
+[node name="GameOver" type="Panel" parent="."]
+editor/display_folded = true
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="GameOver"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="GameOver/CenterContainer"]
+margin_left = 598.0
+margin_top = 365.0
+margin_right = 767.0
+margin_bottom = 402.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Game over..."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/game_over_show = SubResource( 1 )
 

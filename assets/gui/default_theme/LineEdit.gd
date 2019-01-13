@@ -1,8 +1,6 @@
 extends LineEdit
 
 func _on_LineEdit_focus_entered() -> void:
-	$LineEditFocus.play()
-	
 	# Move cursor to the end of inputted text
 	caret_position = str(text).length()
 

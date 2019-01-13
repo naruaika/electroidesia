@@ -326,6 +326,7 @@ theme = ExtResource( 2 )
 
 [node name="Menu" type="VBoxContainer" parent="BattlePanel/HBoxContainer"]
 editor/display_folded = true
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 150.0
 margin_bottom = 167.0
 rect_min_size = Vector2( 150, 0 )
@@ -500,7 +501,6 @@ autowrap = true
 percent_visible = 0.0
 
 [node name="InvestigationPanel" type="Panel" parent="."]
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -521,10 +521,10 @@ texture = ExtResource( 12 )
 [node name="Logo" type="TextureRect" parent="InvestigationPanel"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 30.0
-margin_top = -39.0
-margin_right = 130.0
-margin_bottom = 61.0
+margin_left = 32.0
+margin_top = -46.0
+margin_right = 132.0
+margin_bottom = 54.0
 rect_min_size = Vector2( 100, 100 )
 texture = ExtResource( 15 )
 expand = true
@@ -550,13 +550,13 @@ text = "Lorem ipsum dolor sit amet, doctus omittam ei vim, prima appareat id est
 autowrap = true
 
 [node name="LevelUpPanel" type="Panel" parent="."]
+editor/display_folded = true
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
 
 [node name="CenterContainer" type="CenterContainer" parent="LevelUpPanel"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_vertical = 3
@@ -592,6 +592,7 @@ custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
 text = "100"
 
 [node name="PlayerList" type="HBoxContainer" parent="LevelUpPanel"]
+editor/display_folded = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0

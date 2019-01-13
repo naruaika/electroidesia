@@ -23,5 +23,33 @@
     [
         ["Aleace", "Is the wind blowing too big!? No, but the mushrooms are moving by it own legs! Very impressive!"],
         ["Mathea", "No time to explain, take out your weapon, we fight!"]
+    ],
+    [
+        ["Mathea", "Everyone here has a hobby of writing on signposts for everything they have found."],
+        ["Mathea", "They always hope that someone can get them out of this world."]
+    ],
+    [
+        ["Mathea", "You know what, everyone who got lost here had failed to enter his mind palace. I don't know how."],
+        ["Mathea", "It must be a big reason. All I know is that there was a pair of brothers who were trapped here."],
+        ["Mathea", "One of them disappeared on the 8th day. No one knows where he went."],
+        ["Mathea", "But his brother, Alan, continued to say that his little brother managed to return to the real world."],
+        ["Mathea", "He now lives in Archean mountains. The place is in the north of this Electroidesia forest."],
+        ["Mathea", "Come back if you need to ask something. I'll help as best I can. Good luck!"],
+        ["Aleace", "Thank you very much, Mathea."]
+    ],
+    [
+        ["Alan", "Oh, Irish! Uh, no, sorry. She can't be here."],
+        ["Aleace", "Have you just lost your little sister?"],
+        ["Alan", "Ah, ya. Of course not. She is always by my side."],
+        ["Aleace", "..."],
+        ["Alan", "She'll be back before dinner. She just went briefly to the real world to pick up her favorite storybook."],
+        ["Aleace", "Are you Alan?"],
+        ["Alan", "What!? No one here knows my real name. How do you know?"],
+        ["Aleace", "Um, I'm just guessing, right?"],
+        ["Alan", "..."],
+        ["Aleace", "How did your sister leave you?"],
+        ["Alan", "I'm not used to talking to strangers. But I don't feel afraid of you."],
+        ["Alan", "She said that it doesn't matter if everything isn't as desired. All we need to do is read a story we want to write."],
+        ["Alan", "Then she said she wanted to go out to pick flowers to become his bookmark. And she never returned."]
     ]
 ]
