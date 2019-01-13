@@ -85,10 +85,10 @@ var story_data
 var weapons_stats_data
 var world_objects_data
 
-var _characters_stats_path = "game_data/characters_stats.dat"
-var _story_path = "game_data/story.dat"
-var _weapons_stats_path = "game_data/weapons_stats.dat"
-var _world_objects_path = "game_data/world_objects.dat"
+var _characters_stats_path = "res://game_data/characters_stats.json"
+var _story_path = "res://game_data/story.json"
+var _weapons_stats_path = "res://game_data/weapons_stats.json"
+var _world_objects_path = "res://game_data/world_objects.json"
 
 var is_interrupted = false
 

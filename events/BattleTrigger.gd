@@ -100,11 +100,14 @@ func start_battle(body: Node) -> void:
 		set_process_input(true)
 		
 		show_target_selector()
+		
+		GameManager.get_node("BGM/Battle").play()
 
 func combat() -> void:
 	if battlers[index_battler].is_in_group("player"):
 		battlers[index_battler].attack(target)
 		battler_selector.hide()
+		HUD.attack_menu_hide()
 	else:
 		battlers[index_battler].attack(battlers[0])
 	
@@ -129,13 +132,15 @@ func combat() -> void:
 		battlers[0].get_node("Skeleton/Weapon").visible = false
 		HUD.battle_hide()
 		
+		GameManager.get_node("BGM/Battle").stop()
+		
 		# Give EXP to player battler from current battle
 		yield(HUD.animation_node, "animation_finished")
 		for battler in battlers:
 			battler.level_up(gained_experience_point)
 		
 		# Show player level up information
-		HUD.levelup_show(gained_experience_point)
+		HUD.levelup_show(gained_experience_point, battlers)
 		is_leveling_up = true
 	
 	is_attacking = false

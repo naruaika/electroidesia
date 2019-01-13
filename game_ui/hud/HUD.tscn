@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://game_ui/hud/HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/gui/default_theme/default_theme.tres" type="Theme" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://assets/gui/default_theme/centered_panel.png" type="Texture" id=16]
 [ext_resource path="res://assets/gui/default_theme/font_amble_regular_60.tres" type="DynamicFont" id=17]
 [ext_resource path="res://assets/sounds/show_panel.ogg" type="AudioStream" id=18]
+[ext_resource path="res://assets/sounds/collect_item.ogg" type="AudioStream" id=19]
 
 [sub_resource type="Animation" id=1]
 
@@ -173,7 +174,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=7]
 
 resource_name = "levelup_hide"
 length = 0.2
@@ -189,8 +190,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/1/type = "audio"
+tracks/1/path = NodePath("SoundFX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 18 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=8]
 
 resource_name = "levelup_show"
 length = 0.2
@@ -206,8 +221,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/1/type = "audio"
+tracks/1/path = NodePath("SoundFX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 19 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=9]
 
 length = 0.3
 tracks/0/type = "value"
@@ -237,7 +266,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=10]
 
 length = 0.3
 tracks/0/type = "value"
@@ -296,6 +325,7 @@ anchor_bottom = 1.0
 theme = ExtResource( 2 )
 
 [node name="Menu" type="VBoxContainer" parent="BattlePanel/HBoxContainer"]
+editor/display_folded = true
 margin_right = 150.0
 margin_bottom = 167.0
 rect_min_size = Vector2( 150, 0 )
@@ -323,7 +353,7 @@ margin_bottom = 167.0
 size_flags_horizontal = 3
 alignment = 2
 
-[node name="PLayerList" type="HBoxContainer" parent="BattlePanel/HBoxContainer/Container"]
+[node name="PlayerList" type="HBoxContainer" parent="BattlePanel/HBoxContainer/Container"]
 margin_top = 67.0
 margin_right = 1166.0
 margin_bottom = 167.0
@@ -332,12 +362,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 theme = ExtResource( 2 )
 
-[node name="PlayerStatistics" type="Panel" parent="BattlePanel/HBoxContainer/Container/PLayerList"]
+[node name="PlayerStatistics" type="Panel" parent="BattlePanel/HBoxContainer/Container/PlayerList"]
 margin_right = 280.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 280, 0 )
 
-[node name="BackgroundImage" type="TextureRect" parent="BattlePanel/HBoxContainer/Container/PLayerList/PlayerStatistics"]
+[node name="BackgroundImage" type="TextureRect" parent="BattlePanel/HBoxContainer/Container/PlayerList/PlayerStatistics"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -100.0
@@ -345,7 +375,7 @@ margin_right = 280.0
 texture = ExtResource( 6 )
 stretch_mode = 3
 
-[node name="Photo" type="TextureRect" parent="BattlePanel/HBoxContainer/Container/PLayerList/PlayerStatistics"]
+[node name="Photo" type="TextureRect" parent="BattlePanel/HBoxContainer/Container/PlayerList/PlayerStatistics"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 12.0
@@ -357,7 +387,7 @@ texture = ExtResource( 7 )
 expand = true
 stretch_mode = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BattlePanel/HBoxContainer/Container/PLayerList/PlayerStatistics"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BattlePanel/HBoxContainer/Container/PlayerList/PlayerStatistics"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -369,14 +399,14 @@ margin_bottom = 32.0
 theme = ExtResource( 2 )
 custom_constants/separation = 20
 
-[node name="HPBar" type="TextureProgress" parent="BattlePanel/HBoxContainer/Container/PLayerList/PlayerStatistics/VBoxContainer"]
+[node name="HPBar" type="TextureProgress" parent="BattlePanel/HBoxContainer/Container/PlayerList/PlayerStatistics/VBoxContainer"]
 margin_right = 163.0
 margin_bottom = 17.0
 value = 50.0
 texture_under = ExtResource( 8 )
 texture_progress = ExtResource( 9 )
 
-[node name="Label" type="Label" parent="BattlePanel/HBoxContainer/Container/PLayerList/PlayerStatistics/VBoxContainer/HPBar"]
+[node name="Label" type="Label" parent="BattlePanel/HBoxContainer/Container/PlayerList/PlayerStatistics/VBoxContainer/HPBar"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -37.0
@@ -387,7 +417,7 @@ custom_colors/font_color_shadow = Color( 0.101961, 0.101961, 0.101961, 1 )
 text = "50"
 align = 1
 
-[node name="MPBar" type="TextureProgress" parent="BattlePanel/HBoxContainer/Container/PLayerList/PlayerStatistics/VBoxContainer"]
+[node name="MPBar" type="TextureProgress" parent="BattlePanel/HBoxContainer/Container/PlayerList/PlayerStatistics/VBoxContainer"]
 margin_top = 37.0
 margin_right = 163.0
 margin_bottom = 54.0
@@ -395,7 +425,7 @@ value = 50.0
 texture_under = ExtResource( 8 )
 texture_progress = ExtResource( 11 )
 
-[node name="Label" type="Label" parent="BattlePanel/HBoxContainer/Container/PLayerList/PlayerStatistics/VBoxContainer/MPBar"]
+[node name="Label" type="Label" parent="BattlePanel/HBoxContainer/Container/PlayerList/PlayerStatistics/VBoxContainer/MPBar"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -37.0
@@ -520,18 +550,18 @@ text = "Lorem ipsum dolor sit amet, doctus omittam ei vim, prima appareat id est
 autowrap = true
 
 [node name="LevelUpPanel" type="Panel" parent="."]
-editor/display_folded = true
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
 
-[node name="Container" type="CenterContainer" parent="LevelUpPanel"]
+[node name="CenterContainer" type="CenterContainer" parent="LevelUpPanel"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="LevelUpPanel/Container"]
+[node name="TextureRect" type="TextureRect" parent="LevelUpPanel/CenterContainer"]
 margin_left = 321.0
 margin_top = 245.0
 margin_right = 1044.0
@@ -539,35 +569,97 @@ margin_bottom = 523.0
 texture = ExtResource( 16 )
 stretch_mode = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="LevelUpPanel/Container"]
-margin_left = 485.0
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelUpPanel/CenterContainer"]
+margin_left = 441.0
 margin_top = 348.0
-margin_right = 880.0
+margin_right = 924.0
 margin_bottom = 420.0
 alignment = 1
 
-[node name="Label" type="Label" parent="LevelUpPanel/Container/HBoxContainer"]
-margin_right = 239.0
+[node name="Label" type="Label" parent="LevelUpPanel/CenterContainer/HBoxContainer"]
+margin_right = 368.0
 margin_bottom = 72.0
 custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
-text = "You gain"
+text = "Obtained EXP"
 
-[node name="GainedEXP" type="Label" parent="LevelUpPanel/Container/HBoxContainer"]
-margin_left = 249.0
-margin_right = 284.0
+[node name="GainedEXP" type="Label" parent="LevelUpPanel/CenterContainer/HBoxContainer"]
+margin_left = 378.0
+margin_right = 483.0
 margin_bottom = 72.0
 custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
+text = "100"
+
+[node name="PlayerList" type="HBoxContainer" parent="LevelUpPanel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -230.0
+margin_right = -20.0
+margin_bottom = -20.0
+
+[node name="PlayerStatistics" type="Panel" parent="LevelUpPanel/PlayerList"]
+editor/display_folded = true
+margin_right = 1326.0
+margin_bottom = 210.0
+rect_min_size = Vector2( 280, 0 )
+size_flags_horizontal = 3
+
+[node name="Photo" type="TextureRect" parent="LevelUpPanel/PlayerList/PlayerStatistics"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -100.0
+margin_right = 100.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelUpPanel/PlayerList/PlayerStatistics"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -663.0
+margin_top = -57.0
+margin_right = 663.0
+margin_bottom = -20.0
+alignment = 1
+
+[node name="Label" type="Label" parent="LevelUpPanel/PlayerList/PlayerStatistics/HBoxContainer"]
+margin_left = 614.0
+margin_right = 685.0
+margin_bottom = 37.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
+custom_colors/font_color_shadow = Color( 0.101961, 0.101961, 0.101961, 1 )
+text = "Level"
+align = 1
+
+[node name="CurrentLevel" type="Label" parent="LevelUpPanel/PlayerList/PlayerStatistics/HBoxContainer"]
+margin_left = 695.0
+margin_right = 712.0
+margin_bottom = 37.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
+custom_colors/font_color_shadow = Color( 0.101961, 0.101961, 0.101961, 1 )
 text = "0"
+align = 1
 
-[node name="Label2" type="Label" parent="LevelUpPanel/Container/HBoxContainer"]
-margin_left = 294.0
-margin_right = 395.0
-margin_bottom = 72.0
-custom_fonts/font = ExtResource( 17 )
-custom_colors/font_color = Color( 0.992157, 0.937255, 0.729412, 1 )
-text = "EXP"
+[node name="EXPBar" type="TextureProgress" parent="LevelUpPanel/PlayerList/PlayerStatistics"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -81.5
+margin_top = -17.0
+margin_right = 81.5
+value = 50.0
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 11 )
 
 [node name="SoundFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 18 )
@@ -580,8 +672,8 @@ anims/battle_hide = SubResource( 3 )
 anims/battle_show = SubResource( 4 )
 anims/investigation_hide = SubResource( 5 )
 anims/investigation_show = SubResource( 6 )
-anims/levelup_hide = SubResource( 9 )
-anims/levelup_show = SubResource( 10 )
-anims/message_hide = SubResource( 7 )
-anims/message_show = SubResource( 8 )
+anims/levelup_hide = SubResource( 7 )
+anims/levelup_show = SubResource( 8 )
+anims/message_hide = SubResource( 9 )
+anims/message_show = SubResource( 10 )
 
