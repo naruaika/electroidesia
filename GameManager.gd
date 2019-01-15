@@ -64,6 +64,11 @@ func goto_scene(path: String) -> void:
 """
 func goto_mainmenu() -> void:
 	goto_scene("res://game_ui/title_screen/TitleScreen.tscn")
+	
+	# Reset
+	_user_data = _initial_data.duplicate()
+	is_locked = false
+	is_interrupted = false
 
 func new_game() -> void:
 	goto_scene("res://maps/ElectroidesiaForest.tscn")
@@ -74,11 +79,12 @@ func load_game() -> void:
 """
 	Handle game adventure
 """
-var _user_data = {
-	"player_name" : "",
+var _initial_data = {
+	"player_name" : "Aleace",
 	"backpack" : [],
 	"story_number" : 0.0
 }
+var _user_data
 var user_setting = {
 	"background_music" : true
 }

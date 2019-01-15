@@ -115,8 +115,13 @@ func attack(enemy_node: Node) -> void:
 	is_attacking = false
 	emit_signal("attack_ended")
 
-func attacked(damage_point: float) -> void:
+func attacked(damage_point: float, damage_visible: bool = true) -> void:
 	hit_point[0] -= damage_point
+	
+	if damage_visible:
+		self.damage_point = damage_point
+		target_node = self
+		show_damage()
 	
 	if hit_point[0] <= 0:
 		GameManager.get_node("AnimationPlayer").play("game_over_show")

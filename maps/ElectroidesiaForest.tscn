@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://maps/Map.gd" type="Script" id=1]
 [ext_resource path="res://characters/players/Aleace.tscn" type="PackedScene" id=2]
@@ -33,9 +33,10 @@
 [ext_resource path="res://maps/ManchineelToxicityArea.gd" type="Script" id=31]
 [ext_resource path="res://assets/3d/world/WeatherVane.tscn" type="PackedScene" id=32]
 [ext_resource path="res://assets/3d/world/SignPost.tscn" type="PackedScene" id=33]
-[ext_resource path="res://maps/forest.ogg" type="AudioStream" id=34]
-[ext_resource path="res://maps/ToBeContinue.gd" type="Script" id=35]
-[ext_resource path="res://assets/gui/default_theme/font_amble_regular_30.tres" type="DynamicFont" id=36]
+[ext_resource path="res://assets/default_environtment.tres" type="Environment" id=34]
+[ext_resource path="res://maps/forest.ogg" type="AudioStream" id=35]
+[ext_resource path="res://maps/ToBeContinue.gd" type="Script" id=36]
+[ext_resource path="res://assets/gui/default_theme/font_amble_regular_30.tres" type="DynamicFont" id=37]
 
 [sub_resource type="Animation" id=1]
 
@@ -301,10 +302,10 @@ tracks/1/keys = {
 "values": [ Vector2( 0.8, 0.8 ), Vector2( 1.05, 0.9 ), Vector2( 1, 1.1 ), Vector2( 1, 1 ), Vector2( 1.05, 0.9 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=10]
 
 resource_name = "before"
-length = 7.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("../../Mathea:translation")
 tracks/0/interp = 1
@@ -312,10 +313,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2, 6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( -8.6009, 0, 44.6305 ), Vector3( -38.5815, 0, 50.1903 ), Vector3( -57.7515, 0, -7.79914 ) ]
+"values": [ Vector3( -40.9778, 0, 42.9416 ), Vector3( -57.7515, 0, -7.79914 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("../../Mathea:rotation_degrees")
@@ -324,10 +325,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 2, 2.1, 6, 6.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 3.5, 4.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 30, 0 ), Vector3( 0, -55, 0 ), Vector3( 0, -55, 0 ), Vector3( 0, -160, 0 ), Vector3( 0, -160, 0 ), Vector3( 0, -330, 0 ) ]
+"values": [ Vector3( 0, -160, 0 ), Vector3( 0, -160, 0 ), Vector3( 0, -330, 0 ) ]
 }
 tracks/2/type = "animation"
 tracks/2/path = NodePath("../../Mathea/AnimationPlayer")
@@ -337,10 +338,10 @@ tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
 "clips": PoolStringArray( "run", "idle" ),
-"times": PoolRealArray( 0, 6 )
+"times": PoolRealArray( 0, 3.5 )
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=11]
 
 resource_name = "hide"
 length = 0.1
@@ -384,7 +385,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=12]
 
 resource_name = "show"
 length = 0.4
@@ -414,10 +415,10 @@ tracks/1/keys = {
 "values": [ Vector2( 0.8, 0.8 ), Vector2( 1.05, 0.9 ), Vector2( 1, 1.1 ), Vector2( 1, 1 ), Vector2( 1.05, 0.9 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=13]
 
 resource_name = "before"
-length = 6.0
+length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("../../Mathea:rotation_degrees")
 tracks/0/interp = 1
@@ -425,10 +426,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 5, 5.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 3, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, -330, 0 ), Vector3( 0, 180, 0 ), Vector3( 0, 180, 0 ), Vector3( 0, 225, 0 ) ]
+"values": [ Vector3( 0, 180, 0 ), Vector3( 0, 180, 0 ), Vector3( 0, 225, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("../../Mathea:translation")
@@ -437,10 +438,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 5 ),
+"times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( -57.7515, 0, -7.79914 ), Vector3( -55.7059, 0, -79.0961 ) ]
+"values": [ Vector3( -56.9333, 0, -36.3179 ), Vector3( -55.7059, 0, -79.0961 ) ]
 }
 tracks/2/type = "animation"
 tracks/2/path = NodePath("../../Mathea/AnimationPlayer")
@@ -450,29 +451,43 @@ tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
 "clips": PoolStringArray( "run", "idle" ),
-"times": PoolRealArray( 0, 5 )
+"times": PoolRealArray( 0, 3 )
 }
 
-[sub_resource type="BoxShape" id=17]
+[sub_resource type="BoxShape" id=14]
 
 
-[sub_resource type="Environment" id=10]
+[sub_resource type="ParticlesMaterial" id=17]
 
-background_mode = 1
-ambient_light_color = Color( 0.560784, 0.560784, 0.560784, 1 )
-glow_enabled = true
-glow_intensity = 2.0
-glow_bloom = 0.02
-glow_hdr_threshold = 1.2
-adjustment_enabled = true
-adjustment_brightness = 1.02
+emission_shape = 2
+emission_box_extents = Vector3( 5, 1, 1 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 5.0
+
+[sub_resource type="SpatialMaterial" id=18]
+
+flags_do_not_receive_shadows = true
+vertex_color_use_as_albedo = true
+params_billboard_mode = 1
+albedo_color = Color( 0.839216, 1, 0.168627, 1 )
+metallic_specular = 0.0
+emission_enabled = true
+emission = Color( 0.372549, 0.443137, 0, 1 )
+emission_energy = 1.0
+emission_operator = 1
+emission_on_uv2 = false
+
+[sub_resource type="QuadMesh" id=19]
+
+material = SubResource( 18 )
+size = Vector2( 0.1, 0.1 )
 
 [sub_resource type="BoxShape" id=15]
 
 
 [sub_resource type="Animation" id=16]
 
-resource_name = "fade_in"
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Panel:modulate")
@@ -522,6 +537,7 @@ __meta__ = {
 [node name="Camera" type="Camera" parent="."]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28, 0 )
+doppler_tracking = 2
 current = true
 fov = 22.2737
 near = 0.1
@@ -544,7 +560,7 @@ character_name = null
 
 [node name="Mathea" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
-transform = Transform( -0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, -0.984808, -3.15584, 0, 25.9168 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -3.15584, 0, 25.9168 )
 
 [node name="Skeleton" parent="Mathea" index="1"]
 editor/display_folded = true
@@ -556,7 +572,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.57628e-07, 0, -0.0503316 )
 stream = ExtResource( 4 )
 
 [node name="Floor" type="MeshInstance" parent="."]
-editor/display_folded = true
 transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = null
@@ -576,7 +591,6 @@ __meta__ = {
 }
 
 [node name="Decorations" type="Spatial" parent="."]
-editor/display_folded = true
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 __meta__ = {
 "_edit_lock_": true
@@ -1198,7 +1212,13 @@ transform = Transform( -4.8473e-07, 4.8473e-07, 11.0893, -4.8473e-07, 11.0893, -
 transform = Transform( -10.7115, 1.25457e-07, 2.87013, -1.25457e-07, 11.0893, -9.52943e-07, -2.87013, -9.52943e-07, -10.7115, 41.2169, -2.00928, -190.393 )
 
 [node name="Latite36" parent="Decorations" instance=ExtResource( 10 )]
-transform = Transform( -4.8473e-07, 4.8473e-07, 11.0893, -4.8473e-07, 11.0893, -4.8473e-07, -11.0893, -4.8473e-07, -4.8473e-07, -85.0936, -2.00928, -74.3395 )
+transform = Transform( -2.4229e-07, 2.4229e-07, 5.54294, -2.4229e-07, 5.54294, -2.4229e-07, -5.54294, -2.4229e-07, -2.4229e-07, -85.022, -2.00928, -73.9783 )
+
+[node name="Latite52" parent="Decorations" instance=ExtResource( 10 )]
+transform = Transform( 24.0564, 1.85418e-07, 4.24179, -1.85417e-07, 24.4275, -1.62245e-08, -4.24179, -1.62193e-08, 24.0564, -74.9017, -2.00928, -90.8574 )
+
+[node name="Latite53" parent="Decorations" instance=ExtResource( 9 )]
+transform = Transform( 18.5172, 0, 0, 0, 18.5172, 0, 0, 0, 18.5172, -82.1541, 0, -83.3078 )
 
 [node name="Latite37" parent="Decorations" instance=ExtResource( 10 )]
 transform = Transform( -4.8473e-07, 4.8473e-07, 11.0893, -4.8473e-07, 11.0893, -4.8473e-07, -11.0893, -4.8473e-07, -4.8473e-07, -138.493, -2.00928, -168.592 )
@@ -1273,7 +1293,7 @@ transform = Transform( -3.16961e-07, 3.16961e-07, 7.25122, -3.16961e-07, 7.25122
 transform = Transform( -7.00414, 8.20355e-08, 1.87675, -8.20356e-08, 7.25122, -6.23122e-07, -1.87675, -6.23122e-07, -7.00414, -101.713, 1.07288e-06, -176.411 )
 
 [node name="Latite35" parent="Decorations" instance=ExtResource( 10 )]
-transform = Transform( -7.14106, -5.50398e-08, -1.25916, 5.50395e-08, 7.25122, -6.29106e-07, 1.25916, -6.29106e-07, -7.14106, -88.1771, 0, -78.8837 )
+transform = Transform( -7.25122, 0.00592528, -1.22786e-05, 0.00592528, 7.25122, 0.000528544, 1.27554e-05, 0.000528536, -7.25122, -87.8211, -0.00390625, -76.0664 )
 
 [node name="Latite33" parent="Decorations" instance=ExtResource( 10 )]
 transform = Transform( -58.2075, -3.01607e-06, 83.129, -2.87712e-06, 97.108, 1.85854e-06, -83.129, -1.20926e-06, -58.2075, -196.345, -19.0898, -111.616 )
@@ -1722,14 +1742,23 @@ transform = Transform( 13.5403, -6.16682, 3.56655, 2.95674, 11.8338, 9.23629, -6
 [node name="Manchineel3" parent="Decorations" instance=ExtResource( 15 )]
 transform = Transform( 14.864, 0, 3.62668, 0, 15.3, 0, -3.62668, 0, 14.864, -150.934, 0, -83.6794 )
 
-[node name="Pay6" parent="Decorations" instance=ExtResource( 16 )]
-transform = Transform( -0.528905, 4.63629e-08, 1.40366, -1.62299e-09, 1.5, -5.01566e-08, -1.40366, -1.92041e-08, -0.528905, -81.7159, 0, -69.3529 )
-
 [node name="Pay7" parent="Decorations" instance=ExtResource( 16 )]
-transform = Transform( -1.41524, -2.08641e-07, 0.49709, -1.78139e-07, 1.5, 1.22419e-07, -0.49709, 5.64675e-08, -1.41524, -78.9107, 9.09495e-13, -77.6207 )
+transform = Transform( -1.23836, -1.40556e-07, 0.846443, -1.10117e-07, 1.5, 8.79793e-08, -0.846443, 1.04949e-08, -1.23836, -78.9107, 9.09495e-13, -77.6207 )
 
 [node name="Pay8" parent="Decorations" instance=ExtResource( 16 )]
-transform = Transform( -1.21894, 6.90029e-07, -0.874177, 3.26132e-07, 1.5, 7.29267e-07, 0.874177, 4.02558e-07, -1.21894, -83.7864, 1.81899e-12, -83.9981 )
+transform = Transform( 0.404556, 6.75898e-07, -1.44441, 3.51058e-07, 1.5, 8.00232e-07, 1.44441, -5.53874e-07, 0.404556, -78.9833, 1.81899e-12, -77.4378 )
+
+[node name="Pay32" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( 0.764613, 5.26484e-07, -1.29049, 3.4433e-07, 1.5, 8.15971e-07, 1.29049, -7.12171e-07, 0.764613, -70.1972, 1.81899e-12, -80.0022 )
+
+[node name="Pay33" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( 1.47418, -4.2754e-07, 0.277127, 2.75807e-07, 1.5, 8.46987e-07, -0.277127, -7.81451e-07, 1.47418, -62.5487, 1.79057e-12, -84.4869 )
+
+[node name="Pay34" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( 1.48006, -1.5691e-07, -0.243784, 2.98577e-07, 1.5, 8.47244e-07, 0.243784, -8.84506e-07, 1.48006, -64.1943, 1.81899e-12, -93.2458 )
+
+[node name="Pay35" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( 0.874177, 4.68125e-07, -1.21894, 3.41202e-07, 1.5, 8.2076e-07, 1.21894, -7.55596e-07, 0.874177, -62.7499, 1.81899e-12, -101.84 )
 
 [node name="Pay12" parent="Decorations" instance=ExtResource( 16 )]
 transform = Transform( 0.277127, 7.15884e-07, -1.47418, 3.52359e-07, 1.5, 7.94663e-07, 1.47418, -4.93108e-07, 0.277127, -127.137, 1.81899e-12, -57.0042 )
@@ -1792,13 +1821,22 @@ transform = Transform( -1.35685, -0.00261967, -0.639485, -0.0026197, 1.5, -0.000
 transform = Transform( -1.47827, 0.0010773, 0.254417, 0.00107748, 1.5, -9.10075e-05, -0.254417, 9.30637e-05, -1.47827, -9.83201, 2.42144e-07, 53.3222 )
 
 [node name="Pay9" parent="Decorations" instance=ExtResource( 16 )]
-transform = Transform( -1.47418, -2.09078e-07, -0.277127, -2.3659e-07, 1.5, 1.26869e-07, 0.277127, 1.68395e-07, -1.47418, -91.6532, 1.13687e-12, -75.0722 )
+transform = Transform( -1.21894, -2.41752e-07, -0.874178, -3.5284e-07, 1.5, 7.71723e-08, 0.874178, 2.68342e-07, -1.21894, -91.6532, 9.09495e-13, -75.0722 )
 
 [node name="Pay10" parent="Decorations" instance=ExtResource( 16 )]
 transform = Transform( -1.49272, -2.13089e-07, -0.147589, -2.2681e-07, 1.5, 1.28269e-07, 0.147589, 1.49963e-07, -1.49272, -92.5178, 1.13687e-12, -83.8554 )
 
 [node name="Pay11" parent="Decorations" instance=ExtResource( 16 )]
-transform = Transform( 0.0169282, -2.00181e-07, -1.4999, -3.35972e-07, 1.5, -2.03985e-07, 1.4999, 3.38252e-07, 0.0169282, -92.5178, 1.81899e-12, -83.6279 )
+transform = Transform( 1.07256, 1.43994e-07, -1.04862, -3.55698e-07, 1.5, -1.57842e-07, 1.04862, 3.61525e-07, 1.07256, -92.5178, 1.81899e-12, -83.5557 )
+
+[node name="Pay36" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( 1.40366, 4.47932e-07, 0.528903, -4.24654e-07, 1.5, -1.43369e-07, -0.528903, -1.55727e-08, 1.40366, -86.3791, 1.81899e-12, -89.6944 )
+
+[node name="Pay37" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( 0.404554, -8.88439e-08, -1.44441, -3.38397e-07, 1.5, -1.87041e-07, 1.44441, 3.76303e-07, 0.404554, -89.4845, 1.81899e-12, -97.9275 )
+
+[node name="Pay38" parent="Decorations" instance=ExtResource( 16 )]
+transform = Transform( 0.977085, 1.06222e-07, -1.13811, -3.51786e-07, 1.5, -1.62015e-07, 1.13811, 3.7245e-07, 0.977085, -81.107, 1.93268e-12, -100.311 )
 
 [node name="Portal" parent="Decorations" instance=ExtResource( 17 )]
 transform = Transform( -4.36682e-08, 0.00436787, -0.99999, -0.00438101, 0.999981, 0.00436783, 0.99999, 0.00438097, 1.9092e-05, -130.916, -0.0117188, -200.249 )
@@ -1817,7 +1855,7 @@ polygon = PoolVector2Array( 6.26749, 8.50844, 4.54923, 17.2716, -12.8911, 12.202
 [node name="CollisionPolygon2" type="CollisionPolygon" parent="Boundaries"]
 transform = Transform( 1, 0, 5.30863e-14, 5.30863e-14, 1.62921e-07, -1, 0, 1, 1.62921e-07, -20.1684, 0.00341797, 25.2463 )
 depth = 10.0
-polygon = PoolVector2Array( 25.8736, -0.167569, 28.1792, -7.78238, 38.6357, -12.006, 36.242, -24.8468, 26.1043, -34.555, 24.9997, -42.8661, 6.0006, -42.8956, -7.41757, -30.9726, -17.5252, -34.9387, -17.5243, -41.4376, -3.57115, -58.2973, 20.4522, -58.2668, 47.6683, -47.6311, 56.2198, -19.6558, 73.7185, -14.9598, 87.9356, -14.5576, 89.775, -28.7212, 85.9119, -42.9178, 73.8853, -49.8139, 73.6478, -62.8383, 68.1026, -78.7519, 53.1548, -79.9597, 45.1855, -103.033, 28.9427, -105.66, 22.7415, -99.2578, 11.0907, -103.682, -11.3259, -93.0637, -28.1383, -104.714, -33.0856, -125.044, 120.125, -125.24, 119.73, 74.8179, -79.875, 74.9672, -79.7426, -125.343, -68.0766, -125.308, -58.8651, -82.271, -56.2529, -71.9072, -63.6087, -59.1426, -54.5221, -41.4021, -59.9308, -29.9356, -46.7336, -30.5847, -39.8553, -14.3985, -50.7846, -5.87884, -48.8315, 5.69352, -66.9274, 19.8928, -56.5013, 36.2096, -42.9586, 33.6094, -31.6909, 33.0001, -24.6158, 37.1272, -14.8875, 35.6532, -1.83012, 47.1491, 26.2059, 45.4058, 43.7524, 22.8705, 25.2762, 11.9857 )
+polygon = PoolVector2Array( 25.8736, -0.167569, 28.1792, -7.78238, 38.6357, -12.006, 36.242, -24.8468, 26.1043, -34.555, 24.9997, -42.8661, 6.0006, -42.8956, -7.41757, -30.9726, -17.5252, -34.9387, -17.5243, -41.4376, -3.57115, -58.2973, 20.4522, -58.2668, 47.6683, -47.6311, 56.2198, -19.6558, 73.7185, -14.9598, 87.9356, -14.5576, 89.775, -28.7212, 85.9119, -42.9178, 73.8853, -49.8139, 73.6478, -62.8383, 68.1026, -78.7519, 53.1548, -79.9597, 45.1855, -103.033, 28.9427, -105.66, 22.8154, -96.5675, 11.0907, -103.682, -11.0937, -89.4971, -30.1405, -102.051, -33.0856, -125.044, 120.125, -125.24, 119.73, 74.8179, -79.875, 74.9672, -79.7426, -125.343, -68.0766, -125.308, -58.8651, -82.271, -56.2529, -71.9072, -63.6087, -59.1426, -54.5221, -41.4021, -59.9308, -29.9356, -46.7336, -30.5847, -39.8553, -14.3985, -50.7846, -5.87884, -48.8315, 5.69352, -66.9274, 19.8928, -56.5013, 36.2096, -42.9586, 33.6094, -31.6909, 33.0001, -24.6158, 37.1272, -14.8875, 35.6532, -1.83012, 47.1491, 26.2059, 45.4058, 43.7524, 22.8705, 25.2762, 11.9857 )
 
 [node name="Stories" type="Spatial" parent="."]
 __meta__ = {
@@ -1828,7 +1866,6 @@ __meta__ = {
 story_number = 0
 
 [node name="StoryTrigger2" parent="Stories" instance=ExtResource( 18 )]
-editor/display_folded = true
 story_number = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stories/StoryTrigger2"]
@@ -1978,7 +2015,7 @@ transform = Transform( -6.77527e-08, 0, -3.875, 0, 1, 0, 1, 0, -1.09278e-07, -46
 story_number = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stories/StoryTrigger4"]
-anims/before = SubResource( 11 )
+anims/before = SubResource( 10 )
 
 [node name="LearningTutorial" type="Panel" parent="Stories/StoryTrigger4"]
 editor/display_folded = true
@@ -2030,8 +2067,8 @@ expand = true
 stretch_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stories/StoryTrigger4/LearningTutorial"]
-anims/hide = SubResource( 12 )
-anims/show = SubResource( 13 )
+anims/hide = SubResource( 11 )
+anims/show = SubResource( 12 )
 
 [node name="StoryTrigger5" parent="Stories" instance=ExtResource( 18 )]
 editor/display_folded = true
@@ -2039,10 +2076,9 @@ transform = Transform( 1.155, 0, 0, 0, 1, 0, 0, 0, 1, -64.1704, 0, -87.155 )
 story_number = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stories/StoryTrigger5"]
-anims/before = SubResource( 14 )
+anims/before = SubResource( 13 )
 
 [node name="Battles" type="Spatial" parent="."]
-editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -2052,6 +2088,8 @@ editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36034, 0, 52.8743 )
 
 [node name="DragonMushroom" parent="Battles/BattleTrigger" instance=ExtResource( 29 )]
+character_name = null
+level = null
 
 [node name="BattleTrigger2" parent="Battles" instance=ExtResource( 28 )]
 editor/display_folded = true
@@ -2059,41 +2097,64 @@ transform = Transform( 1.44059, 0, 0, 0, 1.44059, 0, 0, 0, 1.44059, -48.9202, 0,
 
 [node name="DragonMushroom" parent="Battles/BattleTrigger2" instance=ExtResource( 29 )]
 transform = Transform( 0.69416, 0, 0, 0, 0.69416, 0, 0, 0, 0.69416, -1.93577, 0, 0.829618 )
+character_name = null
+level = null
 
 [node name="DragonMushroom2" parent="Battles/BattleTrigger2" instance=ExtResource( 29 )]
 transform = Transform( 0.69416, 0, 0, 0, 0.69416, 0, 0, 0, 0.69416, 2.08248, 0, -2.08248 )
+character_name = null
+level = null
 
 [node name="BattleTrigger4" parent="Battles" instance=ExtResource( 28 )]
-transform = Transform( 2.28776, 0, 0, 0, 2.28776, 0, 0, 0, 2.28776, -59.2876, 0, -20.9023 )
+editor/display_folded = true
+transform = Transform( 1.33683, 0, 0, 0, 1.33683, 0, 0, 0, 1.33683, -55.5391, 0, -20.8181 )
 
 [node name="DragonMushroom2" parent="Battles/BattleTrigger4" instance=ExtResource( 29 )]
-transform = Transform( 0.379814, 0, 0.216348, 0, 0.43711, 0, -0.216348, 0, 0.379814, -0.427841, 0, 0.496361 )
+transform = Transform( 0.649986, 0, 0.370242, 0, 0.748038, 0, -0.370242, 0, 0.649986, -3.53619, 0, 0.786425 )
+character_name = null
+level = null
 
 [node name="DragonMushroom" parent="Battles/BattleTrigger4" instance=ExtResource( 29 )]
-transform = Transform( -0.273057, 0, -0.341328, 0, 0.43711, 0, 0.341328, 0, -0.273057, 3.55773, 0, -0.496655 )
+transform = Transform( -0.46729, 0, -0.584124, 0, 0.748038, 0, 0.584124, 0, -0.46729, 3.28443, 0, -0.912951 )
+character_name = null
+level = null
 
 [node name="BattleTrigger3" parent="Battles" instance=ExtResource( 28 )]
 transform = Transform( 2.0128, 0, 0, 0, 2.0128, 0, 0, 0, 2.0128, -60.9076, 0, -83.2053 )
 
 [node name="DragonMushroom2" parent="Battles/BattleTrigger3" instance=ExtResource( 30 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.269051, 0, -0.36747 )
+character_name = null
+level = null
 
 [node name="DragonMushroom3" parent="Battles/BattleTrigger3" instance=ExtResource( 29 )]
 transform = Transform( 0.383131, 0, 0.316293, 0, 0.49682, 0, -0.316293, 0, 0.383131, -3.87632, 0, 3.8112 )
+character_name = null
+level = null
 
 [node name="ManchineelToxicityArea" type="Area" parent="Battles"]
 transform = Transform( 0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, -52.7646, 0, -46.249 )
 script = ExtResource( 31 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Battles/ManchineelToxicityArea"]
-transform = Transform( 17.15, 0, 0, 0, 17.15, 0, 0, 0, 17.15, 0, 0, 0 )
-shape = SubResource( 17 )
+transform = Transform( 13.2116, 0, 0, 0, 13.2116, 0, 0, 0, 13.2116, 2.52535, -2.01293e-09, 1.48058 )
+shape = SubResource( 14 )
 
 [node name="Weathervane" parent="Battles/ManchineelToxicityArea" instance=ExtResource( 32 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9099, 0, 7.25995 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6318, 0, 13.1184 )
+
+[node name="Top" parent="Battles/ManchineelToxicityArea/Weathervane" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Particles" type="Particles" parent="Battles/ManchineelToxicityArea"]
+transform = Transform( -1.46471e-07, -0.0130517, 3.35102, 0.0130617, 3.351, 0.0130516, -3.35102, 0.0130616, 5.07263e-05, -4.53347, 9.41177, 1.48058 )
+emitting = false
+amount = 200
+process_material = SubResource( 17 )
+draw_pass_1 = SubResource( 19 )
 
 [node name="Timer" type="Timer" parent="Battles/ManchineelToxicityArea"]
-wait_time = 3.0
+wait_time = 5.0
 autostart = true
 
 [node name="Learn" type="Spatial" parent="."]
@@ -2103,19 +2164,19 @@ __meta__ = {
 }
 
 [node name="SignPost" parent="Learn" instance=ExtResource( 33 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -56.9047, 1, -22.2678 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -56.905, 0.5, -22.268 )
 knowledge_name = "Manchineel Toxicity"
 
 [node name="SignPost2" parent="Learn" instance=ExtResource( 33 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -43.4262, 1, -27.8401 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -43.426, 0.5, -27.84 )
 knowledge_name = "Manchineel"
 
 [node name="SignPost3" parent="Learn" instance=ExtResource( 33 )]
-transform = Transform( 0.289807, 0, 0.407445, 0, 0.5, 0, -0.407445, 0, 0.289807, -61.9896, 1, 28.7112 )
+transform = Transform( 0.289807, 0, 0.407445, 0, 0.5, 0, -0.407445, 0, 0.289807, -61.99, 0.5, 28.711 )
 knowledge_name = "Electroidesia"
 
 [node name="SignPost4" parent="Learn" instance=ExtResource( 33 )]
-transform = Transform( 0.238037, 0, 0.439703, 0, 0.5, 0, -0.439703, 0, 0.238037, -18.6865, 1, -0.720443 )
+transform = Transform( 0.238037, 0, 0.439703, 0, 0.5, 0, -0.439703, 0, 0.238037, -18.687, 0.5, -0.72 )
 knowledge_name = "Latite"
 
 [node name="Sun" type="DirectionalLight" parent="."]
@@ -2124,11 +2185,11 @@ shadow_enabled = true
 directional_shadow_max_distance = 1000.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 10 )
+environment = ExtResource( 34 )
 
 [node name="EnvironmentSound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform( 1, -1.74846e-07, -3.01876e-11, -3.01876e-11, -0.000345306, 1, -1.74846e-07, -1, -0.000345306, 0, 11, 0 )
-stream = ExtResource( 34 )
+stream = ExtResource( 35 )
 unit_db = 30.0
 max_db = 1.0
 autoplay = true
@@ -2139,8 +2200,9 @@ __meta__ = {
 }
 
 [node name="ToBeContinue" type="Area" parent="."]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.5927, 0, -102.547 )
-script = ExtResource( 35 )
+script = ExtResource( 36 )
 
 [node name="CollisionShape" type="CollisionShape" parent="ToBeContinue"]
 transform = Transform( 9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0, 0 )
@@ -2167,7 +2229,7 @@ margin_left = 569.0
 margin_top = 365.0
 margin_right = 797.0
 margin_bottom = 402.0
-custom_fonts/font = ExtResource( 36 )
+custom_fonts/font = ExtResource( 37 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "To be continue..."
 

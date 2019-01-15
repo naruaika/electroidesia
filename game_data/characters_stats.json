@@ -7,7 +7,7 @@
     "Dragon Mushroom" : {
         "elemental" : "Earth",
         "hit_point" : 15,
-        "attack" : [11, 0],
+        "attack" : [1, 0],
         "defense" : [5, 0]
     }
 }

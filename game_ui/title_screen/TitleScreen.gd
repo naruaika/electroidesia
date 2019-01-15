@@ -1,10 +1,6 @@
 extends Control
 
 func _ready() -> void:
-	# Hide OS mouse cursor
-	# Because we don't need any mouse input in this entire game
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
 	# Set default focus to NewGameButton
 	$VBoxContainer/Buttons/NewGameButton.grab_focus()
 	

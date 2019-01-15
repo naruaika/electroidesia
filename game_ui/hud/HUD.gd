@@ -19,9 +19,10 @@ func set_message(message: String, speaker: String = "") -> void:
 func set_description(description: String) -> void:
 	$InvestigationPanel/ScrollContainer/Description.text = description
 
-func battle_show() -> void:
-	animation_node.play("attack_enable")
-	yield(animation_node, "animation_finished")
+func battle_show(attack_visible: bool = true) -> void:
+	if attack_visible:
+		animation_node.play("attack_enable")
+		yield(animation_node, "animation_finished")
 	
 	animation_node.play("battle_show")
 	$BattlePanel/HBoxContainer/Menu/AttackButton.grab_focus()

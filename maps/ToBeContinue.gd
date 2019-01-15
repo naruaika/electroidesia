@@ -6,4 +6,4 @@ func _on_ToBeContinue_body_entered(body: Node) -> void:
 		$AnimationPlayer.play("fade_in")
 
 func goto_titlescreen() -> void:
-	GameManager.goto_scene("res://game_ui/title_screen/TitleScreen.tscn")
+	GameManager.goto_mainmenu()

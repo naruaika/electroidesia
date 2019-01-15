@@ -5,7 +5,7 @@ var battlers: Array = []
 var target: Node
 var battler_selector: Node
 var is_attacking: bool = false
-var is_leveling_up: bool = false
+var is_levelling_up: bool = false
 
 var gained_experience_point = 0
 
@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 		queue_free()
 
 func _input(event: InputEvent) -> void:
-	if is_leveling_up:
+	if is_levelling_up:
 		if Input.is_action_just_pressed("ui_accept"):
 			HUD.levelup_hide()
 			
@@ -112,9 +112,9 @@ func start_battle(body: Node) -> void:
 
 func combat() -> void:
 	if battlers[index_battler].is_in_group("player"):
-		battlers[index_battler].attack(target)
 		battler_selector.hide()
 		HUD.attack_menu_hide()
+		battlers[index_battler].attack(target)
 	else:
 		battlers[index_battler].attack(battlers[0])
 	
@@ -148,7 +148,7 @@ func combat() -> void:
 		
 		# Show player level up information
 		HUD.levelup_show(gained_experience_point, battlers)
-		is_leveling_up = true
+		is_levelling_up = true
 	
 	is_attacking = false
 

@@ -27,7 +27,9 @@ _global_script_class_icons={
 [application]
 
 config/name="Electroidesia 0.1.5 Alpha"
-run/main_scene="res://game_ui/title_screen/TitleScreen.tscn"
+run/main_scene="res://game_ui/boot_splash/BootSplash.tscn"
+boot_splash/image="res://assets/gui/boot_splash/solid_black.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
 [autoload]
