@@ -8,7 +8,6 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		GameManager.goto_mainmenu()
-		
 
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
-	GameManager.goto_scene("res://game_ui/title_screen/TitleScreen.tscn")
+	GameManager.goto_mainmenu()
